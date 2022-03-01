@@ -28,7 +28,7 @@ public class SwerveMovement : MonoBehaviour
 
             float swerveAmount = Time.deltaTime * swerveSpeed * _swerveInputSystem.MoveFactorX;
 
-            transform.Translate(swerveAmount, 0, 0);
+            transform.Translate(-swerveAmount, 0, 0);
 
 
             float distance = Vector3.Distance(transform.position, centerPosition);

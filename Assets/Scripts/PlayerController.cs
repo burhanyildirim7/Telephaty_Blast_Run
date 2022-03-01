@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public bool xVarMi = true;
     public bool collectibleVarMi = true;
 
+    private Animator anim;
+
 
     private void Awake()
     {
@@ -53,26 +55,41 @@ public class PlayerController : MonoBehaviour
         }
         else if (other.CompareTag("finish")) 
         {
+            KosuyuSonlandır();
             // finishe collider eklenecek levellerde...
             // FINISH NOKTASINA GELINCE YAPILACAKLAR... Totalscore artırma, x işlemleri, efektler v.s. v.s.
             GameController.instance.isContinue = false;
             GameController.instance.ScoreCarp(7);  // Bu fonksiyon normalde x ler hesaplandıktan sonra çağrılacak. Parametre olarak x i alıyor. 
             // x değerine göre oyuncunun total scoreunu hesaplıyor.. x li olmayan oyunlarda parametre olarak 1 gönderilecek.
             UIController.instance.ActivateWinScreen(); // finish noktasına gelebildiyse her türlü win screen aktif edilecek.. ama burada değil..
-            // normal de bu kodu x ler hesaplandıktan sonra çağıracağız. Ve bu kod çağrıldığında da kazanılan puanlar animasyonlu şekilde artacak..
+            // normal de bu kodu x ler hesaplandıktan sonra çağıracağız. Ve bu kod çağrıldığında da kazanılan puanlar animasyonlu şekilde artacak..   
+        }
+        else if (other.CompareTag("enemy"))
+        {
+            KosuyuSonlandır();
+            GameController.instance.isContinue = false;
+            UIController.instance.ActivateLooseScreen();
 
-            
         }
 
     }
 
+    public void KosuyaBasla()
+    {
+        anim.SetBool("KosmaP", true);
+    }
+
+    public void KosuyuSonlandır()
+    {
+        anim.SetBool("KosmaP", false);
+    }
 
     /// <summary>
     /// Bu fonksiyon her level baslarken cagrilir. 
     /// </summary>
     public void StartingEvents()
     {
-
+        anim = transform.GetChild(0).GetComponent<Animator>();
         transform.parent.transform.rotation = Quaternion.Euler(0, 0, 0);
         transform.parent.transform.position = Vector3.zero;
         GameController.instance.isContinue = false;

@@ -11,6 +11,8 @@ public class UIController : MonoBehaviour
 	public Text gamePlayScoreText, winScreenScoreText, levelNoText, tapToStartScoreText, totalElmasText;
 	public Animator ScoreTextAnim;
 
+	private PlayerController playerController;
+
 
 
 	// singleton yapisi burada kuruluyor.
@@ -28,6 +30,7 @@ public class UIController : MonoBehaviour
 	// Oyun ilk acildiginda calisacak olan ui fonksiyonu. 
 	public void StartUI()
 	{
+		playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
 		ActivateTapToStartScreen();
 	}
 
@@ -43,7 +46,7 @@ public class UIController : MonoBehaviour
 	// TAPTOSTART TUSUNA BASILDISINDA  --- GIRIS EKRANINDA VE LEVEL BASLARINDA
 	public void TapToStartButtonClick()
 	{
-
+		playerController.KosuyaBasla();
 		GameController.instance.isContinue = true;
 		//PlayerController.instance.SetArmForGaming();
 		TapToStartPanel.SetActive(false);

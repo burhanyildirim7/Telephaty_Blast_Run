@@ -11,6 +11,8 @@ TagManager:
   - finish
   - collectible
   - elmas
+  - Missile
+  - enemy
   layers:
   - Default
   - TransparentFX
