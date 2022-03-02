@@ -13,6 +13,7 @@ TagManager:
   - elmas
   - Missile
   - enemy
+  - FirlatmaNesnesi
   layers:
   - Default
   - TransparentFX

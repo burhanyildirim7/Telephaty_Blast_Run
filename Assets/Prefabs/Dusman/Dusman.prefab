@@ -900,6 +900,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hiz: 8
   odaklanmaMesafesiPlayer: 10
+  olumEfekti: {fileID: 5982546347432104920, guid: 906ad81ef3aa7894d9c9178740314d7d, type: 3}
 --- !u!54 &6304694415531524068
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -982,7 +983,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0bcdca085445acc4aa21304ffa02deba, type: 2}
+  - {fileID: 2100000, guid: e025cbae230360b4ba4ba5e99199082b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

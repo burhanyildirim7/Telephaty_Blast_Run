@@ -16,6 +16,9 @@ public class Enemy : MonoBehaviour
     private Animator anim;
     private bool OyunBasladiMi = false;
 
+    [Header("Efektler")]
+    [SerializeField] private ParticleSystem olumEfekti;
+
     private GameObject player;
 
     private WaitForSeconds beklemeSuresi1 = new WaitForSeconds(.2f);
@@ -97,5 +100,15 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("FirlatmaNesnesi"))
+        {
+            Instantiate(olumEfekti, transform.position, Quaternion.identity).Play();
+            Destroy(gameObject);
+        }
+        
     }
 }
