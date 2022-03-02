@@ -31,7 +31,7 @@ public class KarakterPaketiMovement : MonoBehaviour
         if(donme)
         {
             donusYonu = Quaternion.LookRotation(Vector3.right * donulecekObje.position.x + Vector3.forward * donulecekObje.position.z - transform.position);
-            donecekObje.transform.rotation = Quaternion.RotateTowards(transform.rotation, donusYonu, 50000 * Time.deltaTime);
+            donecekObje.transform.rotation = Quaternion.RotateTowards(transform.rotation, donusYonu, 1000 * Time.deltaTime);
 
         }
         else if(donecekObje.transform.rotation.eulerAngles.y != 0)
