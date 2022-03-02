@@ -11,6 +11,7 @@ public class ThrowController : MonoBehaviour
     [Header("FirlatilanObjeIleIlgili")]
     private AtilanObje atilanObje;
     private GameObject throwingObj;
+    [SerializeField] private float objeUzaklikMenzili;
 
     [Header("DokunmaAyarlari")]
     private RaycastHit hit;
@@ -63,7 +64,7 @@ public class ThrowController : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
         if (Physics.Raycast(ray, out hit))
         {
-            if (hit.transform.CompareTag("FirlatmaNesnesi") &&  (player.transform.position.z - hit.transform.position.z) <= 1)
+            if (hit.transform.CompareTag("FirlatmaNesnesi") &&  (player.transform.position.z - hit.transform.position.z) <= objeUzaklikMenzili)
             {
                 throwingObj = hit.transform.gameObject;
                 atilanObje = throwingObj.GetComponent<AtilanObje>();
@@ -85,7 +86,7 @@ public class ThrowController : MonoBehaviour
             throwingObj.transform.position = Vector3.Lerp(throwingObj.transform.position, hit.point + Vector3.up * .5f, Time.deltaTime * 20);
         }
 
-        if((player.transform.position.z - throwingObj.transform.position.z) >= 1)
+        if((player.transform.position.z - throwingObj.transform.position.z) >= objeUzaklikMenzili)
         {
             DokunmayiBitir();
         }
@@ -96,7 +97,7 @@ public class ThrowController : MonoBehaviour
         deltaTouchPosition = touch.deltaPosition;
         text.text = (deltaTouchPosition).ToString();
 
-        if (deltaTouchPosition.magnitude >= 3)
+        if (deltaTouchPosition.magnitude >= 2)
         {
             atilanObje.Firlat(-deltaTouchPosition.normalized.x * Vector3.right * 6 - deltaTouchPosition.normalized.y * Vector3.forward * 6 + Vector3.up * 4);
         }
