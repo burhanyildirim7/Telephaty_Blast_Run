@@ -17,13 +17,22 @@ public class ThrowController : MonoBehaviour
     [Header("Efektler")]
     [SerializeField] private ParticleSystem efekt;
 
+    [Header("AnimasyonVeKarakterDonusuIcin")]
+    private PlayerController playerController;
+    private KarakterPaketiMovement karakterPaketiMovement;
+
 
     [SerializeField] Text text;
     private Vector3 deltaTouchPosition;
 
 
+   void Start()
+    {
+        playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+        karakterPaketiMovement = GameObject.FindWithTag("KarakterPaketi").GetComponent<KarakterPaketiMovement>();
+    }
 
-    void FixedUpdate()
+    void Update()
     {
         if (Input.touchCount > 0)
         {
@@ -40,7 +49,10 @@ public class ThrowController : MonoBehaviour
                         throwingObj = hit.transform.gameObject;
                         atilanObje = throwingObj.GetComponent<AtilanObje>();
                         atilanObje.ObjeSec();
+
+                        karakterPaketiMovement.DonulmeAktiflestir(throwingObj.transform);
                         efekt.Play();
+                        playerController.ObjeleriKontrolEtBasla();
                     }
                 }
             }
@@ -60,15 +72,17 @@ public class ThrowController : MonoBehaviour
                 deltaTouchPosition = touch.deltaPosition;
                 text.text = (deltaTouchPosition).ToString();
 
-                if (deltaTouchPosition.magnitude >= 5)
+                if (deltaTouchPosition.magnitude >= 3)
                 {
-                    atilanObje.Firlat(deltaTouchPosition.normalized.x * Vector3.right * 4 + deltaTouchPosition.normalized.y * Vector3.forward * 4 + Vector3.up * 4);
+                    atilanObje.Firlat(- deltaTouchPosition.normalized.x * Vector3.right * 6 - deltaTouchPosition.normalized.y * Vector3.forward * 6 + Vector3.up * 4);
                 }
                 else
                 {
                     atilanObje.Birak();
                 }
 
+                karakterPaketiMovement.DonulmePasiflestir();
+                playerController.ObjeleriKontrolEtBitir();
                 efekt.Stop();
                 throwingObj = null;
                 atilanObje = null;

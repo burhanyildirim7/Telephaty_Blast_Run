@@ -900,7 +900,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hiz: 8
   odaklanmaMesafesiPlayer: 10
-  olumEfekti: {fileID: 5982546347432104920, guid: 906ad81ef3aa7894d9c9178740314d7d, type: 3}
+  olumEfekti: {fileID: 9111768269756803913, guid: 01792845ac40d1d4cb2f3ac3f5d82b38, type: 3}
 --- !u!54 &6304694415531524068
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -84,6 +84,16 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("KosmaP", false);
     }
 
+    public void ObjeleriKontrolEtBasla()
+    {
+        anim.SetBool("ObjeKontrolEtmeP", true);
+    }
+
+    public void ObjeleriKontrolEtBitir()
+    {
+        anim.SetBool("ObjeKontrolEtmeP", false);
+    }
+
     /// <summary>
     /// Bu fonksiyon her level baslarken cagrilir. 
     /// </summary>
