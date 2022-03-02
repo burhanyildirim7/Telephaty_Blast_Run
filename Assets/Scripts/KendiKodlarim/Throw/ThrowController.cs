@@ -35,7 +35,7 @@ public class ThrowController : MonoBehaviour
         karakterPaketiMovement = GameObject.FindWithTag("KarakterPaketi").GetComponent<KarakterPaketiMovement>();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (Input.touchCount > 0)
         {
@@ -82,7 +82,7 @@ public class ThrowController : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            throwingObj.transform.position = Vector3.Lerp(throwingObj.transform.position, hit.point + Vector3.up * throwingObj.transform.localScale.y * .5f, Time.deltaTime * 20);
+            throwingObj.transform.position = Vector3.Lerp(throwingObj.transform.position, hit.point + Vector3.up * .5f, Time.deltaTime * 20);
         }
 
         if((player.transform.position.z - throwingObj.transform.position.z) >= 1)

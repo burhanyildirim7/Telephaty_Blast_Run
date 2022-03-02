@@ -898,7 +898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c733db8e570106498183186123f54c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hiz: 8
+  hiz: 7
   odaklanmaMesafesiPlayer: 10
   olumEfekti: {fileID: 9111768269756803913, guid: 01792845ac40d1d4cb2f3ac3f5d82b38, type: 3}
 --- !u!54 &6304694415531524068
