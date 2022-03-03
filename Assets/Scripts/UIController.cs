@@ -70,6 +70,10 @@ public class UIController : MonoBehaviour
 	// NEXT LEVEL TUSUNA BASILDIGINDA... WIN EKRANINDAKI BUTON
 	public void NextLevelButtonClick()
 	{
+		GameObject.FindWithTag("ThrowController").GetComponent<ThrowController>().BaslangicDegerleri();
+		GameObject.FindWithTag("KarakterPaketi").GetComponent<KarakterPaketiMovement>().BaslangicDegerleri();
+		GameObject.FindWithTag("MainCamera").GetComponent<CameraMovement>().BaslangicDegerleri();
+
 		SetTapToStartScoreText();
 		TapToStartPanel.SetActive(true);
 		WinPanel.SetActive(false);
@@ -228,7 +232,4 @@ public class UIController : MonoBehaviour
 		GamePanel.SetActive(false);
 		tapToStartScoreText.text = PlayerPrefs.GetInt("total").ToString();
 	}
-
-	
-
 }

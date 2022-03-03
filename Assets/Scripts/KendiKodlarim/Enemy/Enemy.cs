@@ -10,7 +10,9 @@ public class Enemy : MonoBehaviour
 
     [Header("KosuGenelAyarlari")]
     private bool karaktereKosu = false;
-    Quaternion kosuYonu;
+    private Quaternion mevcutKosuYonu;
+    private Quaternion kosuYonu = Quaternion.Euler(Vector3.zero);
+    private float donusHizi = 1000;
 
     [Header("AnimasyonAyarlari")]
     private Animator anim;
@@ -19,49 +21,57 @@ public class Enemy : MonoBehaviour
     [Header("Efektler")]
     [SerializeField] private ParticleSystem olumEfekti;
 
+    [Header("RotasyonAyari")]
+    RaycastHit hit;
+
     private GameObject player;
 
     private WaitForSeconds beklemeSuresi1 = new WaitForSeconds(.2f);
     private WaitForSeconds beklemeSuresi2 = new WaitForSeconds(.5f);
+    private WaitForSeconds beklemeSuresi3 = new WaitForSeconds(2f);
+
+
     void Start()
     {
         anim = GetComponent<Animator>();
         player = GameObject.FindWithTag("Player");
 
-
         StartCoroutine(OyunBasladiMiKontrol());
         StartCoroutine(KaraktereMesafe());
+
     }
 
     void Update()
     {
-        if(!karaktereKosu && GameController.instance.isContinue)
+        if (!karaktereKosu && GameController.instance.isContinue)
         {
             transform.Translate(Vector3.forward * Time.deltaTime * hiz);
 
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, kosuYonu, 1500 * Time.deltaTime);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, mevcutKosuYonu, donusHizi * Time.deltaTime);
         }
-        else if(karaktereKosu && GameController.instance.isContinue)
+        else if (karaktereKosu && GameController.instance.isContinue)
         {
             transform.Translate(Vector3.forward * Time.deltaTime * hiz);
 
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, kosuYonu, 1000 * Time.deltaTime); 
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, mevcutKosuYonu, 1000 * Time.deltaTime);
         }
 
     }
 
+
+    //Dusman karakterden uzaklastigi zamanda yapacak rotasyonu burdadir
     IEnumerator KaraktereMesafe()
     {
-        while(true)
+        while (true)
         {
-            if(Vector3.Distance(transform.position, player.transform.position) <= odaklanmaMesafesiPlayer)
+            if (Vector3.Distance(transform.position, player.transform.position) <= odaklanmaMesafesiPlayer)
             {
-                kosuYonu = Quaternion.LookRotation(player.transform.position - transform.position);
+                mevcutKosuYonu = Quaternion.LookRotation(player.transform.position - transform.position);
                 karaktereKosu = true;
             }
             else
             {
-                kosuYonu = Quaternion.Euler(Vector3.zero);
+                mevcutKosuYonu = kosuYonu;
                 karaktereKosu = false;
             }
             yield return beklemeSuresi1;
@@ -70,9 +80,9 @@ public class Enemy : MonoBehaviour
 
     IEnumerator OyunBasladiMiKontrol()
     {
-        while(!OyunBasladiMi)
+        while (!OyunBasladiMi)
         {
-            if(GameController.instance.isContinue)
+            if (GameController.instance.isContinue)
             {
                 anim.SetBool("KosmaP", true);
                 OyunBasladiMi = true;
@@ -96,9 +106,13 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             Destroy(gameObject);
+        }
+        else if (other.CompareTag("DonusYap"))
+        {
+            DonusAyarlayici();
         }
     }
 
@@ -106,9 +120,62 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("FirlatmaNesnesi"))
         {
+            GameController.instance.SetScore(5);
             Instantiate(olumEfekti, transform.position, Quaternion.identity).Play();
             Destroy(gameObject);
         }
-        
+
+    }
+
+
+    private void DonusAyarlayici()
+    {
+        float uzaklik;
+
+        int layerMask = 1 << 2;
+
+        layerMask = ~layerMask;
+
+        if (Physics.Raycast(transform.position + Vector3.up, transform.TransformDirection(Vector3.right), out hit, Mathf.Infinity)) //SagaDonus
+        {
+            if (hit.transform.CompareTag("DonusAyarlatici"))
+            {
+                kosuYonu = Quaternion.Euler(Vector3.up * (transform.rotation.eulerAngles.y + 90));
+                uzaklik = Vector3.Distance(transform.position, hit.point);
+                StartCoroutine(DonusHiziBelirle(uzaklik));
+            }
+        }
+
+        if (Physics.Raycast(transform.position + Vector3.up, transform.TransformDirection(-Vector3.right), out hit, Mathf.Infinity, layerMask)) //SolaDonus
+        {
+            if (hit.transform.CompareTag("DonusAyarlatici"))
+            {
+                kosuYonu = Quaternion.Euler(Vector3.up * (transform.rotation.eulerAngles.y - 90));
+                uzaklik = Vector3.Distance(transform.position, hit.point);
+                StartCoroutine(DonusHiziBelirle(uzaklik));
+            }
+        }
+    }
+
+
+
+
+    IEnumerator DonusHiziBelirle(float uzaklikDegeri)
+    {
+
+        donusHizi = 45 + 15 * (8 - uzaklikDegeri);
+        if((8 - uzaklikDegeri) <= 1)
+        {
+            donusHizi += 60;
+        }
+        if ((8 - uzaklikDegeri) <= 2)
+        {
+            donusHizi += 35;
+        }
+
+
+
+        yield return beklemeSuresi3;
+        donusHizi = 1500;
     }
 }

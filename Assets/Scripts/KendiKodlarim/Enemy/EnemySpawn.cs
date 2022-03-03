@@ -7,6 +7,7 @@ public class EnemySpawn : MonoBehaviour
     [Header("DusmanOlusturma")]
     [SerializeField] private GameObject dusman;
     [SerializeField] private int dusmanSayisi;
+    [SerializeField] private int dusmanCýkýsAcisi;
 
     private WaitForSeconds beklemeSuresi1 = new WaitForSeconds(.015f);
 
@@ -14,7 +15,6 @@ public class EnemySpawn : MonoBehaviour
     void Start()
     {
         StartCoroutine(DusmanOlustur());
-        
     }
 
 
@@ -22,15 +22,9 @@ public class EnemySpawn : MonoBehaviour
     {
         for (int i = 0; i < dusmanSayisi; i++)
         {
-            Instantiate(dusman, transform.position + Vector3.right * Random.Range(-3, 3) + Vector3.forward * (Random.Range(-3, 3)), Quaternion.identity);
+            Instantiate(dusman, transform.position + Vector3.right * Random.Range(-3.0f, 3.0f) + Vector3.forward * (Random.Range(-3.0f, 3.0f)), Quaternion.Euler(Vector3.up * dusmanCýkýsAcisi));
             yield return beklemeSuresi1;
         }
     }
 
-
-    void Update()
-    {
-
-
-    }
 }

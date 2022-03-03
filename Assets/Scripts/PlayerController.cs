@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
 
     private Animator anim;
 
+    [Header("KaraktereDonusYaptirmakIcinGerekli")]
+    KarakterPaketiMovement karakterPaketiMovement;
 
     private void Awake()
     {
@@ -50,8 +52,6 @@ public class PlayerController : MonoBehaviour
                 UIController.instance.ActivateLooseScreen(); // Bu fonksiyon direk çağrılada bilir veya herhangi bir effect veya animasyon bitiminde de çağrılabilir..
                 // oyuncu fail durumunda bu fonksiyon çağrılacak.. 
 			}
-
-
         }
         else if (other.CompareTag("finish")) 
         {
@@ -71,7 +71,10 @@ public class PlayerController : MonoBehaviour
             UIController.instance.ActivateLooseScreen();
 
         }
-
+        else if(other.CompareTag("DonusYap"))
+        {
+            karakterPaketiMovement.KaraktereDonusYaptir();
+        }
     }
 
     public void KosuyaBasla()
@@ -99,6 +102,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public void StartingEvents()
     {
+        karakterPaketiMovement = GameObject.FindWithTag("KarakterPaketi").GetComponent<KarakterPaketiMovement>();
         anim = transform.GetChild(0).GetComponent<Animator>();
         transform.parent.transform.rotation = Quaternion.Euler(0, 0, 0);
         transform.parent.transform.position = Vector3.zero;

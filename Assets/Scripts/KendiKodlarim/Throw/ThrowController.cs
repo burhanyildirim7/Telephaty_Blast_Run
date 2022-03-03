@@ -28,16 +28,32 @@ public class ThrowController : MonoBehaviour
     [SerializeField] Text text;
     private Vector3 deltaTouchPosition;
 
+    [Header("FirlatmaYonKontrol")]
+    public bool karakterSagaGidiyor;
+    public bool karakterSolaGidiyor;
 
-   void Start()
+    float result;
+
+
+    void Start()
+    {
+        BaslangicDegerleri();
+    }
+
+    public void BaslangicDegerleri()
     {
         player = GameObject.FindWithTag("Player");
         playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         karakterPaketiMovement = GameObject.FindWithTag("KarakterPaketi").GetComponent<KarakterPaketiMovement>();
+
+        karakterSolaGidiyor = false;
+        karakterSagaGidiyor = false;
     }
 
     void Update()
     {
+
+
         if (Input.touchCount > 0)
         {
             touch = Input.GetTouch(0);
@@ -59,12 +75,15 @@ public class ThrowController : MonoBehaviour
         }
     }
 
+    //Dokunma kýsýmlarý
     private void DokunmayaBasla()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
         if (Physics.Raycast(ray, out hit))
         {
-            if (hit.transform.CompareTag("FirlatmaNesnesi") &&  (player.transform.position.z - hit.transform.position.z) <= objeUzaklikMenzili)
+            uzaklikAlgilayici1();
+       
+            if (hit.transform.CompareTag("FirlatmaNesnesi") && result >= objeUzaklikMenzili)
             {
                 throwingObj = hit.transform.gameObject;
                 atilanObje = throwingObj.GetComponent<AtilanObje>();
@@ -86,7 +105,8 @@ public class ThrowController : MonoBehaviour
             throwingObj.transform.position = Vector3.Lerp(throwingObj.transform.position, hit.point + Vector3.up * .5f, Time.deltaTime * 20);
         }
 
-        if((player.transform.position.z - throwingObj.transform.position.z) >= objeUzaklikMenzili)
+        uzaklikAlgilayici2();
+        if (result >= objeUzaklikMenzili)
         {
             DokunmayiBitir();
         }
@@ -99,7 +119,7 @@ public class ThrowController : MonoBehaviour
 
         if (deltaTouchPosition.magnitude >= 2)
         {
-            atilanObje.Firlat(-deltaTouchPosition.normalized.x * Vector3.right * 6 - deltaTouchPosition.normalized.y * Vector3.forward * 6 + Vector3.up * 4);
+            ObjeyiFirlat();
         }
         else
         {
@@ -111,6 +131,98 @@ public class ThrowController : MonoBehaviour
         efekt.Stop();
         throwingObj = null;
         atilanObje = null;
+    }
+
+
+
+
+    //Firlatma kisimlari
+    private void ObjeyiFirlat()
+    {
+        if (!karakterSagaGidiyor && !karakterSolaGidiyor)
+        {
+            atilanObje.Firlat(-deltaTouchPosition.normalized.x * Vector3.right * 6 - deltaTouchPosition.normalized.y * Vector3.forward * 6 + Vector3.up * 4);
+        }
+        else if (karakterSagaGidiyor)
+        {
+            atilanObje.Firlat(-deltaTouchPosition.normalized.y * Vector3.right * 6 - deltaTouchPosition.normalized.x * Vector3.forward * 6 + Vector3.up * 4);
+        }
+        else if (karakterSolaGidiyor)
+        {
+            atilanObje.Firlat(deltaTouchPosition.normalized.y * Vector3.right * 6 - deltaTouchPosition.normalized.x * Vector3.forward * 6 + Vector3.up * 4);
+        }
+    }
+
+
+    //Firlatmada yön belirtmek icin olan kisimlar
+    public void SagaDon()
+    {
+        if (karakterSagaGidiyor)
+        {
+            karakterSagaGidiyor = false;
+        }
+        else if (karakterSolaGidiyor)
+        {
+            karakterSolaGidiyor = false;
+        }
+        else
+        {
+            karakterSagaGidiyor = true;
+        }
+    }
+
+    public void SolaDon()
+    {
+        if (karakterSolaGidiyor)
+        {
+            karakterSolaGidiyor = false;
+        }
+        else if (karakterSagaGidiyor)
+        {
+            karakterSagaGidiyor = false;
+        }
+        else
+        {
+            karakterSolaGidiyor = true;
+        }
+    }
+
+    private float uzaklikAlgilayici1()
+    {
+
+        if (!karakterSagaGidiyor && !karakterSolaGidiyor)
+        {
+            result = hit.point.z - player.transform.position.z;
+        }
+        else if (karakterSolaGidiyor)
+        {
+            result = player.transform.position.x - hit.point.x;
+        }
+        else if (karakterSagaGidiyor)
+        {
+            result = -player.transform.position.x + hit.point.x;
+        }
+
+        return result;
+    }
+
+    private float uzaklikAlgilayici2()
+    {
+
+        if (!karakterSagaGidiyor && !karakterSolaGidiyor)
+        {
+            result = -throwingObj.transform.position.z + player.transform.position.z;
+        }
+        else if (karakterSolaGidiyor)
+        {
+            result = -player.transform.position.x + throwingObj.transform.position.x;
+        }
+        else if (karakterSagaGidiyor)
+        {
+            result = player.transform.position.x - throwingObj.transform.position.x;
+        }
+
+        return result;
     }
 }
 
