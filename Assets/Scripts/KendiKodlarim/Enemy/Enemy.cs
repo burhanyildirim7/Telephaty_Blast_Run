@@ -11,18 +11,22 @@ public class Enemy : MonoBehaviour
     [Header("KosuGenelAyarlari")]
     private bool karaktereKosu = false;
     private Quaternion mevcutKosuYonu;
-    private Quaternion kosuYonu = Quaternion.Euler(Vector3.zero);
+    private Quaternion kosuYonu;
     private float donusHizi = 1000;
 
     [Header("AnimasyonAyarlari")]
     private Animator anim;
-    private bool OyunBasladiMi = false;
 
     [Header("Efektler")]
     [SerializeField] private ParticleSystem olumEfekti;
 
     [Header("RotasyonAyari")]
     RaycastHit hit;
+
+    [Header("KosmayaBaslamaAyari")]
+    private bool oyunBasladiMi;
+    private float oncekiMesafe;
+    private float simdikiMesafe;
 
     private GameObject player;
 
@@ -33,29 +37,58 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        anim = GetComponent<Animator>();
-        player = GameObject.FindWithTag("Player");
-
-        StartCoroutine(OyunBasladiMiKontrol());
-        StartCoroutine(KaraktereMesafe());
-
+        BaslangicDegerleri();
     }
 
+    private void BaslangicDegerleri()
+    {
+        oyunBasladiMi = false;
+        anim = GetComponent<Animator>();
+        player = GameObject.FindWithTag("Player");
+        kosuYonu = Quaternion.Euler(Vector3.up * transform.rotation.eulerAngles.y);
+
+        StartCoroutine(KarakterPesindenKosmaAyari());
+    }
+
+
+    //Rotasyon ve haraket islemleri
     void Update()
     {
-        if (!karaktereKosu && GameController.instance.isContinue)
+        if (!karaktereKosu && oyunBasladiMi)
         {
             transform.Translate(Vector3.forward * Time.deltaTime * hiz);
 
             transform.rotation = Quaternion.RotateTowards(transform.rotation, mevcutKosuYonu, donusHizi * Time.deltaTime);
         }
-        else if (karaktereKosu && GameController.instance.isContinue)
+        else if (karaktereKosu && oyunBasladiMi)
         {
             transform.Translate(Vector3.forward * Time.deltaTime * hiz);
 
             transform.rotation = Quaternion.RotateTowards(transform.rotation, mevcutKosuYonu, 1000 * Time.deltaTime);
         }
+    }
 
+    IEnumerator KarakterPesindenKosmaAyari()
+    {
+        yield return beklemeSuresi2;
+
+        while (!oyunBasladiMi)
+        {
+            oncekiMesafe = Vector3.Distance(transform.position, player.transform.position);
+            yield return beklemeSuresi2;
+            simdikiMesafe = Vector3.Distance(transform.position, player.transform.position);
+
+            if (Vector3.Distance(transform.position, player.transform.position) <= 40)
+            {
+                if((simdikiMesafe - .3f) > oncekiMesafe)
+                {
+                    oyunBasladiMi = true;
+                    anim.SetBool("KosmaP", true);
+                    StartCoroutine(KaraktereMesafe());
+                    StartCoroutine(OyunBittiMiKontrol());
+                }
+            }
+        }
     }
 
 
@@ -78,19 +111,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    IEnumerator OyunBasladiMiKontrol()
-    {
-        while (!OyunBasladiMi)
-        {
-            if (GameController.instance.isContinue)
-            {
-                anim.SetBool("KosmaP", true);
-                OyunBasladiMi = true;
-                StartCoroutine(OyunBittiMiKontrol());
-            }
-            yield return beklemeSuresi1;
-        }
-    }
 
     IEnumerator OyunBittiMiKontrol()
     {
@@ -104,30 +124,11 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Destroy(gameObject);
-        }
-        else if (other.CompareTag("DonusYap"))
-        {
-            DonusAyarlayici();
-        }
-    }
+   
 
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("FirlatmaNesnesi"))
-        {
-            GameController.instance.SetScore(5);
-            Instantiate(olumEfekti, transform.position, Quaternion.identity).Play();
-            Destroy(gameObject);
-        }
+  
 
-    }
-
-
+    //Donus ayarlari
     private void DonusAyarlayici()
     {
         float uzaklik;
@@ -157,9 +158,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-
-
-
     IEnumerator DonusHiziBelirle(float uzaklikDegeri)
     {
 
@@ -177,5 +175,29 @@ public class Enemy : MonoBehaviour
 
         yield return beklemeSuresi3;
         donusHizi = 1500;
+    }
+
+
+    //Carpisma ayarlari
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+        else if (other.CompareTag("DonusYap"))
+        {
+            DonusAyarlayici();
+        }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("FirlatmaNesnesi"))
+        {
+            GameController.instance.SetScore(5);
+            Instantiate(olumEfekti, transform.position, Quaternion.identity).Play();
+            Destroy(gameObject);
+        }
     }
 }

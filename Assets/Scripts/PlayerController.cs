@@ -73,6 +73,7 @@ public class PlayerController : MonoBehaviour
         }
         else if(other.CompareTag("DonusYap"))
         {
+         
             karakterPaketiMovement.KaraktereDonusYaptir();
         }
     }

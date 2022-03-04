@@ -52,8 +52,6 @@ public class ThrowController : MonoBehaviour
 
     void Update()
     {
-
-
         if (Input.touchCount > 0)
         {
             touch = Input.GetTouch(0);
@@ -82,7 +80,7 @@ public class ThrowController : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             uzaklikAlgilayici1();
-       
+
             if (hit.transform.CompareTag("FirlatmaNesnesi") && result >= objeUzaklikMenzili)
             {
                 throwingObj = hit.transform.gameObject;
@@ -145,7 +143,7 @@ public class ThrowController : MonoBehaviour
         }
         else if (karakterSagaGidiyor)
         {
-            atilanObje.Firlat(-deltaTouchPosition.normalized.y * Vector3.right * 6 - deltaTouchPosition.normalized.x * Vector3.forward * 6 + Vector3.up * 4);
+            atilanObje.Firlat(-deltaTouchPosition.normalized.y * Vector3.right * 6 + deltaTouchPosition.normalized.x * Vector3.forward * 6 + Vector3.up * 4);
         }
         else if (karakterSolaGidiyor)
         {
@@ -157,15 +155,11 @@ public class ThrowController : MonoBehaviour
     //Firlatmada yön belirtmek icin olan kisimlar
     public void SagaDon()
     {
-        if (karakterSagaGidiyor)
-        {
-            karakterSagaGidiyor = false;
-        }
-        else if (karakterSolaGidiyor)
+        if (karakterSolaGidiyor)
         {
             karakterSolaGidiyor = false;
         }
-        else
+        else if (!karakterSolaGidiyor)
         {
             karakterSagaGidiyor = true;
         }
@@ -173,15 +167,11 @@ public class ThrowController : MonoBehaviour
 
     public void SolaDon()
     {
-        if (karakterSolaGidiyor)
-        {
-            karakterSolaGidiyor = false;
-        }
-        else if (karakterSagaGidiyor)
+        if (karakterSagaGidiyor)
         {
             karakterSagaGidiyor = false;
         }
-        else
+        else if (!karakterSagaGidiyor)
         {
             karakterSolaGidiyor = true;
         }
