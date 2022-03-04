@@ -59,6 +59,11 @@ public class UIController : MonoBehaviour
 	// RESTART TUSUNA BASILDISINDA  --- LOOSE EKRANINDA
 	public void RestartButtonClick()
 	{
+		GameObject.FindWithTag("ThrowController").GetComponent<ThrowController>().BaslangicDegerleri();
+		GameObject.FindWithTag("KarakterPaketi").GetComponent<KarakterPaketiMovement>().BaslangicDegerleri();
+		GameObject.FindWithTag("MainCamera").GetComponent<CameraMovement>().BaslangicDegerleri();
+
+
 		GamePanel.SetActive(false);
 		LoosePanel.SetActive(false);
 		TapToStartPanel.SetActive(true);

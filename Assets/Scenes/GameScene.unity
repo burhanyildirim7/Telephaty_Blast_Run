@@ -1140,6 +1140,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 5
   donme: 0
+  karakterSagaGidiyor: 0
+  karakterSolaGidiyor: 0
 --- !u!1 &2063141234
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,9 +1190,8 @@ MonoBehaviour:
   tempLevelNo: 0
   totalLevelNo: 0
   levels:
-  - {fileID: 5972974239943631132, guid: 3e0fd0d654fed424ea2eb6fbbd945e54, type: 3}
-  - {fileID: 5972974239943631132, guid: 3e0fd0d654fed424ea2eb6fbbd945e54, type: 3}
-  - {fileID: 5972974239943631132, guid: 3e0fd0d654fed424ea2eb6fbbd945e54, type: 3}
+  - {fileID: 1385783554539317374, guid: 3e0fd0d654fed424ea2eb6fbbd945e54, type: 3}
+  - {fileID: 5972974239943631132, guid: 0554bb912fd8511428535caa6c7d551e, type: 3}
 --- !u!1 &628836747382434081
 GameObject:
   m_ObjectHideFlags: 0

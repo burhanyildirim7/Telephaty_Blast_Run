@@ -24,9 +24,15 @@ public class KarakterPaketiMovement : MonoBehaviour
     private ThrowController throwController;
 
 
+    [Header("YonBilgisiIcindir")]   //Throw controller ve camera ayari icin gereklidir
+    public bool karakterSagaGidiyor;
+    public bool karakterSolaGidiyor;
+
+
     void Start()
     {
         BaslangicDegerleri();
+
     }
 
     public void BaslangicDegerleri() //UIController
@@ -34,6 +40,9 @@ public class KarakterPaketiMovement : MonoBehaviour
         throwController = GameObject.FindWithTag("ThrowController").GetComponent<ThrowController>();
         cameraMovement = GameObject.FindWithTag("MainCamera").GetComponent<CameraMovement>();
         donecekObje = transform.GetChild(0).transform;
+
+        karakterSolaGidiyor = false;
+        karakterSagaGidiyor = false;
 
         hedefRotasyon = Quaternion.Euler(Vector3.zero);
     }
@@ -47,19 +56,21 @@ public class KarakterPaketiMovement : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, hedefRotasyon, Time.deltaTime * 1.4865f);
         }
 
-       
-        if(donme)  //Zihin kontrolü yaparken gecerlidir
+
+        if (donme)  //Zihin kontrolü yaparken gecerlidir
         {
             donusYonu = Quaternion.LookRotation(Vector3.right * donulecekObje.position.x + Vector3.forward * donulecekObje.position.z - transform.position);
             donecekObje.transform.rotation = Quaternion.RotateTowards(transform.rotation, donusYonu, 1000 * Time.deltaTime);
 
         }
-        else if(donecekObje.transform.rotation.eulerAngles.y != 0)
+        else if (donecekObje.transform.rotation.eulerAngles.y != 0)
         {
             donusYonu = Quaternion.LookRotation(Vector3.zero);
             donecekObje.transform.rotation = Quaternion.RotateTowards(transform.rotation, donusYonu, 50 * Time.deltaTime);
         }
-        
+
+        Debug.DrawRay(transform.position + Vector3.up, transform.TransformDirection(Vector3.right) * 1000, Color.green);
+        Debug.DrawRay(transform.position + Vector3.up, transform.TransformDirection(-Vector3.right) * 1000, Color.green);
     }
 
     public void DonulmeAktiflestir(Transform hedefObje) //Buyu yaparken gecerlidir
@@ -76,25 +87,55 @@ public class KarakterPaketiMovement : MonoBehaviour
 
     public void KaraktereDonusYaptir()
     {
-        if (Physics.Raycast(transform.position + Vector3.up, transform.TransformDirection(Vector3.right), out hit, Mathf.Infinity)) //SagaDonus
+        if (Physics.Raycast(transform.position + Vector3.up, transform.TransformDirection(Vector3.right), out hit, Mathf.Infinity)) //Saga Donus
         {
             if (hit.transform.CompareTag("DonusAyarlatici"))
             {
-                throwController.SagaDon();
-                hedefRotasyon = Quaternion.Euler(Vector3.up * (transform.rotation.eulerAngles.y + 90));
-                cameraMovement.KameraDoðrultuDegistir(11, 0, -11, 90);
+                if (karakterSolaGidiyor)
+                {
+                    throwController.SagaDon();
+                    hedefRotasyon = Quaternion.Euler(Vector3.up * (transform.rotation.eulerAngles.y + 90));
+                    cameraMovement.KameraDoðrultuDegistir(11, 0, 11, 90);
+
+                    karakterSagaGidiyor = false;
+                    karakterSolaGidiyor = false;
+                }
+                else if (!karakterSolaGidiyor && !karakterSagaGidiyor)
+                {
+                    throwController.SagaDon();
+                    hedefRotasyon = Quaternion.Euler(Vector3.up * (transform.rotation.eulerAngles.y + 90));
+                    cameraMovement.KameraDoðrultuDegistir(11, 0, -11, 90);
+
+                    karakterSolaGidiyor = false;
+                    karakterSagaGidiyor = true;
+                }
             }
         }
 
-        if (Physics.Raycast(transform.position + Vector3.up, transform.TransformDirection(-Vector3.right), out hit, Mathf.Infinity)) //SolaDonus
+        if (Physics.Raycast(transform.position + Vector3.up, transform.TransformDirection(-Vector3.right), out hit, Mathf.Infinity)) //Sola Donus
         {
+
             if (hit.transform.CompareTag("DonusAyarlatici"))
             {
-                throwController.SolaDon();
-                hedefRotasyon = Quaternion.Euler(Vector3.up * (transform.rotation.eulerAngles.y - 90));
-                cameraMovement.KameraDoðrultuDegistir(-11, 0, -11, -90);
+                if (karakterSagaGidiyor)
+                {
+                    throwController.SolaDon();
+                    hedefRotasyon = Quaternion.Euler(Vector3.up * (transform.rotation.eulerAngles.y - 90));
+                    cameraMovement.KameraDoðrultuDegistir(-11, 0, 11, -90);
+
+                    karakterSagaGidiyor = false;
+                    karakterSolaGidiyor = false;
+                }
+                else if (!karakterSolaGidiyor && !karakterSagaGidiyor)
+                {
+                    throwController.SolaDon();
+                    hedefRotasyon = Quaternion.Euler(Vector3.up * (transform.rotation.eulerAngles.y - 90));
+                    cameraMovement.KameraDoðrultuDegistir(-11, 0, -11, -90);
+
+                    karakterSagaGidiyor = false;
+                    karakterSolaGidiyor = true;
+                }
             }
         }
     }
-
 }

@@ -20,9 +20,11 @@ public class EnemySpawn : MonoBehaviour
 
     IEnumerator DusmanOlustur()
     {
+        GameObject obje;
         for (int i = 0; i < dusmanSayisi; i++)
         {
-            Instantiate(dusman, transform.position + Vector3.right * Random.Range(-3.0f, 3.0f) + Vector3.forward * (Random.Range(-3.0f, 3.0f)), Quaternion.Euler(Vector3.up * dusmanCýkýsAcisi));
+            obje =  Instantiate(dusman, transform.position + Vector3.right * Random.Range(-3.0f, 3.0f) + Vector3.forward * (Random.Range(-3.0f, 3.0f)), Quaternion.Euler(Vector3.up * dusmanCýkýsAcisi));
+            obje.transform.parent = transform;
             yield return beklemeSuresi1;
         }
     }
