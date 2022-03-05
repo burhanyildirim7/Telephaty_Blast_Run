@@ -62,13 +62,13 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0b69e72ed3595471596f06dda90cc19a, type: 3}
-  - {fileID: 2100002, guid: 0b69e72ed3595471596f06dda90cc19a, type: 3}
-  - {fileID: 2100004, guid: 0b69e72ed3595471596f06dda90cc19a, type: 3}
+  - {fileID: 2100000, guid: 533ddf8cef9c9664e87a5faf0c9ec06a, type: 2}
+  - {fileID: 2100000, guid: 0433357df714d624aaa2bc03fe6351fe, type: 2}
+  - {fileID: 2100000, guid: 1702cf3fa0790f54682f9a29db9aa348, type: 2}
   - {fileID: 2100006, guid: 0b69e72ed3595471596f06dda90cc19a, type: 3}
   - {fileID: 2100008, guid: 0b69e72ed3595471596f06dda90cc19a, type: 3}
-  - {fileID: 2100010, guid: 0b69e72ed3595471596f06dda90cc19a, type: 3}
-  - {fileID: 2100012, guid: 0b69e72ed3595471596f06dda90cc19a, type: 3}
+  - {fileID: 2100000, guid: fad73d78e44a75f4585f892c1440bd42, type: 2}
+  - {fileID: 2100000, guid: aeff74b2a0d6c734aaabc7c768ba32a5, type: 2}
   - {fileID: 2100014, guid: 0b69e72ed3595471596f06dda90cc19a, type: 3}
   - {fileID: 2100016, guid: 0b69e72ed3595471596f06dda90cc19a, type: 3}
   m_StaticBatchInfo:
