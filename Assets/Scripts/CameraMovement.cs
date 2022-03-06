@@ -24,8 +24,8 @@ public class CameraMovement : MonoBehaviour
 
         rotasyonY = 180;
         eksenX = 0;
-        eksenY = 13.275f;
-        eksenZ = 11;
+        eksenY = 14.275f;
+        eksenZ = 12;
 
         transform.position = Vector3.up * 13.275f + Vector3.forward * 11;
         transform.rotation = Quaternion.Euler(Vector3.up * 180 + Vector3.right * 45);

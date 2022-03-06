@@ -20,30 +20,25 @@ public class AtilanObje : MonoBehaviour
         fizik = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void ObjeSec()
     {
-        renderer.material = material[1];
+        //renderer.material = material[1];
         fizik.velocity = Vector3.zero;
         gameObject.layer = 2;
     }
 
     public void Firlat(Vector3 yon)
     {
-        renderer.material = material[0];
+        //renderer.material = material[0];
         fizik.velocity = yon;
         gameObject.layer = 0;
     }
 
     public void Birak()
     {
+        //renderer.material = material[0];
         fizik.velocity = Vector3.zero;
-        renderer.material = material[0];
         gameObject.layer = 0;
     }
 }

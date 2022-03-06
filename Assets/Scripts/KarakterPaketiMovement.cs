@@ -69,8 +69,6 @@ public class KarakterPaketiMovement : MonoBehaviour
             donecekObje.transform.rotation = Quaternion.RotateTowards(transform.rotation, donusYonu, 50 * Time.deltaTime);
         }
 
-        Debug.DrawRay(transform.position + Vector3.up, transform.TransformDirection(Vector3.right) * 1000, Color.green);
-        Debug.DrawRay(transform.position + Vector3.up, transform.TransformDirection(-Vector3.right) * 1000, Color.green);
     }
 
     public void DonulmeAktiflestir(Transform hedefObje) //Buyu yaparken gecerlidir

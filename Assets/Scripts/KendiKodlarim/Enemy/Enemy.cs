@@ -196,7 +196,7 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.CompareTag("FirlatmaNesnesi"))
         {
             GameController.instance.SetScore(5);
-            Instantiate(olumEfekti, transform.position, Quaternion.identity).Play();
+            Instantiate(olumEfekti, transform.position + Vector3.up * .28f, Quaternion.identity).Play();
             Destroy(gameObject);
         }
     }
