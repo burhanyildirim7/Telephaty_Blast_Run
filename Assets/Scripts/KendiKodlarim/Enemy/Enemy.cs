@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     private Quaternion mevcutKosuYonu;
     private Quaternion kosuYonu;
     private float donusHizi = 1000;
+    private float engellerdenKacmaAyari;
 
     [Header("AnimasyonAyarlari")]
     private Animator anim;
@@ -21,7 +22,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private ParticleSystem olumEfekti;
 
     [Header("RotasyonAyari")]
-    RaycastHit hit;
+    RaycastHit hit;   //Rotasyon ayari 
+    RaycastHit hit1;// Engelden kacma ayari
+    RaycastHit hit2;// Engelden kacma ayari
 
     [Header("KosmayaBaslamaAyari")]
     private bool oyunBasladiMi;
@@ -38,6 +41,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         BaslangicDegerleri();
+        StartCoroutine(EngelYanindanGec());
     }
 
     private void BaslangicDegerleri()
@@ -56,7 +60,7 @@ public class Enemy : MonoBehaviour
     {
         if (!karaktereKosu && oyunBasladiMi)
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * hiz);
+            transform.Translate((Vector3.forward + Vector3.right * engellerdenKacmaAyari) * Time.deltaTime * hiz);
 
             transform.rotation = Quaternion.RotateTowards(transform.rotation, mevcutKosuYonu, donusHizi * Time.deltaTime);
         }
@@ -65,6 +69,40 @@ public class Enemy : MonoBehaviour
             transform.Translate(Vector3.forward * Time.deltaTime * hiz);
 
             transform.rotation = Quaternion.RotateTowards(transform.rotation, mevcutKosuYonu, 1000 * Time.deltaTime);
+        }
+    }
+
+
+    IEnumerator EngelYanindanGec()
+    {
+        while(true)
+        {
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit1, 10))//Layer kullanýlýyorsa sontrafa virgül koyulup layerMask yazýlmaýlýdr.
+            {
+                if(hit1.transform.CompareTag("FirlatilabilirNesne") || hit1.transform.CompareTag("Nesne"))
+                {
+                    if(Physics.Raycast(transform.position, transform.TransformDirection(-Vector3.up * 2), out hit2, Mathf.Infinity))
+                    {
+                        if(hit2.transform.CompareTag("Zemin"))
+                        {
+                            if(hit2.transform.position.x > transform.position.x)
+                            {
+                                engellerdenKacmaAyari = .4f;
+                            }
+                            else
+                            {
+                                engellerdenKacmaAyari = -.4f;
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                engellerdenKacmaAyari = 0;
+            }
+
+            yield return beklemeSuresi1;
         }
     }
 
@@ -80,7 +118,7 @@ public class Enemy : MonoBehaviour
 
             if (Vector3.Distance(transform.position, player.transform.position) <= 40)
             {
-                if((simdikiMesafe - .3f) > oncekiMesafe)
+                if((simdikiMesafe - .75f) > oncekiMesafe)
                 {
                     oyunBasladiMi = true;
                     anim.SetBool("KosmaP", true);

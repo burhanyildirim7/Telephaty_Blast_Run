@@ -18,6 +18,8 @@ TagManager:
   - DonusYap
   - DonusAyarlatici
   - ThrowController
+  - FirlatilabilirNesne
+  - Nesne
   layers:
   - Default
   - TransparentFX

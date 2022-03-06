@@ -523,7 +523,7 @@ GameObject:
   - component: {fileID: 1289945713403818399}
   m_Layer: 0
   m_Name: Sebil
-  m_TagString: FirlatmaNesnesi
+  m_TagString: FirlatilabilirNesne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -641,7 +641,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a3ca37979964e4b8e12b4e9973ca6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: []
 --- !u!1 &179216005468963112
 GameObject:
   m_ObjectHideFlags: 0
@@ -4110,7 +4109,7 @@ GameObject:
   - component: {fileID: 6617264415501506376}
   m_Layer: 0
   m_Name: Sandalye1
-  m_TagString: FirlatmaNesnesi
+  m_TagString: FirlatilabilirNesne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4227,7 +4226,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a3ca37979964e4b8e12b4e9973ca6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: []
 --- !u!1 &1868441678838790013
 GameObject:
   m_ObjectHideFlags: 0
@@ -6223,7 +6221,7 @@ GameObject:
   - component: {fileID: 8327471744223555826}
   m_Layer: 0
   m_Name: saksi2 (1)
-  m_TagString: FirlatmaNesnesi
+  m_TagString: FirlatilabilirNesne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6351,7 +6349,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a3ca37979964e4b8e12b4e9973ca6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: []
 --- !u!1 &2645094119895073344
 GameObject:
   m_ObjectHideFlags: 0
@@ -6368,7 +6365,7 @@ GameObject:
   - component: {fileID: 6604230380408307149}
   m_Layer: 0
   m_Name: saksi2
-  m_TagString: FirlatmaNesnesi
+  m_TagString: FirlatilabilirNesne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6496,7 +6493,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a3ca37979964e4b8e12b4e9973ca6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: []
 --- !u!1 &2696800906502245944
 GameObject:
   m_ObjectHideFlags: 0
@@ -8132,9 +8128,10 @@ GameObject:
   - component: {fileID: 2812036828410074108}
   - component: {fileID: 2812036828410074106}
   - component: {fileID: 2812036828410074107}
+  - component: {fileID: 712610889012739027}
   m_Layer: 0
   m_Name: Cube.020 (1)
-  m_TagString: Untagged
+  m_TagString: Nesne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8205,6 +8202,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &712610889012739027
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2812036828410074109}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.060143054, y: 0.024081262, z: 0.023966486}
+  m_Center: {x: 0.000033182092, y: 0.0010809787, z: -0.008315282}
 --- !u!1 &2812036828460734473
 GameObject:
   m_ObjectHideFlags: 0
@@ -8384,9 +8394,10 @@ GameObject:
   - component: {fileID: 2812036828574769804}
   - component: {fileID: 2812036828574769802}
   - component: {fileID: 2812036828574769803}
+  - component: {fileID: 6861252392975318552}
   m_Layer: 0
   m_Name: wardrobe (1)
-  m_TagString: Untagged
+  m_TagString: Nesne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8460,6 +8471,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6861252392975318552
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2812036828574769805}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0063692373, y: 0.011744755, z: 0.015867077}
+  m_Center: {x: -0.00091256585, y: -0.0001335853, z: -0.00083863275}
 --- !u!1 &2812036828790937266
 GameObject:
   m_ObjectHideFlags: 0
@@ -8672,9 +8696,10 @@ GameObject:
   - component: {fileID: 2812036829035652210}
   - component: {fileID: 2812036829035652208}
   - component: {fileID: 2812036829035652209}
+  - component: {fileID: 7821912423816670620}
   m_Layer: 0
   m_Name: Cube.020 (2)
-  m_TagString: Untagged
+  m_TagString: Nesne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8745,6 +8770,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7821912423816670620
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2812036829035652211}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.060143054, y: 0.025201308, z: 0.023966486}
+  m_Center: {x: -0.000053008436, y: -0.0016412991, z: -0.008315283}
 --- !u!1 &2812036829072525795
 GameObject:
   m_ObjectHideFlags: 0
@@ -9826,7 +9864,7 @@ GameObject:
   - component: {fileID: 312859512952443932}
   m_Layer: 0
   m_Name: Lamp
-  m_TagString: FirlatmaNesnesi
+  m_TagString: FirlatilabilirNesne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9889,7 +9927,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a3ca37979964e4b8e12b4e9973ca6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: []
 --- !u!1 &3021870136104303484
 GameObject:
   m_ObjectHideFlags: 0
@@ -11767,9 +11804,10 @@ GameObject:
   - component: {fileID: 789528884459278151}
   - component: {fileID: 3821031498663864330}
   - component: {fileID: 7691372780027716896}
+  - component: {fileID: 8363403754382190139}
   m_Layer: 0
   m_Name: wardrobe
-  m_TagString: Untagged
+  m_TagString: Nesne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11843,6 +11881,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8363403754382190139
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3724974287179903265}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.005913948, y: 0.0117447525, z: 0.015867073}
+  m_Center: {x: -0.0011402104, y: -0.00013358597, z: -0.0008386328}
 --- !u!1 &3749244425228440442
 GameObject:
   m_ObjectHideFlags: 0
@@ -11854,9 +11905,10 @@ GameObject:
   - component: {fileID: 8150999250865283186}
   - component: {fileID: 8283471216653869618}
   - component: {fileID: 6745583221366630226}
+  - component: {fileID: 4637384019772441028}
   m_Layer: 0
   m_Name: Cube.020
-  m_TagString: Untagged
+  m_TagString: Nesne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11927,6 +11979,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4637384019772441028
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3749244425228440442}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.060143054, y: 0.0246131, z: 0.023966486}
+  m_Center: {x: -0.00004193973, y: -0.0013470585, z: -0.008315283}
 --- !u!1 &3750236370848894570
 GameObject:
   m_ObjectHideFlags: 0
@@ -12974,7 +13039,7 @@ GameObject:
   - component: {fileID: 3588994018282869301}
   m_Layer: 0
   m_Name: ZeminParcasi1
-  m_TagString: Untagged
+  m_TagString: Zemin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14191,7 +14256,7 @@ GameObject:
   - component: {fileID: 3574832828683987026}
   m_Layer: 0
   m_Name: yazici1 (1)
-  m_TagString: FirlatmaNesnesi
+  m_TagString: FirlatilabilirNesne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14308,7 +14373,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a3ca37979964e4b8e12b4e9973ca6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: []
 --- !u!1 &4470453225152670557
 GameObject:
   m_ObjectHideFlags: 0
@@ -18819,7 +18883,7 @@ GameObject:
   - component: {fileID: 5824958725419953320}
   m_Layer: 0
   m_Name: masa (1)
-  m_TagString: FirlatmaNesnesi
+  m_TagString: FirlatilabilirNesne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18883,7 +18947,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a3ca37979964e4b8e12b4e9973ca6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: []
 --- !u!1 &6781789576567203930
 GameObject:
   m_ObjectHideFlags: 0
@@ -18898,7 +18961,7 @@ GameObject:
   - component: {fileID: 1586386509087462233}
   m_Layer: 0
   m_Name: masa
-  m_TagString: FirlatmaNesnesi
+  m_TagString: FirlatilabilirNesne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18962,7 +19025,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a3ca37979964e4b8e12b4e9973ca6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: []
 --- !u!1 &6781789577033527629
 GameObject:
   m_ObjectHideFlags: 0
@@ -18977,7 +19039,7 @@ GameObject:
   - component: {fileID: 6015688962875256970}
   m_Layer: 0
   m_Name: masa
-  m_TagString: FirlatmaNesnesi
+  m_TagString: FirlatilabilirNesne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19041,7 +19103,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a3ca37979964e4b8e12b4e9973ca6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: []
 --- !u!1 &6794280470530135629
 GameObject:
   m_ObjectHideFlags: 0
@@ -20379,7 +20440,7 @@ GameObject:
   - component: {fileID: 8409037647203339859}
   m_Layer: 0
   m_Name: koltuk (5)
-  m_TagString: FirlatmaNesnesi
+  m_TagString: FirlatilabilirNesne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20491,7 +20552,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a3ca37979964e4b8e12b4e9973ca6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: []
 --- !u!1 &7187254726427313930
 GameObject:
   m_ObjectHideFlags: 0
@@ -20508,7 +20568,7 @@ GameObject:
   - component: {fileID: 4662300420792815825}
   m_Layer: 0
   m_Name: koltuk (1)
-  m_TagString: FirlatmaNesnesi
+  m_TagString: FirlatilabilirNesne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20620,7 +20680,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a3ca37979964e4b8e12b4e9973ca6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: []
 --- !u!1 &7187254726499643094
 GameObject:
   m_ObjectHideFlags: 0
@@ -20637,7 +20696,7 @@ GameObject:
   - component: {fileID: 7046302807434855484}
   m_Layer: 0
   m_Name: koltuk (3)
-  m_TagString: FirlatmaNesnesi
+  m_TagString: FirlatilabilirNesne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20749,7 +20808,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a3ca37979964e4b8e12b4e9973ca6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: []
 --- !u!1 &7187254726846930401
 GameObject:
   m_ObjectHideFlags: 0
@@ -20766,7 +20824,7 @@ GameObject:
   - component: {fileID: 5093311138614375997}
   m_Layer: 0
   m_Name: koltuk
-  m_TagString: FirlatmaNesnesi
+  m_TagString: FirlatilabilirNesne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20878,7 +20936,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a3ca37979964e4b8e12b4e9973ca6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: []
 --- !u!1 &7187254727172105549
 GameObject:
   m_ObjectHideFlags: 0
@@ -20895,7 +20952,7 @@ GameObject:
   - component: {fileID: 717784978221897813}
   m_Layer: 0
   m_Name: koltuk (2)
-  m_TagString: FirlatmaNesnesi
+  m_TagString: FirlatilabilirNesne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21007,7 +21064,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a3ca37979964e4b8e12b4e9973ca6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: []
 --- !u!1 &7187254728147091713
 GameObject:
   m_ObjectHideFlags: 0
@@ -21024,7 +21080,7 @@ GameObject:
   - component: {fileID: 6847433016690722868}
   m_Layer: 0
   m_Name: koltuk (4)
-  m_TagString: FirlatmaNesnesi
+  m_TagString: FirlatilabilirNesne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21136,7 +21192,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a3ca37979964e4b8e12b4e9973ca6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: []
 --- !u!1 &7194274555115622521
 GameObject:
   m_ObjectHideFlags: 0
@@ -21578,7 +21633,7 @@ GameObject:
   - component: {fileID: 5367802695776061590}
   m_Layer: 0
   m_Name: yazici (1)
-  m_TagString: FirlatmaNesnesi
+  m_TagString: FirlatilabilirNesne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21630,8 +21685,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.4241797, y: 1.0750061, z: 1}
-  m_Center: {x: 0.2729681, y: 0.82423824, z: 9.61969e-11}
+  m_Size: {x: 1.4241797, y: 1.0750061, z: 1.1798168}
+  m_Center: {x: 0.2729681, y: 0.8242382, z: 0.08990859}
 --- !u!114 &5367802695776061590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21644,7 +21699,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a3ca37979964e4b8e12b4e9973ca6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: []
 --- !u!1 &7756807403496783381
 GameObject:
   m_ObjectHideFlags: 0
@@ -21659,7 +21713,7 @@ GameObject:
   - component: {fileID: 8645551421664690401}
   m_Layer: 0
   m_Name: yazici
-  m_TagString: FirlatmaNesnesi
+  m_TagString: FirlatilabilirNesne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21725,7 +21779,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a3ca37979964e4b8e12b4e9973ca6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: []
 --- !u!1 &7778098533303753275
 GameObject:
   m_ObjectHideFlags: 0
@@ -23434,7 +23487,7 @@ GameObject:
   - component: {fileID: 6847823825167964478}
   m_Layer: 0
   m_Name: yazici1
-  m_TagString: FirlatmaNesnesi
+  m_TagString: FirlatilabilirNesne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23551,7 +23604,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a3ca37979964e4b8e12b4e9973ca6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: []
 --- !u!1 &8344484798686483847
 GameObject:
   m_ObjectHideFlags: 0
@@ -23686,7 +23738,7 @@ GameObject:
   - component: {fileID: 8479441320621025411}
   m_Layer: 0
   m_Name: copKutusu
-  m_TagString: FirlatmaNesnesi
+  m_TagString: FirlatilabilirNesne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23751,7 +23803,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a3ca37979964e4b8e12b4e9973ca6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: []
 --- !u!1 &8420822343561942954
 GameObject:
   m_ObjectHideFlags: 0
@@ -25610,7 +25661,7 @@ GameObject:
   - component: {fileID: 693094819250569481}
   m_Layer: 0
   m_Name: petek
-  m_TagString: FirlatmaNesnesi
+  m_TagString: FirlatilabilirNesne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25676,7 +25727,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a3ca37979964e4b8e12b4e9973ca6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: []
 --- !u!1 &9045949109602146571
 GameObject:
   m_ObjectHideFlags: 0
@@ -25777,7 +25827,7 @@ GameObject:
   - component: {fileID: 896559607491057767}
   m_Layer: 0
   m_Name: DemirDolap
-  m_TagString: FirlatmaNesnesi
+  m_TagString: FirlatilabilirNesne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25890,7 +25940,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a3ca37979964e4b8e12b4e9973ca6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: []
 --- !u!1 &9072215071226257582
 GameObject:
   m_ObjectHideFlags: 0
@@ -25907,7 +25956,7 @@ GameObject:
   - component: {fileID: 62854446179571086}
   m_Layer: 0
   m_Name: DemirDolap (1)
-  m_TagString: FirlatmaNesnesi
+  m_TagString: FirlatilabilirNesne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26020,7 +26069,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a3ca37979964e4b8e12b4e9973ca6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  material: []
 --- !u!1 &9091565918883469409
 GameObject:
   m_ObjectHideFlags: 0

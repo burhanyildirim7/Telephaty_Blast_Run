@@ -81,11 +81,12 @@ public class ThrowController : MonoBehaviour
         {
             uzaklikAlgilayici1();
 
-            if (hit.transform.CompareTag("FirlatmaNesnesi") && result >= objeUzaklikMenzili)
+            if (hit.transform.CompareTag("FirlatilabilirNesne") && result >= objeUzaklikMenzili)
             {
                 throwingObj = hit.transform.gameObject;
                 atilanObje = throwingObj.GetComponent<AtilanObje>();
                 atilanObje.ObjeSec();
+                atilanObje.tag = "FirlatmaNesnesi";
 
                 karakterPaketiMovement.DonulmeAktiflestir(throwingObj.transform);
                 efekt.Play();
