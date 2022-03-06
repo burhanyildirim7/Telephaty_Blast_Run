@@ -29,9 +29,6 @@ public class CameraMovement : MonoBehaviour
 
         transform.position = Vector3.up * 13.275f + Vector3.forward * 11;
         transform.rotation = Quaternion.Euler(Vector3.up * 180 + Vector3.right * 45);
-
-        
-
         
     }
 
@@ -43,7 +40,7 @@ public class CameraMovement : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(Vector3.right* 45 + Vector3.up * rotasyonY) , Time.deltaTime * 3);
     }
 
-    public void KameraDoðrultuDegistir(int x, int y, int z, int rotY)
+    public void KameraDogrultuDegistir(int x, int y, int z, int rotY)
     {
         eksenX += x;
         eksenY += y;
