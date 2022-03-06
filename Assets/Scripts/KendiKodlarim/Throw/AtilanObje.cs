@@ -19,15 +19,15 @@ public class AtilanObje : MonoBehaviour
         renderer = GetComponent<MeshRenderer>();
         fizik = GetComponent<Rigidbody>();
 
-        material = GetComponent<MeshRenderer>().sharedMaterial;
+    //    material = GetComponent<MeshRenderer>().sharedMaterial;
 
     }
 
-    void Update()
+  /*  void Update()
     {
         if(Input.GetMouseButtonDown(0))
         {
-            material.SetFloat("_OutlineWidth", 5);
+            material.SetFloat("_OutlineWidth", 15);
             material.SetColor("_OutlineColor", Color.green);
         }
 
@@ -36,7 +36,7 @@ public class AtilanObje : MonoBehaviour
             material.SetFloat("_OutlineWidth", 0);
             material.SetColor("_OutlineColor", Color.green);
         }
-    }
+    }*/
 
 
     public void ObjeSec()
