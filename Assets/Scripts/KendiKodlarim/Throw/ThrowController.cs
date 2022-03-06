@@ -101,7 +101,7 @@ public class ThrowController : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            throwingObj.transform.position = Vector3.Lerp(throwingObj.transform.position, hit.point + Vector3.up * .5f, Time.deltaTime * 20);
+            throwingObj.transform.position = Vector3.Lerp(throwingObj.transform.position, hit.point + Vector3.up * .75f, Time.deltaTime * 20);
         }
 
         uzaklikAlgilayici2();
@@ -126,10 +126,11 @@ public class ThrowController : MonoBehaviour
         }
 
         karakterPaketiMovement.DonulmePasiflestir();
-        playerController.ObjeleriKontrolEtBitir();
         efekt.Stop();
         throwingObj = null;
         atilanObje = null;
+
+        playerController.ObjeleriKontrolEtBitir();
     }
 
 
@@ -150,6 +151,8 @@ public class ThrowController : MonoBehaviour
         {
             atilanObje.Firlat(deltaTouchPosition.normalized.y * Vector3.right * 6 - deltaTouchPosition.normalized.x * Vector3.forward * 6 + Vector3.up * 4);
         }
+
+        playerController.ObjeleriKontrolEtBitir();
     }
 
 

@@ -9,24 +9,29 @@ public class EnemySpawn : MonoBehaviour
     [SerializeField] private int dusmanSayisi;
     [SerializeField] private int dusmanCýkýsAcisi;
 
-    private WaitForSeconds beklemeSuresi1 = new WaitForSeconds(.015f);
+    public bool DusmanlarKossunMu = false;
 
 
     void Start()
     {
-        StartCoroutine(DusmanOlustur());
-    }
-
-
-    IEnumerator DusmanOlustur()
-    {
         GameObject obje;
         for (int i = 0; i < dusmanSayisi; i++)
         {
-            obje =  Instantiate(dusman, transform.position + Vector3.right * Random.Range(-3.0f, 3.0f) + Vector3.forward * (Random.Range(-3.0f, 3.0f)), Quaternion.Euler(Vector3.up * dusmanCýkýsAcisi));
+            obje = Instantiate(dusman, transform.position + Vector3.right * Random.Range(-3.5f, 3.5f) + Vector3.forward * (Random.Range(-3.8f, 3.8f)), Quaternion.Euler(Vector3.up * dusmanCýkýsAcisi));
             obje.transform.parent = transform;
-            yield return beklemeSuresi1;
         }
     }
+
+    public void DusmanOlustur(int sayi)
+    {
+        DusmanlarKossunMu = true;
+        GameObject obje;
+        for (int i = 0; i < sayi; i++)
+        {
+            obje = Instantiate(dusman, transform.position + Vector3.right * Random.Range(-3.5f, 3.5f) + Vector3.forward * (Random.Range(-3.8f, 3.8f)), Quaternion.Euler(Vector3.up * dusmanCýkýsAcisi));
+            obje.transform.parent = transform;
+        }
+    }
+    
 
 }

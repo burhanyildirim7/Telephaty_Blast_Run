@@ -28,8 +28,8 @@ public class Enemy : MonoBehaviour
 
     [Header("KosmayaBaslamaAyari")]
     private bool oyunBasladiMi;
-    private float oncekiMesafe;
-    private float simdikiMesafe;
+    private bool kosmayiSonlandir = false;
+    private EnemySpawn enemySpawn;
 
     private GameObject player;
 
@@ -42,7 +42,11 @@ public class Enemy : MonoBehaviour
     {
         BaslangicDegerleri();
         StartCoroutine(EngelYanindanGec());
+        StartCoroutine(DusmanlarinKosuAyarlari());
+        
     }
+
+    
 
     private void BaslangicDegerleri()
     {
@@ -50,8 +54,7 @@ public class Enemy : MonoBehaviour
         anim = GetComponent<Animator>();
         player = GameObject.FindWithTag("Player");
         kosuYonu = Quaternion.Euler(Vector3.up * transform.rotation.eulerAngles.y);
-
-        StartCoroutine(KarakterPesindenKosmaAyari());
+        enemySpawn = transform.parent.GetComponent<EnemySpawn>();
     }
 
 
@@ -77,21 +80,21 @@ public class Enemy : MonoBehaviour
     {
         while(true)
         {
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit1, 10))//Layer kullanýlýyorsa sontrafa virgül koyulup layerMask yazýlmaýlýdr.
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit1, 25))//Layer kullanýlýyorsa sontrafa virgül koyulup layerMask yazýlmaýlýdr.
             {
                 if(hit1.transform.CompareTag("FirlatilabilirNesne") || hit1.transform.CompareTag("Nesne"))
                 {
-                    if(Physics.Raycast(transform.position, transform.TransformDirection(-Vector3.up * 2), out hit2, Mathf.Infinity))
+                    if(Physics.Raycast(transform.position, transform.TransformDirection(-Vector3.up * 2), out hit2, 25))
                     {
                         if(hit2.transform.CompareTag("Zemin"))
                         {
                             if(hit2.transform.position.x > transform.position.x)
                             {
-                                engellerdenKacmaAyari = .4f;
+                                engellerdenKacmaAyari = .4f + (hit2.transform.position.x - transform.position.x) / 8;
                             }
                             else
                             {
-                                engellerdenKacmaAyari = -.4f;
+                                engellerdenKacmaAyari = -.4f + (hit2.transform.position.x - transform.position.x) / 8;
                             }
                         }
                     }
@@ -106,26 +109,28 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    IEnumerator KarakterPesindenKosmaAyari()
+  
+    IEnumerator DusmanlarinKosuAyarlari()
     {
-        yield return beklemeSuresi2;
-
-        while (!oyunBasladiMi)
+        if(enemySpawn.DusmanlarKossunMu)
         {
-            oncekiMesafe = Vector3.Distance(transform.position, player.transform.position);
-            yield return beklemeSuresi2;
-            simdikiMesafe = Vector3.Distance(transform.position, player.transform.position);
+            oyunBasladiMi = true;
+            anim.SetBool("KosmaP", true);
+            StartCoroutine(KaraktereMesafe());
+            StartCoroutine(OyunBittiMiKontrol());
+        }
 
-            if (Vector3.Distance(transform.position, player.transform.position) <= 40)
+
+        while(!oyunBasladiMi)
+        {
+            if(enemySpawn.DusmanlarKossunMu)
             {
-                if((simdikiMesafe - .75f) > oncekiMesafe)
-                {
-                    oyunBasladiMi = true;
-                    anim.SetBool("KosmaP", true);
-                    StartCoroutine(KaraktereMesafe());
-                    StartCoroutine(OyunBittiMiKontrol());
-                }
+                oyunBasladiMi = true;
+                anim.SetBool("KosmaP", true);
+                StartCoroutine(KaraktereMesafe());
+                StartCoroutine(OyunBittiMiKontrol());
             }
+            yield return beklemeSuresi1;
         }
     }
 
@@ -133,8 +138,25 @@ public class Enemy : MonoBehaviour
     //Dusman karakterden uzaklastigi zamanda yapacak rotasyonu burdadir
     IEnumerator KaraktereMesafe()
     {
-        while (true)
+        while (!kosmayiSonlandir)
         {
+            if (Vector3.Distance(transform.position, player.transform.position) >= 35)
+            {
+                hiz = 15;
+            }
+            else if (Vector3.Distance(transform.position, player.transform.position) >= 25)
+            {
+                hiz = 10;
+            }
+            else if (Vector3.Distance(transform.position, player.transform.position) >= 15)
+            {
+                hiz = 8;
+            }
+            else
+            {
+                hiz = 6f;
+            }
+
             if (Vector3.Distance(transform.position, player.transform.position) <= odaklanmaMesafesiPlayer)
             {
                 mevcutKosuYonu = Quaternion.LookRotation(player.transform.position - transform.position);
@@ -156,6 +178,8 @@ public class Enemy : MonoBehaviour
         {
             if (!GameController.instance.isContinue)
             {
+                kosmayiSonlandir = true;
+                hiz = 0;
                 anim.SetBool("KosmaP", false);
             }
             yield return beklemeSuresi1;
