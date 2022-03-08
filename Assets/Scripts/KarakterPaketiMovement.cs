@@ -32,7 +32,6 @@ public class KarakterPaketiMovement : MonoBehaviour
     void Start()
     {
         BaslangicDegerleri();
-
     }
 
     public void BaslangicDegerleri() //UIController
