@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7655217495651816928}
   - component: {fileID: 7655217495650522562}
   - component: {fileID: 7655217495649523458}
-  - component: {fileID: 7655217495653558114}
   m_Layer: 0
   m_Name: Fire_Hydrants_14
   m_TagString: Untagged
@@ -84,20 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7655217495653558114
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7655217495651453376}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 87c33a5801fa84bf4930b715178beee2, type: 3}
 --- !u!1 &7655217495651453378
 GameObject:
   m_ObjectHideFlags: 0

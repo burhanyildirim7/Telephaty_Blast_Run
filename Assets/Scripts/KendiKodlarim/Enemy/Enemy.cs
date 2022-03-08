@@ -96,6 +96,7 @@ public class Enemy : MonoBehaviour
 
     IEnumerator EngelYanindanGec()
     {
+        Debug.Log("A");
         while (true)
         {
             if (Physics.Raycast(transform.position + Vector3.up * .25f, transform.TransformDirection(Vector3.forward), out hit1, 50))

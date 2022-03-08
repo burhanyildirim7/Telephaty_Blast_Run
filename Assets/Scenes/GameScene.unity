@@ -1190,7 +1190,7 @@ MonoBehaviour:
   tempLevelNo: 0
   totalLevelNo: 0
   levels:
-  - {fileID: 5770002558056566250, guid: c926282ce0d15e940a62758a9b4d17ec, type: 3}
+  - {fileID: 6409168062112042791, guid: d7eacf04d747a7e4cb7099737bfd59bc, type: 3}
   - {fileID: 6409168062112042791, guid: d7eacf04d747a7e4cb7099737bfd59bc, type: 3}
   - {fileID: 7183010954589556963, guid: 552c2b7b6b0252a4da3bad1203eac24d, type: 3}
 --- !u!1 &628836747382434081
@@ -24733,6 +24733,10 @@ PrefabInstance:
     - target: {fileID: 6835161480579053511, guid: 94a707eed4bef7c49a2e3fe06ab3c20b, type: 3}
       propertyPath: m_Name
       value: LEVEL 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6835161480579053511, guid: 94a707eed4bef7c49a2e3fe06ab3c20b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94a707eed4bef7c49a2e3fe06ab3c20b, type: 3}
