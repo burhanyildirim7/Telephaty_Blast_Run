@@ -60,11 +60,19 @@ public class AtilanObje : MonoBehaviour
             }
             else if(karakterPaketiMovement.karakterSagaGidiyor)
             {
-
+                if (karakterPaketiMovement.transform.position.x - transform.position.x >= -.3f)
+                {
+                    efekt.Stop();
+                    outline.Secilemez();
+                }
             }
             else if(karakterPaketiMovement.karakterSolaGidiyor)
             {
-
+                if (-karakterPaketiMovement.transform.position.x + transform.position.x >= -.3f)
+                {
+                    efekt.Stop();
+                    outline.Secilemez();
+                }
             }
             yield return beklemeSuresi1;
         }

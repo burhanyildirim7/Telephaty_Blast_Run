@@ -6770,6 +6770,7 @@ Transform:
   - {fileID: 5866934600237017524}
   - {fileID: 5866934599876525830}
   - {fileID: 4910861075928279635}
+  - {fileID: 5963681038014530588}
   - {fileID: 5963681039453575520}
   m_Father: {fileID: 6409168062112042784}
   m_RootOrder: 3
@@ -6836,7 +6837,6 @@ Transform:
   - {fileID: 6409168061924481618}
   - {fileID: 6409168062082662424}
   - {fileID: 6409168062079656462}
-  - {fileID: 5963681038014530588}
   - {fileID: 6409168062325321759}
   - {fileID: 6409168061937825329}
   m_Father: {fileID: 6409168062112042784}
@@ -6957,7 +6957,7 @@ Transform:
   - {fileID: 6409168061812098230}
   - {fileID: 6409168061722880088}
   m_Father: {fileID: 6409168062296114125}
-  m_RootOrder: 35
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6409168062404722202
 GameObject:
@@ -10484,29 +10484,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Huesos-Craneo (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 1644424005084259446, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
-      propertyPath: m_Size.x
-      value: 0.102271214
+    - target: {fileID: 3182205481421067881, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
+      propertyPath: outlineColor.b
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1644424005084259446, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
-      propertyPath: m_Size.y
-      value: 0.0763837
+    - target: {fileID: 3182205481421067881, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
+      propertyPath: outlineColor.g
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1644424005084259446, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
-      propertyPath: m_Size.z
-      value: 0.07802807
-      objectReference: {fileID: 0}
-    - target: {fileID: 1644424005084259446, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
-      propertyPath: m_Center.x
-      value: 0.012610762
-      objectReference: {fileID: 0}
-    - target: {fileID: 1644424005084259446, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
-      propertyPath: m_Center.y
-      value: -0.0073592844
-      objectReference: {fileID: 0}
-    - target: {fileID: 1644424005084259446, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
-      propertyPath: m_Center.z
-      value: 0.016546186
+    - target: {fileID: 3182205481421067881, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
+      propertyPath: outlineColor.r
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
@@ -10566,6 +10554,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 20.551
       objectReference: {fileID: 0}
+    - target: {fileID: 3635582763620706028, guid: a03dc1fabfe6a3f4d9438890f02fa563, type: 3}
+      propertyPath: outlineColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635582763620706028, guid: a03dc1fabfe6a3f4d9438890f02fa563, type: 3}
+      propertyPath: outlineColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635582763620706028, guid: a03dc1fabfe6a3f4d9438890f02fa563, type: 3}
+      propertyPath: outlineColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4902302005748817952, guid: a03dc1fabfe6a3f4d9438890f02fa563, type: 3}
       propertyPath: m_Name
       value: Cactus.001 (1)
@@ -10584,10 +10584,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6409168062241808936}
     m_Modifications:
-    - target: {fileID: 3356689332689256039, guid: 286653c30139c0d4597cd991b438e24e, type: 3}
-      propertyPath: efekt
-      value: 
-      objectReference: {fileID: 676058186210919786, guid: 61efc4199a1dece4bb6351a7dbc3923f, type: 3}
+    - target: {fileID: 3923041323642633717, guid: 286653c30139c0d4597cd991b438e24e, type: 3}
+      propertyPath: outlineColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3923041323642633717, guid: 286653c30139c0d4597cd991b438e24e, type: 3}
+      propertyPath: outlineColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3923041323642633717, guid: 286653c30139c0d4597cd991b438e24e, type: 3}
+      propertyPath: outlineColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4175120248824493929, guid: 286653c30139c0d4597cd991b438e24e, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -10650,6 +10658,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6409168062241808936}
     m_Modifications:
+    - target: {fileID: 162939163518676285, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
+      propertyPath: outlineColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 162939163518676285, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
+      propertyPath: outlineColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 162939163518676285, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
+      propertyPath: outlineColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1701449063583034523, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
       propertyPath: m_Name
       value: chest 1
@@ -10776,7 +10796,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 734843392121093147, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 734843392121093147, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10821,6 +10841,18 @@ PrefabInstance:
     - target: {fileID: 853459043909026686, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
       propertyPath: m_Name
       value: Huesos-Craneo (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3182205481421067881, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
+      propertyPath: outlineColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3182205481421067881, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
+      propertyPath: outlineColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3182205481421067881, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
+      propertyPath: outlineColor.r
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
@@ -11058,6 +11090,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6409168062241808936}
     m_Modifications:
+    - target: {fileID: 162939163518676285, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
+      propertyPath: outlineColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 162939163518676285, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
+      propertyPath: outlineColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 162939163518676285, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
+      propertyPath: outlineColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1701449063583034523, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
       propertyPath: m_Name
       value: chest 1
@@ -11336,7 +11380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 449998, guid: 2150293d12bfb2448a976624bc72a6f2, type: 3}
       propertyPath: m_RootOrder
-      value: 36
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 449998, guid: 2150293d12bfb2448a976624bc72a6f2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11602,6 +11646,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6409168062241808936}
     m_Modifications:
+    - target: {fileID: 162939163518676285, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
+      propertyPath: outlineColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 162939163518676285, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
+      propertyPath: outlineColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 162939163518676285, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
+      propertyPath: outlineColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1701449063583034523, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
       propertyPath: m_Name
       value: chest 1
@@ -11707,6 +11763,18 @@ PrefabInstance:
     - target: {fileID: 691999128490849100, guid: a03dc1fabfe6a3f4d9438890f02fa563, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -36.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635582763620706028, guid: a03dc1fabfe6a3f4d9438890f02fa563, type: 3}
+      propertyPath: outlineColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635582763620706028, guid: a03dc1fabfe6a3f4d9438890f02fa563, type: 3}
+      propertyPath: outlineColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635582763620706028, guid: a03dc1fabfe6a3f4d9438890f02fa563, type: 3}
+      propertyPath: outlineColor.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4902302005748817952, guid: a03dc1fabfe6a3f4d9438890f02fa563, type: 3}
       propertyPath: m_Name
@@ -12140,6 +12208,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -42.515
       objectReference: {fileID: 0}
+    - target: {fileID: 3635582763620706028, guid: a03dc1fabfe6a3f4d9438890f02fa563, type: 3}
+      propertyPath: outlineColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635582763620706028, guid: a03dc1fabfe6a3f4d9438890f02fa563, type: 3}
+      propertyPath: outlineColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3635582763620706028, guid: a03dc1fabfe6a3f4d9438890f02fa563, type: 3}
+      propertyPath: outlineColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4902302005748817952, guid: a03dc1fabfe6a3f4d9438890f02fa563, type: 3}
       propertyPath: m_Name
       value: Cactus.001 (2)
@@ -12304,11 +12384,11 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 6409168062296114125}
+    m_TransformParent: {fileID: 6409168062241808936}
     m_Modifications:
     - target: {fileID: 734843392121093147, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
       propertyPath: m_RootOrder
-      value: 34
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 734843392121093147, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
       propertyPath: m_LocalScale.x
@@ -12385,6 +12465,18 @@ PrefabInstance:
     - target: {fileID: 1644424005084259446, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
       propertyPath: m_Center.z
       value: 0.016546205
+      objectReference: {fileID: 0}
+    - target: {fileID: 3182205481421067881, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
+      propertyPath: outlineColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3182205481421067881, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
+      propertyPath: outlineColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3182205481421067881, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
+      propertyPath: outlineColor.r
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
@@ -12474,10 +12566,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6409168062241808936}
     m_Modifications:
-    - target: {fileID: 3356689332689256039, guid: 286653c30139c0d4597cd991b438e24e, type: 3}
-      propertyPath: efekt
-      value: 
-      objectReference: {fileID: 676058186210919786, guid: 61efc4199a1dece4bb6351a7dbc3923f, type: 3}
+    - target: {fileID: 3923041323642633717, guid: 286653c30139c0d4597cd991b438e24e, type: 3}
+      propertyPath: outlineColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3923041323642633717, guid: 286653c30139c0d4597cd991b438e24e, type: 3}
+      propertyPath: outlineColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3923041323642633717, guid: 286653c30139c0d4597cd991b438e24e, type: 3}
+      propertyPath: outlineColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4175120248824493929, guid: 286653c30139c0d4597cd991b438e24e, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -12614,6 +12714,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6409168062241808936}
     m_Modifications:
+    - target: {fileID: 162939163518676285, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
+      propertyPath: outlineColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 162939163518676285, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
+      propertyPath: outlineColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 162939163518676285, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
+      propertyPath: outlineColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1701449063583034523, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
       propertyPath: m_Name
       value: chest 1
@@ -13050,10 +13162,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6409168062241808936}
     m_Modifications:
-    - target: {fileID: 3356689332689256039, guid: 286653c30139c0d4597cd991b438e24e, type: 3}
-      propertyPath: efekt
-      value: 
-      objectReference: {fileID: 676058186210919786, guid: 61efc4199a1dece4bb6351a7dbc3923f, type: 3}
+    - target: {fileID: 3923041323642633717, guid: 286653c30139c0d4597cd991b438e24e, type: 3}
+      propertyPath: outlineColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3923041323642633717, guid: 286653c30139c0d4597cd991b438e24e, type: 3}
+      propertyPath: outlineColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3923041323642633717, guid: 286653c30139c0d4597cd991b438e24e, type: 3}
+      propertyPath: outlineColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4175120248824493929, guid: 286653c30139c0d4597cd991b438e24e, type: 3}
       propertyPath: m_RootOrder
       value: 0

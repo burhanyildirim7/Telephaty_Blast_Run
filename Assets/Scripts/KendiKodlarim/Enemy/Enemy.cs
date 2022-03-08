@@ -38,6 +38,7 @@ public class Enemy : MonoBehaviour
 
     private GameObject player;
 
+    private WaitForSeconds beklemeSuresi0 = new WaitForSeconds(.1f);
     private WaitForSeconds beklemeSuresi1 = new WaitForSeconds(.2f);
     private WaitForSeconds beklemeSuresi2 = new WaitForSeconds(.5f);
     private WaitForSeconds beklemeSuresi3 = new WaitForSeconds(2f);
@@ -107,11 +108,11 @@ public class Enemy : MonoBehaviour
                             {
                                 if (hit2.transform.position.x > transform.position.x)
                                 {
-                                    engellerdenKacmaAyari = .4f + (hit2.transform.position.x - transform.position.x) / 15;
+                                    engellerdenKacmaAyari = .3f + (hit2.transform.position.x - transform.position.x) / 25;
                                 }
                                 else
                                 {
-                                    engellerdenKacmaAyari = -.4f + (hit2.transform.position.x - transform.position.x) / 15;
+                                    engellerdenKacmaAyari = -.3f + (hit2.transform.position.x - transform.position.x) / 25;
                                 }
                             }
                         }
@@ -213,7 +214,7 @@ public class Enemy : MonoBehaviour
                 mevcutKosuYonu = kosuYonu;
                 karaktereKosu = false;
             }
-            yield return beklemeSuresi1;
+            yield return beklemeSuresi0;
         }
     }
 
