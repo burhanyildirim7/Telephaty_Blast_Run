@@ -87,13 +87,15 @@ public class KarakterPaketiMovement : MonoBehaviour
     {
         if (Physics.Raycast(transform.position + Vector3.up, transform.TransformDirection(Vector3.right), out hit, Mathf.Infinity)) //Saga Donus
         {
+            Debug.Log("A");
             if (hit.transform.CompareTag("DonusAyarlatici"))
             {
+                
                 if (karakterSolaGidiyor)
                 {
                     throwController.SagaDon();
                     hedefRotasyon = Quaternion.Euler(Vector3.up * (transform.rotation.eulerAngles.y + 90));
-                    cameraMovement.KameraDogrultuDegistir(10, 0, 10, 90);
+                    cameraMovement.KameraDogrultuDegistir(12, 0, 12, 90);
 
                     karakterSagaGidiyor = false;
                     karakterSolaGidiyor = false;
@@ -102,7 +104,7 @@ public class KarakterPaketiMovement : MonoBehaviour
                 {
                     throwController.SagaDon();
                     hedefRotasyon = Quaternion.Euler(Vector3.up * (transform.rotation.eulerAngles.y + 90));
-                    cameraMovement.KameraDogrultuDegistir(10, 0, -10, 90);
+                    cameraMovement.KameraDogrultuDegistir(12, 0, -12, 90);
 
                     karakterSolaGidiyor = false;
                     karakterSagaGidiyor = true;
@@ -112,9 +114,10 @@ public class KarakterPaketiMovement : MonoBehaviour
 
         if (Physics.Raycast(transform.position + Vector3.up, transform.TransformDirection(-Vector3.right), out hit, Mathf.Infinity)) //Sola Donus
         {
-
+            Debug.Log(hit.transform.gameObject.name);
             if (hit.transform.CompareTag("DonusAyarlatici"))
             {
+         
                 if (karakterSagaGidiyor)
                 {
                     throwController.SolaDon();

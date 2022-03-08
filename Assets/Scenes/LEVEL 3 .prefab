@@ -351,7 +351,7 @@ GameObject:
   - component: {fileID: 9089420778754039203}
   - component: {fileID: 6794560396917291274}
   - component: {fileID: 5848945195368821353}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Cube (3)
   m_TagString: DonusAyarlatici
   m_Icon: {fileID: 0}
@@ -758,7 +758,7 @@ GameObject:
   - component: {fileID: 4238745089820699604}
   - component: {fileID: 5598357407699244597}
   - component: {fileID: 74068465520562207}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Cube (1)
   m_TagString: DonusAyarlatici
   m_Icon: {fileID: 0}
@@ -774,7 +774,7 @@ Transform:
   m_GameObject: {fileID: 4026106525019974873}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.83, y: 1.83, z: 84.31}
-  m_LocalScale: {x: 1.1550604, y: 3.6446633, z: 1.2946101}
+  m_LocalScale: {x: 0.91285026, y: 3.2036, z: 1.7336736}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3190235228935840002}
@@ -906,7 +906,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4456226613830961700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.83, z: 84.52}
+  m_LocalPosition: {x: 0, y: 1.83, z: 84.38}
   m_LocalScale: {x: 7.4313, y: 3.6446633, z: 0.06913574}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2499,8 +2499,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8483219060745794059}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalPosition: {x: 0, y: 0.45, z: -10.56}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4335532529355185433}
@@ -9666,8 +9666,7 @@ PrefabInstance:
       propertyPath: patlamaEfekti
       value: 
       objectReference: {fileID: 5694430422327807665}
-    m_RemovedComponents:
-    - {fileID: 3058930596686706469, guid: dee661d0b45de284b8731f66c844570a, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dee661d0b45de284b8731f66c844570a, type: 3}
 --- !u!4 &8406212851245135639 stripped
 Transform:

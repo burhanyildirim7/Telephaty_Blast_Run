@@ -96,25 +96,31 @@ public class Enemy : MonoBehaviour
 
     IEnumerator EngelYanindanGec()
     {
-        Debug.Log("A");
+        
         while (true)
         {
             if (Physics.Raycast(transform.position + Vector3.up * .25f, transform.TransformDirection(Vector3.forward), out hit1, 50))
             {
+
                 if (hit1.transform.CompareTag("FirlatilabilirNesne") || hit1.transform.CompareTag("Nesne"))
                 {
                     if (Physics.Raycast(transform.position, transform.TransformDirection(-Vector3.up * 2), out hit2, 3))
                     {
+                       
                         if (!karakterSagaGidiyor && !karakterSolaGidiyor)
                         {
+                            
                             if (hit2.transform.CompareTag("Zemin"))
                             {
+                              
                                 if (hit2.transform.position.x > transform.position.x)
                                 {
+                                    
                                     engellerdenKacmaAyari = .3f + (hit2.transform.position.x - transform.position.x) / 20;
                                 }
                                 else
                                 {
+                                    
                                     engellerdenKacmaAyari = -.3f + (hit2.transform.position.x - transform.position.x) / 20;
                                 }
                             }

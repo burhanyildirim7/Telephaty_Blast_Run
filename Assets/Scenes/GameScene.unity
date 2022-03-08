@@ -1190,7 +1190,7 @@ MonoBehaviour:
   tempLevelNo: 0
   totalLevelNo: 0
   levels:
-  - {fileID: 6409168062112042791, guid: d7eacf04d747a7e4cb7099737bfd59bc, type: 3}
+  - {fileID: 9059292604785676220, guid: 6a05c87f80aba76418f0ab4d071c9767, type: 3}
   - {fileID: 6409168062112042791, guid: d7eacf04d747a7e4cb7099737bfd59bc, type: 3}
   - {fileID: 7183010954589556963, guid: 552c2b7b6b0252a4da3bad1203eac24d, type: 3}
 --- !u!1 &628836747382434081
@@ -24738,7 +24738,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1601786810886719955, guid: 94a707eed4bef7c49a2e3fe06ab3c20b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 94a707eed4bef7c49a2e3fe06ab3c20b, type: 3}
 --- !u!222 &8065103501126037052
 CanvasRenderer:
