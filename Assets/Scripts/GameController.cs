@@ -57,8 +57,14 @@ public class GameController : MonoBehaviour
     /// <param name="katsayi"></param>
     public void ScoreCarp(int katsayi)
 	{
-        if (PlayerController.instance.xVarMi) score *= katsayi;
-        else score = 1 * score;
+        if (PlayerController.instance.xVarMi)
+        {
+            score *= katsayi;
+        }
+        else
+        {
+            score = 1 * score;
+        }
         PlayerPrefs.SetInt("totalScore", PlayerPrefs.GetInt("totalScore") + score);
     }
 

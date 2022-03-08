@@ -6,6 +6,7 @@ public class KarakterPaketiMovement : MonoBehaviour
 {
     [Header("KarakterHiz")]
     public float _speed;
+    private float baslangicHizi;
 
     [Header("PlayerRotasyon")] //ObjeKontrolEderken
     private Transform donecekObje;
@@ -31,11 +32,14 @@ public class KarakterPaketiMovement : MonoBehaviour
 
     void Start()
     {
+        baslangicHizi = _speed;
         BaslangicDegerleri();
+       
     }
 
     public void BaslangicDegerleri() //UIController
     {
+        _speed = baslangicHizi; //Oyun sonlarinda surekli olarak karakterin hizi artirildigi icin boyle bir seye ihtiyac duyulmustur
         throwController = GameObject.FindWithTag("ThrowController").GetComponent<ThrowController>();
         cameraMovement = GameObject.FindWithTag("MainCamera").GetComponent<CameraMovement>();
         donecekObje = transform.GetChild(0).transform;

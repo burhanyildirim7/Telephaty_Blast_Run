@@ -86,6 +86,7 @@ public class PlayerController : MonoBehaviour
         KosuyuSonlandır();
         GameController.instance.isContinue = false;
         UIController.instance.ActivateWinScreen();
+        GameController.instance.ScoreCarp(1);
     }
 
     public void KosuyaBasla()

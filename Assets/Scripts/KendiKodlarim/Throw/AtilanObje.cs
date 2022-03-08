@@ -120,4 +120,13 @@ public class AtilanObje : MonoBehaviour
         yield return new WaitForSeconds(2.25f);
         gameObject.tag = "FirlatilabilirNesne";
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("DonusYap"))
+        {
+            gameObject.layer = 2;
+        }
+
+    }
 }
