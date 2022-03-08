@@ -13,7 +13,12 @@ public class Enemy : MonoBehaviour
     private Quaternion mevcutKosuYonu;
     private Quaternion kosuYonu;
     private float donusHizi = 1000;
+
+    [Header("KosarkenKacmaAyarlari")]
     private float engellerdenKacmaAyari;
+    private KarakterPaketiMovement karakterPaketiMovement;
+    private bool karakterSagaGidiyor = false;
+    private bool karakterSolaGidiyor = false;
 
     [Header("AnimasyonAyarlari")]
     private Animator anim;
@@ -55,6 +60,16 @@ public class Enemy : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         kosuYonu = Quaternion.Euler(Vector3.up * transform.rotation.eulerAngles.y);
         enemySpawn = transform.parent.GetComponent<EnemySpawn>();
+
+
+        if(transform.rotation.eulerAngles.y == 270)
+        {
+            karakterSolaGidiyor = true;
+        }
+        else if(transform.rotation.eulerAngles.y == 90)
+        {
+            karakterSagaGidiyor = true;
+        }
     }
 
 
@@ -80,23 +95,49 @@ public class Enemy : MonoBehaviour
     {
         while(true)
         {
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit1, 25))//Layer kullanýlýyorsa sontrafa virgül koyulup layerMask yazýlmaýlýdr.
+            if (Physics.Raycast(transform.position + Vector3.up * .25f, transform.TransformDirection(Vector3.forward), out hit1, 50))
             {
                 if(hit1.transform.CompareTag("FirlatilabilirNesne") || hit1.transform.CompareTag("Nesne"))
                 {
-                    if(Physics.Raycast(transform.position, transform.TransformDirection(-Vector3.up * 2), out hit2, 25))
+                    if(Physics.Raycast(transform.position, transform.TransformDirection(-Vector3.up * 2), out hit2, 3))
                     {
-                        if(hit2.transform.CompareTag("Zemin"))
+                        if(!karakterSagaGidiyor && !karakterSolaGidiyor)
                         {
-                            if(hit2.transform.position.x > transform.position.x)
+                            if (hit2.transform.CompareTag("Zemin"))
                             {
-                                engellerdenKacmaAyari = .4f + (hit2.transform.position.x - transform.position.x) / 8;
+                                if (hit2.transform.position.x > transform.position.x)
+                                {
+                                    engellerdenKacmaAyari = .4f + (hit2.transform.position.x - transform.position.x) / 15;
+                                }
+                                else
+                                {
+                                    engellerdenKacmaAyari = -.4f + (hit2.transform.position.x - transform.position.x) / 15;
+                                }
+                            }
+                        }
+                        else if(karakterSolaGidiyor)
+                        {
+                            if (hit2.transform.position.z > transform.position.z)
+                            {
+                                engellerdenKacmaAyari = .4f + (hit2.transform.position.z - transform.position.z) / 15;
                             }
                             else
                             {
-                                engellerdenKacmaAyari = -.4f + (hit2.transform.position.x - transform.position.x) / 8;
+                                engellerdenKacmaAyari = -.4f + (hit2.transform.position.z - transform.position.z) / 15;
                             }
                         }
+                        else if(karakterSagaGidiyor)
+                        {
+                            if (hit2.transform.position.z > transform.position.z)
+                            {
+                                engellerdenKacmaAyari = -.4f + (hit2.transform.position.z - transform.position.z) / 15;
+                            }
+                            else
+                            {
+                                engellerdenKacmaAyari = +.4f + (hit2.transform.position.z - transform.position.z) / 15;
+                            }
+                        }
+                        
                     }
                 }
             }
@@ -104,6 +145,8 @@ public class Enemy : MonoBehaviour
             {
                 engellerdenKacmaAyari = 0;
             }
+
+
 
             yield return beklemeSuresi1;
         }
@@ -142,14 +185,17 @@ public class Enemy : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, player.transform.position) >= 35)
             {
+                donusHizi += Random.Range(20, 50);
                 hiz = 15;
             }
             else if (Vector3.Distance(transform.position, player.transform.position) >= 25)
             {
+                donusHizi += Random.Range(10, 25);
                 hiz = 10;
             }
             else if (Vector3.Distance(transform.position, player.transform.position) >= 15)
             {
+                donusHizi += Random.Range(5, 10);
                 hiz = 8;
             }
             else
@@ -203,6 +249,7 @@ public class Enemy : MonoBehaviour
         {
             if (hit.transform.CompareTag("DonusAyarlatici"))
             {
+                karakterSagaGidiyor = true;
                 kosuYonu = Quaternion.Euler(Vector3.up * (transform.rotation.eulerAngles.y + 90));
                 uzaklik = Vector3.Distance(transform.position, hit.point);
                 StartCoroutine(DonusHiziBelirle(uzaklik));
@@ -213,6 +260,7 @@ public class Enemy : MonoBehaviour
         {
             if (hit.transform.CompareTag("DonusAyarlatici"))
             {
+                karakterSolaGidiyor = true;
                 kosuYonu = Quaternion.Euler(Vector3.up * (transform.rotation.eulerAngles.y - 90));
                 uzaklik = Vector3.Distance(transform.position, hit.point);
                 StartCoroutine(DonusHiziBelirle(uzaklik));
@@ -251,13 +299,28 @@ public class Enemy : MonoBehaviour
         {
             DonusAyarlayici();
         }
+        else if (other.CompareTag("DonusHizAzaltici"))
+        {
+            DonusAyarlayici();
+        }
+    }
+
+    IEnumerator HizAzaltici()
+    {
+        for (int i = 0; i < 20; i++)
+        {
+            hiz = 6;
+            yield return beklemeSuresi1;
+        }
+
+
     }
 
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("FirlatmaNesnesi"))
         {
-            GameController.instance.SetScore(5);
+            GameController.instance.SetScore(1);
             Instantiate(olumEfekti, transform.position + Vector3.up * .28f, Quaternion.identity).Play();
             Destroy(gameObject);
         }

@@ -10,7 +10,8 @@ public class AtilanObje : MonoBehaviour
 
     [Header("EfektIcinGereklidir")]
     private KarakterPaketiMovement karakterPaketiMovement;
-    private ParticleSystem efekt;
+    public ParticleSystem efekt;
+    private Outline outline;
 
     private float eksenX, eksenY, eksenZ;
 
@@ -18,13 +19,24 @@ public class AtilanObje : MonoBehaviour
 
     void Start()
     {
-        efekt = transform.GetChild(0).GetComponent<ParticleSystem>();
+        efekt = Instantiate(efekt, transform.position + Vector3.up * 1.5f, Quaternion.identity);
+        efekt.transform.parent = transform.parent;
+
+
         fizik = GetComponent<Rigidbody>();
         karakterPaketiMovement = GameObject.FindWithTag("KarakterPaketi").GetComponent<KarakterPaketiMovement>();
+        outline = GetComponent<Outline>();
 
         StartCoroutine(TutunabilirligiKontrolEt());
+        // outline.Secilebilir();
+        StartCoroutine(bekeleme());
     }
-
+    
+    IEnumerator bekeleme()
+    {
+        yield return new WaitForSeconds(1);
+        outline.Secilebilir();
+    }
 
     void Update()
     {
@@ -40,9 +52,10 @@ public class AtilanObje : MonoBehaviour
         {
             if(!karakterPaketiMovement.karakterSagaGidiyor && !karakterPaketiMovement.karakterSolaGidiyor)
             {
-                if(karakterPaketiMovement.transform.position.z - transform.position.z >= -.2f)
+                if(karakterPaketiMovement.transform.position.z - transform.position.z >= -.3f)
                 {
                     efekt.Stop();
+                    outline.Secilemez();
                 }
             }
             else if(karakterPaketiMovement.karakterSagaGidiyor)
@@ -89,7 +102,7 @@ public class AtilanObje : MonoBehaviour
 
     IEnumerator TagDegistir() //Geriden gelen dusmanlarýn tekrar carpmamasi icin
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2.25f);
         gameObject.tag = "FirlatilabilirNesne";
     }
 }
