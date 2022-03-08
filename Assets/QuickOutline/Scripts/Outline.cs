@@ -107,6 +107,8 @@ public class Outline : MonoBehaviour
 
         // Apply material properties immediately
         needsUpdate = true;
+
+        Secilebilir();
     }
 
     void OnEnable()
@@ -151,6 +153,7 @@ public class Outline : MonoBehaviour
             needsUpdate = false;
         }
 
+    
     }
 
     public void Secilebilir()

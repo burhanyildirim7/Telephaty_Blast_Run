@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6548417557991404411
+--- !u!1 &3752434923576833420
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,50 +8,50 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2927870778415588586}
-  - component: {fileID: 3712561202605324321}
-  - component: {fileID: 3668137287126562420}
-  - component: {fileID: 3089960260248430098}
-  - component: {fileID: 87534253230488304}
-  - component: {fileID: 2471955566258412240}
-  - component: {fileID: 711612079841284336}
+  - component: {fileID: 8211860618580216693}
+  - component: {fileID: 4998691673596533733}
+  - component: {fileID: 632125427128276276}
+  - component: {fileID: 2542641390590116576}
+  - component: {fileID: 3108207096750665991}
+  - component: {fileID: 1962775743487360230}
+  - component: {fileID: 847527817021062585}
   m_Layer: 0
-  m_Name: DemirDolap
+  m_Name: koltuk  (4)
   m_TagString: FirlatilabilirNesne
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2927870778415588586
+--- !u!4 &8211860618580216693
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6548417557991404411}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.6, z: 0}
-  m_LocalScale: {x: 40, y: 36, z: 40}
+  m_GameObject: {fileID: 3752434923576833420}
+  m_LocalRotation: {x: -0.7071069, y: 0.0000000628242, z: 0.000000080561, w: 0.70710677}
+  m_LocalPosition: {x: -2.96, y: 0.24999988, z: 56.89223}
+  m_LocalScale: {x: 200, y: 200, z: 200}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!33 &3712561202605324321
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &4998691673596533733
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6548417557991404411}
-  m_Mesh: {fileID: -8678823145569952518, guid: a465ff88f50b69b46981fd9c6db3e4e7, type: 3}
---- !u!23 &3668137287126562420
+  m_GameObject: {fileID: 3752434923576833420}
+  m_Mesh: {fileID: 6548614679560893509, guid: ff34eb0d2accfd544a0d0e4f41997fc5, type: 3}
+--- !u!23 &632125427128276276
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6548417557991404411}
+  m_GameObject: {fileID: 3752434923576833420}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -65,9 +65,12 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1285507144799149237, guid: a465ff88f50b69b46981fd9c6db3e4e7, type: 3}
-  - {fileID: -1637880222114644024, guid: a465ff88f50b69b46981fd9c6db3e4e7, type: 3}
-  - {fileID: 8975480819012031255, guid: a465ff88f50b69b46981fd9c6db3e4e7, type: 3}
+  - {fileID: 2100000, guid: b07c04e483f934043a008cfa20d1c181, type: 2}
+  - {fileID: 2100000, guid: 601181115a2685d4f8a572df92bf4501, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -89,26 +92,31 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3089960260248430098
-BoxCollider:
+--- !u!114 &2542641390590116576
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6548417557991404411}
-  m_Material: {fileID: 13400000, guid: e76df76053b8f0b438e804f057134c14, type: 2}
-  m_IsTrigger: 0
+  m_GameObject: {fileID: 3752434923576833420}
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.021617893, y: 0.027609488, z: 0.047496557}
-  m_Center: {x: -0.000058175625, y: 0.0009210143, z: 0.01557017}
---- !u!54 &87534253230488304
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0, g: 1, b: 0, a: 1}
+  outlineWidth: 10
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
+--- !u!54 &3108207096750665991
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6548417557991404411}
+  m_GameObject: {fileID: 3752434923576833420}
   serializedVersion: 2
   m_Mass: 30
   m_Drag: 0
@@ -118,34 +126,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2471955566258412240
+--- !u!65 &1962775743487360230
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3752434923576833420}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0077057397, y: 0.0065816534, z: 0.0067384993}
+  m_Center: {x: -0.0000014781253, y: -0.0000014773108, z: 0.0033692492}
+--- !u!114 &847527817021062585
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6548417557991404411}
+  m_GameObject: {fileID: 3752434923576833420}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99a3ca37979964e4b8e12b4e9973ca6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   efekt: {fileID: 676058186210919786, guid: 61efc4199a1dece4bb6351a7dbc3923f, type: 3}
---- !u!114 &711612079841284336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6548417557991404411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
-  outlineWidth: 2
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []

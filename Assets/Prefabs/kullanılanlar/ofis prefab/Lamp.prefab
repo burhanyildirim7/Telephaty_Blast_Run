@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1961007760365881476}
   - component: {fileID: 7163370853082537132}
   - component: {fileID: 6409936954724333696}
+  - component: {fileID: 5721493911692049132}
   m_Layer: 0
   m_Name: Lamp
   m_TagString: FirlatilabilirNesne
@@ -43,7 +44,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150488879358228470}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e76df76053b8f0b438e804f057134c14, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -77,6 +78,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a3ca37979964e4b8e12b4e9973ca6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  efekt: {fileID: 676058186210919786, guid: 61efc4199a1dece4bb6351a7dbc3923f, type: 3}
+--- !u!114 &5721493911692049132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150488879358228470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &4161487494946146495
 GameObject:
   m_ObjectHideFlags: 0
