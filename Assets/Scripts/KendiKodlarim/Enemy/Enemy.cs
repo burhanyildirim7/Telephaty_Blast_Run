@@ -6,13 +6,15 @@ public class Enemy : MonoBehaviour
 {
     [Header("KosuHizAyarlari")]
     [SerializeField] private float hiz;
+    [SerializeField] private float donusHizi;
+    private float baslangicHizi;
     [SerializeField] private float odaklanmaMesafesiPlayer;
 
     [Header("KosuGenelAyarlari")]
     private bool karaktereKosu = false;
     private Quaternion mevcutKosuYonu;
     private Quaternion kosuYonu;
-    private float donusHizi = 1000;
+    private float donusAcisalHizi = 1000;
 
     [Header("KosarkenKacmaAyarlari")]
     private float engellerdenKacmaAyari;
@@ -49,10 +51,10 @@ public class Enemy : MonoBehaviour
         BaslangicDegerleri();
         StartCoroutine(EngelYanindanGec());
         StartCoroutine(DusmanlarinKosuAyarlari());
-        
+        baslangicHizi = hiz;
     }
 
-    
+
 
     private void BaslangicDegerleri()
     {
@@ -63,11 +65,11 @@ public class Enemy : MonoBehaviour
         enemySpawn = transform.parent.GetComponent<EnemySpawn>();
 
 
-        if(transform.rotation.eulerAngles.y == 270)
+        if (transform.rotation.eulerAngles.y == 270)
         {
             karakterSolaGidiyor = true;
         }
-        else if(transform.rotation.eulerAngles.y == 90)
+        else if (transform.rotation.eulerAngles.y == 90)
         {
             karakterSagaGidiyor = true;
         }
@@ -81,7 +83,7 @@ public class Enemy : MonoBehaviour
         {
             transform.Translate((Vector3.forward + Vector3.right * engellerdenKacmaAyari) * Time.deltaTime * hiz);
 
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, mevcutKosuYonu, donusHizi * Time.deltaTime);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, mevcutKosuYonu, donusAcisalHizi * Time.deltaTime);
         }
         else if (karaktereKosu && oyunBasladiMi)
         {
@@ -94,51 +96,51 @@ public class Enemy : MonoBehaviour
 
     IEnumerator EngelYanindanGec()
     {
-        while(true)
+        while (true)
         {
             if (Physics.Raycast(transform.position + Vector3.up * .25f, transform.TransformDirection(Vector3.forward), out hit1, 50))
             {
-                if(hit1.transform.CompareTag("FirlatilabilirNesne") || hit1.transform.CompareTag("Nesne"))
+                if (hit1.transform.CompareTag("FirlatilabilirNesne") || hit1.transform.CompareTag("Nesne"))
                 {
-                    if(Physics.Raycast(transform.position, transform.TransformDirection(-Vector3.up * 2), out hit2, 3))
+                    if (Physics.Raycast(transform.position, transform.TransformDirection(-Vector3.up * 2), out hit2, 3))
                     {
-                        if(!karakterSagaGidiyor && !karakterSolaGidiyor)
+                        if (!karakterSagaGidiyor && !karakterSolaGidiyor)
                         {
                             if (hit2.transform.CompareTag("Zemin"))
                             {
                                 if (hit2.transform.position.x > transform.position.x)
                                 {
-                                    engellerdenKacmaAyari = .3f + (hit2.transform.position.x - transform.position.x) / 25;
+                                    engellerdenKacmaAyari = .3f + (hit2.transform.position.x - transform.position.x) / 20;
                                 }
                                 else
                                 {
-                                    engellerdenKacmaAyari = -.3f + (hit2.transform.position.x - transform.position.x) / 25;
+                                    engellerdenKacmaAyari = -.3f + (hit2.transform.position.x - transform.position.x) / 20;
                                 }
                             }
                         }
-                        else if(karakterSolaGidiyor)
+                        else if (karakterSolaGidiyor)
                         {
                             if (hit2.transform.position.z > transform.position.z)
                             {
-                                engellerdenKacmaAyari = .4f + (hit2.transform.position.z - transform.position.z) / 15;
+                                engellerdenKacmaAyari = .3f + (hit2.transform.position.z - transform.position.z) / 15;
                             }
                             else
                             {
-                                engellerdenKacmaAyari = -.4f + (hit2.transform.position.z - transform.position.z) / 15;
+                                engellerdenKacmaAyari = -.3f + (hit2.transform.position.z - transform.position.z) / 15;
                             }
                         }
-                        else if(karakterSagaGidiyor)
+                        else if (karakterSagaGidiyor)
                         {
                             if (hit2.transform.position.z > transform.position.z)
                             {
-                                engellerdenKacmaAyari = -.4f + (hit2.transform.position.z - transform.position.z) / 15;
+                                engellerdenKacmaAyari = -.3f + (hit2.transform.position.z - transform.position.z) / 15;
                             }
                             else
                             {
-                                engellerdenKacmaAyari = +.4f + (hit2.transform.position.z - transform.position.z) / 15;
+                                engellerdenKacmaAyari = +.3f + (hit2.transform.position.z - transform.position.z) / 15;
                             }
                         }
-                        
+
                     }
                 }
             }
@@ -153,10 +155,10 @@ public class Enemy : MonoBehaviour
         }
     }
 
-  
+
     IEnumerator DusmanlarinKosuAyarlari()
     {
-        if(enemySpawn.DusmanlarKossunMu)
+        if (enemySpawn.DusmanlarKossunMu)
         {
             oyunBasladiMi = true;
             anim.SetBool("KosmaP", true);
@@ -165,9 +167,9 @@ public class Enemy : MonoBehaviour
         }
 
 
-        while(!oyunBasladiMi)
+        while (!oyunBasladiMi)
         {
-            if(enemySpawn.DusmanlarKossunMu)
+            if (enemySpawn.DusmanlarKossunMu)
             {
                 oyunBasladiMi = true;
                 anim.SetBool("KosmaP", true);
@@ -186,17 +188,17 @@ public class Enemy : MonoBehaviour
         {
             if (Vector3.Distance(transform.position, player.transform.position) >= 35)
             {
-                donusHizi += Random.Range(20, 50);
+                donusAcisalHizi += Random.Range(20, 50);
                 hiz = 15;
             }
             else if (Vector3.Distance(transform.position, player.transform.position) >= 25)
             {
-                donusHizi += Random.Range(10, 25);
+                donusAcisalHizi += Random.Range(10, 25);
                 hiz = 10;
             }
             else if (Vector3.Distance(transform.position, player.transform.position) >= 15)
             {
-                donusHizi += Random.Range(5, 10);
+                donusAcisalHizi += Random.Range(5, 10);
                 hiz = 8;
             }
             else
@@ -233,9 +235,9 @@ public class Enemy : MonoBehaviour
         }
     }
 
-   
 
-  
+
+
 
     //Donus ayarlari
     private void DonusAyarlayici()
@@ -272,20 +274,20 @@ public class Enemy : MonoBehaviour
     IEnumerator DonusHiziBelirle(float uzaklikDegeri)
     {
 
-        donusHizi = 45 + 15 * (8 - uzaklikDegeri);
-        if((8 - uzaklikDegeri) <= 1)
+        donusAcisalHizi = 45 + 15 * (8 - uzaklikDegeri);
+        if ((8 - uzaklikDegeri) <= 1)
         {
-            donusHizi += 60;
+            donusAcisalHizi += 60;
         }
         if ((8 - uzaklikDegeri) <= 2)
         {
-            donusHizi += 35;
+            donusAcisalHizi += 35;
         }
 
 
 
         yield return beklemeSuresi3;
-        donusHizi = 1500;
+        donusAcisalHizi = 1500;
     }
 
 
@@ -308,12 +310,9 @@ public class Enemy : MonoBehaviour
 
     IEnumerator HizAzaltici()
     {
-        for (int i = 0; i < 20; i++)
-        {
-            hiz = 6;
-            yield return beklemeSuresi1;
-        }
-
+        hiz = donusHizi;
+        yield return new WaitForSeconds(3);
+        hiz = baslangicHizi;
 
     }
 
