@@ -13,6 +13,10 @@ public class AtilanObje : MonoBehaviour
     public ParticleSystem efekt;
     private Outline outline;
 
+    [Header("PatlamaEfektiKontrol")]
+    [SerializeField] private bool patlamaEfektiVarMi;
+    [SerializeField] private ParticleSystem patlamaEfekti;
+
     private float eksenX, eksenY, eksenZ;
 
     private WaitForSeconds beklemeSuresi1 = new WaitForSeconds(.25f);
@@ -20,7 +24,7 @@ public class AtilanObje : MonoBehaviour
     void Start()
     {
         efekt = Instantiate(efekt, transform.position + Vector3.up * 1.5f, Quaternion.identity);
-        efekt.transform.parent = transform.parent;
+        efekt.transform.parent = transform;
 
 
         fizik = GetComponent<Rigidbody>();
@@ -28,14 +32,12 @@ public class AtilanObje : MonoBehaviour
         outline = GetComponent<Outline>();
 
         StartCoroutine(TutunabilirligiKontrolEt());
-        // outline.Secilebilir();
-        StartCoroutine(bekeleme());
+        outline.Secilebilir();
     }
     
     IEnumerator bekeleme()
     {
         yield return new WaitForSeconds(1);
-        outline.Secilebilir();
     }
 
     void Update()
@@ -89,6 +91,11 @@ public class AtilanObje : MonoBehaviour
 
         fizik.velocity = Vector3.zero;
         gameObject.layer = 2;
+
+        if(patlamaEfektiVarMi)
+        {
+            patlamaEfekti.Play();
+        }
     }
 
     public void Firlat(Vector3 yon)

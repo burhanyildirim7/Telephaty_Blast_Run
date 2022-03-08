@@ -158,7 +158,7 @@ public class Outline : MonoBehaviour
 
     public void Secilebilir()
     {
-        outlineWidth = 10;
+        outlineWidth = 7.5f;
         needsUpdate = true;
         UpdateMaterialProperties();
     }
