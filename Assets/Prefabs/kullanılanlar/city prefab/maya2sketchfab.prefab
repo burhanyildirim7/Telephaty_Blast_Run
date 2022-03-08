@@ -706,7 +706,7 @@ GameObject:
   - component: {fileID: 4157568908062010030}
   - component: {fileID: 5132681439950971255}
   - component: {fileID: 8093038183405812161}
-  - component: {fileID: 8502038059695093443}
+  - component: {fileID: 2301650502538830576}
   m_Layer: 0
   m_Name: maya2sketchfab
   m_TagString: FirlatilabilirNesne
@@ -779,7 +779,7 @@ MonoBehaviour:
   efekt: {fileID: 676058186210919786, guid: 61efc4199a1dece4bb6351a7dbc3923f, type: 3}
   patlamaEfektiVarMi: 1
   patlamaEfekti: {fileID: 0}
---- !u!54 &8502038059695093443
+--- !u!54 &2301650502538830576
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

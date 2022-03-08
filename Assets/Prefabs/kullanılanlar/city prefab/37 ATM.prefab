@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7069089973304784466}
   - component: {fileID: 4571474781556598542}
   - component: {fileID: 8756391207029787720}
-  - component: {fileID: 2788444235977321560}
+  - component: {fileID: 6834698261960050443}
   m_Layer: 0
   m_Name: 37 ATM
   m_TagString: FirlatilabilirNesne
@@ -82,7 +82,7 @@ MonoBehaviour:
   efekt: {fileID: 676058186210919786, guid: 61efc4199a1dece4bb6351a7dbc3923f, type: 3}
   patlamaEfektiVarMi: 1
   patlamaEfekti: {fileID: 0}
---- !u!54 &2788444235977321560
+--- !u!54 &6834698261960050443
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

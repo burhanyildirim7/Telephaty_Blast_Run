@@ -5,7 +5,7 @@ using UnityEngine;
 public class KarakterPaketiMovement : MonoBehaviour
 {
     [Header("KarakterHiz")]
-    [SerializeField] private float _speed;
+    public float _speed;
 
     [Header("PlayerRotasyon")] //ObjeKontrolEderken
     private Transform donecekObje;
@@ -82,15 +82,12 @@ public class KarakterPaketiMovement : MonoBehaviour
         donme = false;
     }
 
-
     public void KaraktereDonusYaptir()
     {
         if (Physics.Raycast(transform.position + Vector3.up, transform.TransformDirection(Vector3.right), out hit, Mathf.Infinity)) //Saga Donus
         {
-            Debug.Log("A");
             if (hit.transform.CompareTag("DonusAyarlatici"))
             {
-                
                 if (karakterSolaGidiyor)
                 {
                     throwController.SagaDon();
@@ -114,10 +111,9 @@ public class KarakterPaketiMovement : MonoBehaviour
 
         if (Physics.Raycast(transform.position + Vector3.up, transform.TransformDirection(-Vector3.right), out hit, Mathf.Infinity)) //Sola Donus
         {
-            Debug.Log(hit.transform.gameObject.name);
+            Debug.Log(hit.transform.gameObject.name + hit.transform.gameObject.tag);
             if (hit.transform.CompareTag("DonusAyarlatici"))
             {
-         
                 if (karakterSagaGidiyor)
                 {
                     throwController.SolaDon();

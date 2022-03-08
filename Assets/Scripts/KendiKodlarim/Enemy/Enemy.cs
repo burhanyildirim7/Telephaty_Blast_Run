@@ -170,7 +170,7 @@ public class Enemy : MonoBehaviour
             oyunBasladiMi = true;
             anim.SetBool("KosmaP", true);
             StartCoroutine(KaraktereMesafe());
-            StartCoroutine(OyunBittiMiKontrol());
+          //  StartCoroutine(OyunBittiMiKontrol());
         }
 
 
@@ -181,7 +181,7 @@ public class Enemy : MonoBehaviour
                 oyunBasladiMi = true;
                 anim.SetBool("KosmaP", true);
                 StartCoroutine(KaraktereMesafe());
-                StartCoroutine(OyunBittiMiKontrol());
+          //      StartCoroutine(OyunBittiMiKontrol());
             }
             yield return beklemeSuresi1;
         }
@@ -227,7 +227,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-
+    /*
     IEnumerator OyunBittiMiKontrol()
     {
         while (anim.GetBool("KosmaP"))
@@ -240,7 +240,7 @@ public class Enemy : MonoBehaviour
             }
             yield return beklemeSuresi1;
         }
-    }
+    }*/
 
 
 
@@ -259,8 +259,17 @@ public class Enemy : MonoBehaviour
         {
             if (hit.transform.CompareTag("DonusAyarlatici"))
             {
-                karakterSagaGidiyor = true;
-                kosuYonu = Quaternion.Euler(Vector3.up * (transform.rotation.eulerAngles.y + 90));
+                if (karakterSolaGidiyor)
+                {
+                    karakterSolaGidiyor = false;
+                    kosuYonu = Quaternion.Euler(Vector3.up * (transform.rotation.eulerAngles.y + 90));
+                }
+                else
+                {
+                    karakterSagaGidiyor = true;
+                    kosuYonu = Quaternion.Euler(Vector3.up * (transform.rotation.eulerAngles.y - 90));
+                }
+                
                 uzaklik = Vector3.Distance(transform.position, hit.point);
                 StartCoroutine(DonusHiziBelirle(uzaklik));
             }
@@ -270,8 +279,17 @@ public class Enemy : MonoBehaviour
         {
             if (hit.transform.CompareTag("DonusAyarlatici"))
             {
-                karakterSolaGidiyor = true;
-                kosuYonu = Quaternion.Euler(Vector3.up * (transform.rotation.eulerAngles.y - 90));
+                if(karakterSagaGidiyor)
+                {
+                    karakterSagaGidiyor = false;
+                    kosuYonu = Quaternion.Euler(Vector3.up * (transform.rotation.eulerAngles.y + 90));
+                }
+                else
+                {
+                    karakterSolaGidiyor = true;
+                    kosuYonu = Quaternion.Euler(Vector3.up * (transform.rotation.eulerAngles.y - 90));
+                }
+                
                 uzaklik = Vector3.Distance(transform.position, hit.point);
                 StartCoroutine(DonusHiziBelirle(uzaklik));
             }
