@@ -29,12 +29,23 @@ public class KarakterPaketiMovement : MonoBehaviour
     public bool karakterSagaGidiyor;
     public bool karakterSolaGidiyor;
 
+    [SerializeField] private GameObject[] karakterler;
+
 
     void Start()
     {
         baslangicHizi = _speed;
         BaslangicDegerleri();
        
+    }
+
+    public void KarakterAktiflestir(int deger)
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            karakterler[i].SetActive(false);
+        }
+        karakterler[deger].SetActive(true);
     }
 
     public void BaslangicDegerleri() //UIController
@@ -115,7 +126,6 @@ public class KarakterPaketiMovement : MonoBehaviour
 
         if (Physics.Raycast(transform.position + Vector3.up, transform.TransformDirection(-Vector3.right), out hit, Mathf.Infinity)) //Sola Donus
         {
-            Debug.Log(hit.transform.gameObject.name + hit.transform.gameObject.tag);
             if (hit.transform.CompareTag("DonusAyarlatici"))
             {
                 if (karakterSagaGidiyor)

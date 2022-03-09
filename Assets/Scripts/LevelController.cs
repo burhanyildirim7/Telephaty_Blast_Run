@@ -10,8 +10,13 @@ public class LevelController : MonoBehaviour
 	public List<GameObject> levels = new List<GameObject>();
 	private GameObject currentLevelObj;
 
+	private KarakterPaketiMovement karakterPaketiMovement; //Levele gore karakter cikarmayi saglar
+	private bool AyniLeveldenBaslasinMi = false;
+	private int oncekiLevelNo;
+
 	private void Awake()
 	{
+		karakterPaketiMovement = GameObject.FindWithTag("KarakterPaketi").GetComponent<KarakterPaketiMovement>();
 		if (instance == null) instance = this;
 		//else Destroy(this);
 	}
@@ -55,7 +60,20 @@ public class LevelController : MonoBehaviour
 			levelNo = totalLevelNo;
 		}
 		UIController.instance.SetLevelText(totalLevelNo);
-		currentLevelObj = Instantiate(levels[levelNo - 1], Vector3.zero, Quaternion.identity);
+
+		if(!AyniLeveldenBaslasinMi)
+        {
+			currentLevelObj = Instantiate(levels[levelNo - 1], Vector3.zero, Quaternion.identity);
+			karakterPaketiMovement.KarakterAktiflestir(levelNo - 1); //Levele ozel olan karakteri etkinlestirir
+			oncekiLevelNo = levelNo - 1;
+		}
+		else if(AyniLeveldenBaslasinMi)
+        {
+			currentLevelObj = Instantiate(levels[oncekiLevelNo], Vector3.zero, Quaternion.identity);
+			karakterPaketiMovement.KarakterAktiflestir(oncekiLevelNo); //Levele ozel olan karakteri etkinlestirir
+
+		}
+		
 		Elephant.LevelStarted(totalLevelNo);
 
 	}
@@ -65,6 +83,7 @@ public class LevelController : MonoBehaviour
 	/// </summary>
 	public void NextLevelEvents()
 	{
+		AyniLeveldenBaslasinMi = false;
 		Elephant.LevelCompleted(totalLevelNo);
 		Destroy(currentLevelObj);
 		IncreaseLevelNo();
@@ -77,6 +96,7 @@ public class LevelController : MonoBehaviour
 	/// </summary>
 	public void RestartLevelEvents()
 	{
+		AyniLeveldenBaslasinMi = true;
 		Elephant.LevelFailed(totalLevelNo);
 		PlayerController.instance.StartingEvents();
 		Destroy(currentLevelObj);

@@ -59,6 +59,7 @@ public class ThrowController : MonoBehaviour
             if (Input.GetTouch(0).phase == TouchPhase.Began)
             {
                 DokunmayaBasla();
+                MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact); // titresim
             }
 
             if (Input.GetTouch(0).phase == TouchPhase.Moved && throwingObj != null)

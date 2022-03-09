@@ -114,8 +114,10 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     public void StartingEvents()
     {
+        StartCoroutine(AnimasyonAlgilayici());
         karakterPaketiMovement = GameObject.FindWithTag("KarakterPaketi").GetComponent<KarakterPaketiMovement>();
-        anim = transform.GetChild(0).GetComponent<Animator>();
+        
+       
         transform.parent.transform.rotation = Quaternion.Euler(0, 0, 0);
         transform.parent.transform.position = Vector3.zero;
         GameController.instance.isContinue = false;
@@ -123,6 +125,18 @@ public class PlayerController : MonoBehaviour
         transform.position = new Vector3(0, transform.position.y, 0);
         GetComponent<Collider>().enabled = true;
 
+    }
+
+    IEnumerator AnimasyonAlgilayici()
+    {
+        yield return new WaitForSeconds(.08f);
+        for (int i = 0; i < 3; i++)
+        {
+            if (transform.GetChild(i).transform.gameObject.activeSelf)
+            {
+                anim = transform.GetChild(i).GetComponent<Animator>();
+            }
+        }
     }
 
 }

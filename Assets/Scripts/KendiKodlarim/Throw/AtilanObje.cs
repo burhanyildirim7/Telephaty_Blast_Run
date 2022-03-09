@@ -126,6 +126,8 @@ public class AtilanObje : MonoBehaviour
         if(other.CompareTag("DonusYap"))
         {
             gameObject.layer = 2;
+            BoxCollider collider = GetComponent<BoxCollider>();
+            collider.enabled = false;
         }
 
     }
