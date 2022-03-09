@@ -116,7 +116,7 @@ public class ThrowController : MonoBehaviour
         deltaTouchPosition = touch.deltaPosition;
         text.text = (deltaTouchPosition).ToString();
 
-        if (deltaTouchPosition.magnitude >= 2)
+        if (deltaTouchPosition.magnitude >= 1)
         {
             ObjeyiFirlat();
         }

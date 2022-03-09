@@ -79,17 +79,21 @@ public class Enemy : MonoBehaviour
     //Rotasyon ve haraket islemleri
     void Update()
     {
-        if (!karaktereKosu && oyunBasladiMi)
+        if (!karaktereKosu && oyunBasladiMi && player.activeSelf)
         {
             transform.Translate((Vector3.forward + Vector3.right * engellerdenKacmaAyari) * Time.deltaTime * hiz);
 
             transform.rotation = Quaternion.RotateTowards(transform.rotation, mevcutKosuYonu, donusAcisalHizi * Time.deltaTime);
         }
-        else if (karaktereKosu && oyunBasladiMi)
+        else if (karaktereKosu && oyunBasladiMi && player.activeSelf)
         {
             transform.Translate(Vector3.forward * Time.deltaTime * hiz);
 
             transform.rotation = Quaternion.RotateTowards(transform.rotation, mevcutKosuYonu, 1000 * Time.deltaTime);
+        }
+        else if(!player.activeSelf  && anim.GetBool("KosmaP"))
+        {
+            anim.SetBool("KosmaP", false);
         }
     }
 
@@ -101,7 +105,6 @@ public class Enemy : MonoBehaviour
         {
             if (Physics.Raycast(transform.position + Vector3.up * .25f, transform.TransformDirection(Vector3.forward), out hit1, 50))
             {
-
                 if (hit1.transform.CompareTag("FirlatilabilirNesne") || hit1.transform.CompareTag("Nesne"))
                 {
                     if (Physics.Raycast(transform.position, transform.TransformDirection(-Vector3.up * 2), out hit2, 3))
@@ -191,7 +194,7 @@ public class Enemy : MonoBehaviour
     //Dusman karakterden uzaklastigi zamanda yapacak rotasyonu burdadir
     IEnumerator KaraktereMesafe()
     {
-        while (!kosmayiSonlandir)
+        while (!kosmayiSonlandir && player.activeSelf)
         {
             if (Vector3.Distance(transform.position, player.transform.position) >= 35)
             {
@@ -227,20 +230,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    /*
-    IEnumerator OyunBittiMiKontrol()
-    {
-        while (anim.GetBool("KosmaP"))
-        {
-            if (!GameController.instance.isContinue)
-            {
-                kosmayiSonlandir = true;
-                hiz = 0;
-                anim.SetBool("KosmaP", false);
-            }
-            yield return beklemeSuresi1;
-        }
-    }*/
 
 
 
@@ -321,6 +310,7 @@ public class Enemy : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            other.gameObject.SetActive(false);
             Destroy(gameObject);
         }
         else if (other.CompareTag("DonusYap"))

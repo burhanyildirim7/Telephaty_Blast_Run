@@ -59,9 +59,10 @@ public class UIController : MonoBehaviour
 	// RESTART TUSUNA BASILDISINDA  --- LOOSE EKRANINDA
 	public void RestartButtonClick()
 	{
-		GameObject.FindWithTag("ThrowController").GetComponent<ThrowController>().BaslangicDegerleri();
+		
 		GameObject.FindWithTag("KarakterPaketi").GetComponent<KarakterPaketiMovement>().BaslangicDegerleri();
 		GameObject.FindWithTag("MainCamera").GetComponent<CameraMovement>().BaslangicDegerleri();
+		GameObject.FindWithTag("ThrowController").GetComponent<ThrowController>().BaslangicDegerleri();
 
 
 		GamePanel.SetActive(false);
@@ -75,9 +76,10 @@ public class UIController : MonoBehaviour
 	// NEXT LEVEL TUSUNA BASILDIGINDA... WIN EKRANINDAKI BUTON
 	public void NextLevelButtonClick()
 	{
-		GameObject.FindWithTag("ThrowController").GetComponent<ThrowController>().BaslangicDegerleri();
+		
 		GameObject.FindWithTag("KarakterPaketi").GetComponent<KarakterPaketiMovement>().BaslangicDegerleri();
 		GameObject.FindWithTag("MainCamera").GetComponent<CameraMovement>().BaslangicDegerleri();
+		GameObject.FindWithTag("ThrowController").GetComponent<ThrowController>().BaslangicDegerleri();
 
 		SetTapToStartScoreText();
 		TapToStartPanel.SetActive(true);

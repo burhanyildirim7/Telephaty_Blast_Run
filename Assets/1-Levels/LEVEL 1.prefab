@@ -8761,6 +8761,7 @@ GameObject:
   - component: {fileID: 3095978185042771342}
   - component: {fileID: 3095978185042771340}
   - component: {fileID: 3095978185042771341}
+  - component: {fileID: 7480085957573814596}
   m_Layer: 0
   m_Name: Cabinet1.028 (1)
   m_TagString: Untagged
@@ -8836,6 +8837,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7480085957573814596
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3095978185042771343}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.004572655, y: 0.012053797, z: 0.0061747143}
+  m_Center: {x: 0.0022863275, y: -0.0060269004, z: 0.0030873634}
 --- !u!1 &3095978185048179591
 GameObject:
   m_ObjectHideFlags: 0
@@ -20056,6 +20070,7 @@ GameObject:
   - component: {fileID: 7785374957845216398}
   - component: {fileID: 4884245488162408163}
   - component: {fileID: 2402982581896010197}
+  - component: {fileID: 4243471054023115494}
   m_Layer: 0
   m_Name: Cabinet1.028
   m_TagString: Untagged
@@ -20131,6 +20146,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4243471054023115494
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5666525185917671721}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.004572655, y: 0.012053797, z: 0.0062847417}
+  m_Center: {x: 0.0022863275, y: -0.0060269004, z: 0.0031423792}
 --- !u!1 &5699751617634079536
 GameObject:
   m_ObjectHideFlags: 0

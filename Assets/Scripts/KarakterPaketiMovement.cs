@@ -39,6 +39,7 @@ public class KarakterPaketiMovement : MonoBehaviour
 
     public void BaslangicDegerleri() //UIController
     {
+        transform.GetChild(0).transform.gameObject.SetActive(true);
         _speed = baslangicHizi; //Oyun sonlarinda surekli olarak karakterin hizi artirildigi icin boyle bir seye ihtiyac duyulmustur
         throwController = GameObject.FindWithTag("ThrowController").GetComponent<ThrowController>();
         cameraMovement = GameObject.FindWithTag("MainCamera").GetComponent<CameraMovement>();
