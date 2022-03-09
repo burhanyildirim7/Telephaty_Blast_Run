@@ -54,7 +54,7 @@ public class AtilanObje : MonoBehaviour
         {
             if(!karakterPaketiMovement.karakterSagaGidiyor && !karakterPaketiMovement.karakterSolaGidiyor)
             {
-                if(karakterPaketiMovement.transform.position.z - transform.position.z >= -.3f)
+                if(karakterPaketiMovement.transform.position.z - transform.position.z >= 2f)
                 {
                     efekt.Stop();
                     outline.Secilemez();
@@ -62,7 +62,7 @@ public class AtilanObje : MonoBehaviour
             }
             else if(karakterPaketiMovement.karakterSagaGidiyor)
             {
-                if (karakterPaketiMovement.transform.position.x - transform.position.x >= -.3f)
+                if (karakterPaketiMovement.transform.position.x - transform.position.x >= 2f)
                 {
                     efekt.Stop();
                     outline.Secilemez();
@@ -70,7 +70,7 @@ public class AtilanObje : MonoBehaviour
             }
             else if(karakterPaketiMovement.karakterSolaGidiyor)
             {
-                if (-karakterPaketiMovement.transform.position.x + transform.position.x >= -.3f)
+                if (-karakterPaketiMovement.transform.position.x + transform.position.x >= 2f)
                 {
                     efekt.Stop();
                     outline.Secilemez();

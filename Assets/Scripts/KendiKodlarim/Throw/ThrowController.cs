@@ -106,7 +106,7 @@ public class ThrowController : MonoBehaviour
         }
 
         uzaklikAlgilayici2();
-        if (result >= objeUzaklikMenzili)
+        if (result >= -objeUzaklikMenzili)
         {
             DokunmayiBitir();
         }
