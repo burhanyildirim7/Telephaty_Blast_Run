@@ -5387,10 +5387,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: maya2sketchfab (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 6942183342573558240, guid: 6859678164b42e145ba337a3912eef92, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7718121190565036890, guid: 6859678164b42e145ba337a3912eef92, type: 3}
       propertyPath: m_RootOrder
       value: 2
