@@ -7,6 +7,7 @@ public class AtilanObje : MonoBehaviour
     [Header("FirlatmaIcinGereklidir")]
     private Rigidbody fizik;
     private bool tutuluyorMu = false;
+    private BoxCollider collider;
 
     [Header("EfektIcinGereklidir")]
     private KarakterPaketiMovement karakterPaketiMovement;
@@ -26,7 +27,7 @@ public class AtilanObje : MonoBehaviour
         efekt = Instantiate(efekt, transform.position + Vector3.up * 1.5f, Quaternion.identity);
         efekt.transform.parent = transform;
 
-
+        collider = GetComponent<BoxCollider>();
         fizik = GetComponent<Rigidbody>();
         karakterPaketiMovement = GameObject.FindWithTag("KarakterPaketi").GetComponent<KarakterPaketiMovement>();
         outline = GetComponent<Outline>();
@@ -54,7 +55,7 @@ public class AtilanObje : MonoBehaviour
         {
             if(!karakterPaketiMovement.karakterSagaGidiyor && !karakterPaketiMovement.karakterSolaGidiyor)
             {
-                if(karakterPaketiMovement.transform.position.z - transform.position.z >= 4f)
+                if(karakterPaketiMovement.transform.position.z - transform.position.z >= 5f)
                 {
                     efekt.Stop();
                     outline.Secilemez();
@@ -62,7 +63,7 @@ public class AtilanObje : MonoBehaviour
             }
             else if(karakterPaketiMovement.karakterSagaGidiyor)
             {
-                if (karakterPaketiMovement.transform.position.x - transform.position.x >= 4f)
+                if (karakterPaketiMovement.transform.position.x - transform.position.x >= 5f)
                 {
                     efekt.Stop();
                     outline.Secilemez();
@@ -70,7 +71,7 @@ public class AtilanObje : MonoBehaviour
             }
             else if(karakterPaketiMovement.karakterSolaGidiyor)
             {
-                if (-karakterPaketiMovement.transform.position.x + transform.position.x >= 4f)
+                if (-karakterPaketiMovement.transform.position.x + transform.position.x >= 5f)
                 {
                     efekt.Stop();
                     outline.Secilemez();
@@ -96,6 +97,10 @@ public class AtilanObje : MonoBehaviour
         {
             patlamaEfekti.Play();
         }
+
+        collider.enabled = false;
+        fizik.isKinematic = false;
+        fizik.useGravity = false;
     }
 
     public void Firlat(Vector3 yon)
@@ -105,6 +110,9 @@ public class AtilanObje : MonoBehaviour
         fizik.velocity = yon;
         gameObject.layer = 0;
         StartCoroutine(TagDegistir());
+
+        collider.enabled = true;
+        fizik.useGravity = true;
     }
 
     public void Birak()
@@ -113,12 +121,17 @@ public class AtilanObje : MonoBehaviour
         fizik.velocity = Vector3.zero;
         gameObject.layer = 0;
         StartCoroutine(TagDegistir());
+
+        collider.enabled = true;
+        fizik.useGravity = true;
     }
 
     IEnumerator TagDegistir() //Geriden gelen dusmanlarýn tekrar carpmamasi icin
     {
         yield return new WaitForSeconds(2.25f);
         gameObject.tag = "FirlatilabilirNesne";
+        fizik.isKinematic = true;
+        collider.size *= .35f;
     }
 
     private void OnTriggerEnter(Collider other)

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7163370853082537132}
   - component: {fileID: 6409936954724333696}
   - component: {fileID: 5721493911692049132}
+  - component: {fileID: 6979602698480404615}
   m_Layer: 0
   m_Name: Lamp
   m_TagString: FirlatilabilirNesne
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1150488879358228470}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.8, z: 1}
+  m_LocalScale: {x: 1.5, y: 1, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 373600470943526380}
@@ -79,6 +80,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   efekt: {fileID: 676058186210919786, guid: 61efc4199a1dece4bb6351a7dbc3923f, type: 3}
+  patlamaEfektiVarMi: 0
+  patlamaEfekti: {fileID: 0}
 --- !u!114 &5721493911692049132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,11 +95,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineColor: {r: 0, g: 0.78431374, b: 0, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!65 &6979602698480404615
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150488879358228470}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.8407485, y: 4.3250914, z: 2.1333518}
+  m_Center: {x: -0.008018812, y: 2.2719502, z: -0.014338176}
 --- !u!1 &4161487494946146495
 GameObject:
   m_ObjectHideFlags: 0

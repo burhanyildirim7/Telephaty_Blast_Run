@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4494096390146257047}
   - component: {fileID: 6179647285246012720}
   - component: {fileID: 8853289302637108739}
+  - component: {fileID: 2726682886675731336}
   m_Layer: 0
   m_Name: saksi2
   m_TagString: FirlatilabilirNesne
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 266591500154880718}
   m_LocalRotation: {x: -0.33186308, y: -0.6243933, z: -0.6243933, w: 0.33186308}
   m_LocalPosition: {x: 0, y: 0.29, z: 0}
-  m_LocalScale: {x: 30, y: 30, z: 30}
+  m_LocalScale: {x: 50, y: 50, z: 50}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6537351237551358613}
@@ -146,6 +147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   efekt: {fileID: 676058186210919786, guid: 61efc4199a1dece4bb6351a7dbc3923f, type: 3}
+  patlamaEfektiVarMi: 0
+  patlamaEfekti: {fileID: 0}
 --- !u!114 &8853289302637108739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,11 +162,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 0, g: 1, b: 0, a: 1}
+  outlineColor: {r: 0, g: 0.78431374, b: 0, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!65 &2726682886675731336
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 266591500154880718}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.06996835, y: 0.07132834, z: 0.062724724}
+  m_Center: {x: -0.0016649495, y: 0.0045323274, z: 0.031363275}
 --- !u!1 &550521857250927003
 GameObject:
   m_ObjectHideFlags: 0

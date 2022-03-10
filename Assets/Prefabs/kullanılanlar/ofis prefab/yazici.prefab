@@ -346,6 +346,7 @@ GameObject:
   - component: {fileID: 1530490748841064568}
   - component: {fileID: 3901924855117521462}
   - component: {fileID: 2528265694729443733}
+  - component: {fileID: 5802203395260936344}
   m_Layer: 0
   m_Name: yazici
   m_TagString: FirlatilabilirNesne
@@ -362,7 +363,7 @@ Transform:
   m_GameObject: {fileID: 5522516660854556304}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4853928780431561309}
@@ -415,6 +416,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   efekt: {fileID: 676058186210919786, guid: 61efc4199a1dece4bb6351a7dbc3923f, type: 3}
+  patlamaEfektiVarMi: 0
+  patlamaEfekti: {fileID: 0}
 --- !u!114 &2528265694729443733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -428,11 +431,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 0, g: 1, b: 0, a: 1}
+  outlineColor: {r: 0, g: 0.78431374, b: 0, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!65 &5802203395260936344
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5522516660854556304}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.3004673, y: 2.3666244, z: 2.5544968}
+  m_Center: {x: 0.21656585, y: 0.6833123, z: 0.04126358}
 --- !u!1 &7954244653734817031
 GameObject:
   m_ObjectHideFlags: 0

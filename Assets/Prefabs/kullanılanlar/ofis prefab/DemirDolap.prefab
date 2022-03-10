@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 87534253230488304}
   - component: {fileID: 2471955566258412240}
   - component: {fileID: 711612079841284336}
+  - component: {fileID: 1860577955672289458}
   m_Layer: 0
   m_Name: DemirDolap
   m_TagString: FirlatilabilirNesne
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 6548417557991404411}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.6, z: 0}
-  m_LocalScale: {x: 40, y: 36, z: 40}
+  m_LocalScale: {x: 50, y: 50, z: 50}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -131,6 +132,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   efekt: {fileID: 676058186210919786, guid: 61efc4199a1dece4bb6351a7dbc3923f, type: 3}
+  patlamaEfektiVarMi: 0
+  patlamaEfekti: {fileID: 0}
 --- !u!114 &711612079841284336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,8 +147,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 0, g: 1, b: 0, a: 1}
+  outlineColor: {r: 0, g: 0.78431374, b: 0, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!65 &1860577955672289458
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6548417557991404411}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.044104755, y: 0.045227528, z: 0.074826546}
+  m_Center: {x: 0.0024430132, y: 0.002335801, z: 0.0075666043}

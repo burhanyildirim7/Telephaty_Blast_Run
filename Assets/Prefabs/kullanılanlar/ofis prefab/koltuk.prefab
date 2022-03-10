@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4747251449746628831}
   - component: {fileID: 8538853925433109177}
   - component: {fileID: 5246285171700518959}
+  - component: {fileID: 5549664188546301987}
   m_Layer: 0
   m_Name: koltuk
   m_TagString: FirlatilabilirNesne
@@ -31,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 4951741329460811560}
   m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 200, y: 200, z: 200}
+  m_LocalScale: {x: 300, y: 300, z: 300}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -130,6 +131,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   efekt: {fileID: 676058186210919786, guid: 61efc4199a1dece4bb6351a7dbc3923f, type: 3}
+  patlamaEfektiVarMi: 0
+  patlamaEfekti: {fileID: 0}
 --- !u!114 &5246285171700518959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,8 +146,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 0.01935637, g: 1, b: 0, a: 1}
+  outlineColor: {r: 0, g: 0.78431374, b: 0, a: 1}
   outlineWidth: 10
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!65 &5549664188546301987
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4951741329460811560}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.014140153, y: 0.011144751, z: 0.011242508}
+  m_Center: {x: 0.00074638287, y: -0.000047989688, z: 0.0030522181}

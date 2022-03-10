@@ -55,7 +55,7 @@ public class Enemy : MonoBehaviour
 
     }
 
- 
+
 
 
 
@@ -94,7 +94,7 @@ public class Enemy : MonoBehaviour
 
             transform.rotation = Quaternion.RotateTowards(transform.rotation, mevcutKosuYonu, 1000 * Time.deltaTime);
         }
-        else if(!player.activeSelf  && anim.GetBool("KosmaP"))
+        else if (!player.activeSelf && anim.GetBool("KosmaP"))
         {
             anim.SetBool("KosmaP", false);
         }
@@ -103,39 +103,31 @@ public class Enemy : MonoBehaviour
 
     IEnumerator EngelYanindanGec()
     {
-        
+
         while (true)
         {
             if (Physics.Raycast(transform.position + Vector3.up * .25f, transform.TransformDirection(Vector3.forward), out hit1, 20))
             {
                 if (hit1.transform.CompareTag("FirlatilabilirNesne") || hit1.transform.CompareTag("Nesne"))
                 {
-                    if (Physics.Raycast(transform.position + Vector3.up * .25f, transform.TransformDirection(-Vector3.up * 1), out hit2, 3))
+                    if (Physics.Raycast(transform.position + Vector3.up * .25f, transform.TransformDirection(-Vector3.up * 1), out hit2, 10))
                     {
-                        if (!karakterSagaGidiyor && !karakterSolaGidiyor)
+                        if (hit2.transform.CompareTag("Zemin"))
                         {
-                            if (hit2.transform.CompareTag("Zemin"))
+                            if (!karakterSagaGidiyor && !karakterSolaGidiyor)
                             {
                                 if (hit2.transform.position.x > transform.position.x)
                                 {
-                                    
+
                                     engellerdenKacmaAyari = .3f + (hit2.transform.position.x - transform.position.x) / 20;
                                 }
                                 else
                                 {
-                                    
+
                                     engellerdenKacmaAyari = -.3f + (hit2.transform.position.x - transform.position.x) / 20;
                                 }
-                                
                             }
-                            else
-                            {
-                                Destroy(gameObject);
-                            }
-                        }
-                        else if (karakterSolaGidiyor)
-                        {
-                            if (hit2.transform.CompareTag("Zemin"))
+                            else if (karakterSolaGidiyor)
                             {
                                 if (hit2.transform.position.z > transform.position.z)
                                 {
@@ -146,14 +138,7 @@ public class Enemy : MonoBehaviour
                                     engellerdenKacmaAyari = -.3f + (hit2.transform.position.z - transform.position.z) / 15;
                                 }
                             }
-                            else
-                            {
-                                Destroy(gameObject);
-                            }
-                        }
-                        else if (karakterSagaGidiyor)
-                        {
-                            if (hit2.transform.CompareTag("Zemin"))
+                            else if (karakterSagaGidiyor)
                             {
                                 if (hit2.transform.position.z > transform.position.z)
                                 {
@@ -164,12 +149,8 @@ public class Enemy : MonoBehaviour
                                     engellerdenKacmaAyari = +.3f + (hit2.transform.position.z - transform.position.z) / 15;
                                 }
                             }
-                            else
-                            {
-                                Destroy(gameObject);
-                            }
-                        }
 
+                        }
                     }
                 }
             }
@@ -177,9 +158,6 @@ public class Enemy : MonoBehaviour
             {
                 engellerdenKacmaAyari = 0;
             }
-
-
-
             yield return beklemeSuresi1;
         }
     }
@@ -192,7 +170,6 @@ public class Enemy : MonoBehaviour
             oyunBasladiMi = true;
             anim.SetBool("KosmaP", true);
             StartCoroutine(KaraktereMesafe());
-          //  StartCoroutine(OyunBittiMiKontrol());
         }
 
 
@@ -203,7 +180,6 @@ public class Enemy : MonoBehaviour
                 oyunBasladiMi = true;
                 anim.SetBool("KosmaP", true);
                 StartCoroutine(KaraktereMesafe());
-          //      StartCoroutine(OyunBittiMiKontrol());
             }
             yield return beklemeSuresi1;
         }
@@ -277,7 +253,7 @@ public class Enemy : MonoBehaviour
                     karakterSagaGidiyor = true;
                     kosuYonu = Quaternion.Euler(Vector3.up * (transform.rotation.eulerAngles.y - 90));
                 }
-                
+
                 uzaklik = Vector3.Distance(transform.position, hit.point);
                 StartCoroutine(DonusHiziBelirle(uzaklik));
             }
@@ -287,7 +263,7 @@ public class Enemy : MonoBehaviour
         {
             if (hit.transform.CompareTag("DonusAyarlatici"))
             {
-                if(karakterSagaGidiyor)
+                if (karakterSagaGidiyor)
                 {
                     karakterSagaGidiyor = false;
                     kosuYonu = Quaternion.Euler(Vector3.up * (transform.rotation.eulerAngles.y + 90));
@@ -297,7 +273,7 @@ public class Enemy : MonoBehaviour
                     karakterSolaGidiyor = true;
                     kosuYonu = Quaternion.Euler(Vector3.up * (transform.rotation.eulerAngles.y - 90));
                 }
-                
+
                 uzaklik = Vector3.Distance(transform.position, hit.point);
                 StartCoroutine(DonusHiziBelirle(uzaklik));
             }
@@ -340,6 +316,10 @@ public class Enemy : MonoBehaviour
         else if (other.CompareTag("DonusHizAzaltici"))
         {
             DonusAyarlayici();
+        }
+        else if (other.CompareTag("Kenarlik"))
+        {
+            Destroy(gameObject);
         }
     }
 
