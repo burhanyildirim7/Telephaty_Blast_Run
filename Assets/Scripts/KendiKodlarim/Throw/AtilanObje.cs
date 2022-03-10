@@ -131,7 +131,7 @@ public class AtilanObje : MonoBehaviour
         yield return new WaitForSeconds(2.25f);
         gameObject.tag = "FirlatilabilirNesne";
         fizik.isKinematic = true;
-        collider.size *= .35f;
+        collider.size *= .6f;
     }
 
     private void OnTriggerEnter(Collider other)

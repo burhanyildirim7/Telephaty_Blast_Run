@@ -34,6 +34,8 @@ public class ThrowController : MonoBehaviour
 
     float result;
 
+    private Vector2 dokunmatikAyarDuzenleyici;
+
 
     void Start()
     {
@@ -110,11 +112,12 @@ public class ThrowController : MonoBehaviour
         {
             DokunmayiBitir();
         }
+        dokunmatikAyarDuzenleyici = touch.deltaPosition;
     }
 
     private void DokunmayiBitir()
     {
-        deltaTouchPosition = touch.deltaPosition;
+        deltaTouchPosition = touch.deltaPosition + dokunmatikAyarDuzenleyici;
         text.text = (deltaTouchPosition).ToString();
 
         if (deltaTouchPosition.magnitude >= 1)

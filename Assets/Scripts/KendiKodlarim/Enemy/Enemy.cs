@@ -158,7 +158,7 @@ public class Enemy : MonoBehaviour
             {
                 engellerdenKacmaAyari = 0;
             }
-            yield return beklemeSuresi1;
+            yield return beklemeSuresi0;
         }
     }
 
