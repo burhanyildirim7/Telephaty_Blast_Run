@@ -707,7 +707,7 @@ GameObject:
   - component: {fileID: 5132681439950971255}
   - component: {fileID: 8093038183405812161}
   - component: {fileID: 2301650502538830576}
-  - component: {fileID: 7190644669553839444}
+  - component: {fileID: 6721224868485098617}
   m_Layer: 0
   m_Name: maya2sketchfab
   m_TagString: FirlatilabilirNesne
@@ -796,7 +796,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &7190644669553839444
+--- !u!65 &6721224868485098617
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -804,11 +804,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6942183342573558240}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.03955337, y: 0.008254367, z: 0.010611487}
-  m_Center: {x: -0.012776679, y: 0.061472274, z: -0.00085127354}
+  m_Size: {x: 0.03478251, y: 0.06732132, z: 0.01}
+  m_Center: {x: -0.007937494, y: 0.03455552, z: 0}
 --- !u!1 &7080512805978655532
 GameObject:
   m_ObjectHideFlags: 0

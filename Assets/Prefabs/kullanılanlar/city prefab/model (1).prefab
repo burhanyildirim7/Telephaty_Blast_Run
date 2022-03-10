@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4501348802821833360}
   - component: {fileID: 7431405005750225279}
   - component: {fileID: 7221460764770140244}
+  - component: {fileID: 8761706382389768041}
   m_Layer: 0
   m_Name: model (1)
   m_TagString: FirlatilabilirNesne
@@ -149,3 +150,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &8761706382389768041
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2437948843574242436}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.25, y: 1.25, z: 1.25}
+  m_Center: {x: 0.047962993, y: -0.4464189, z: -0.000000037252903}

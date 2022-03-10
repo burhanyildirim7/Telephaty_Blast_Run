@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 1847504808442693593}
   - component: {fileID: 3614041201867467314}
   - component: {fileID: 4875135914316492991}
+  - component: {fileID: 3809140198783255231}
   m_Layer: 0
   m_Name: 48 Sign_board_5
   m_TagString: FirlatilabilirNesne
@@ -130,6 +131,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &3809140198783255231
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3790533969574035556}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.61182564, y: 0.6179515, z: 0.4487153}
+  m_Center: {x: 0.008480837, y: 0.06602426, z: -0.019791305}
 --- !u!1 &3790533969574035558
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,7 +155,6 @@ GameObject:
   - component: {fileID: 3790533969574140998}
   - component: {fileID: 3790533969577040996}
   - component: {fileID: 3790533969576042148}
-  - component: {fileID: 3790533969580338884}
   m_Layer: 0
   m_Name: Parking_Sign3
   m_TagString: Untagged
@@ -216,17 +229,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3790533969580338884
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3790533969574035558}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 67bddd6399ed84024a5f71cdd0dcdbfc, type: 3}

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 694781833792336368}
   - component: {fileID: 694781833793139154}
   - component: {fileID: 694781833794237202}
-  - component: {fileID: 694781833798321010}
   m_Layer: 0
   m_Name: Right_sign1
   m_TagString: Untagged
@@ -86,20 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &694781833798321010
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694781833792040400}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 680cdba6401ce4491aaae3a776f2e431, type: 3}
 --- !u!1 &694781833792040402
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,6 +98,7 @@ GameObject:
   - component: {fileID: 632816910833342308}
   - component: {fileID: 9168000301133428596}
   - component: {fileID: 4862651539605176341}
+  - component: {fileID: 9144578662731862357}
   m_Layer: 0
   m_Name: 46 Sign_board_3
   m_TagString: FirlatilabilirNesne
@@ -198,6 +184,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &9144578662731862357
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694781833792040402}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.7160064, z: 0.5}
+  m_Center: {x: 0, y: 0.108003, z: 0}
 --- !u!1 &694781833792040406
 GameObject:
   m_ObjectHideFlags: 0

@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 8246860174616245093}
   - component: {fileID: 8860617429598809455}
   - component: {fileID: 619320058540615741}
+  - component: {fileID: 1303188679536230596}
   m_Layer: 0
   m_Name: 38 Fire_Hydrants
   m_TagString: FirlatilabilirNesne
@@ -181,6 +182,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &1303188679536230596
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7655217495651453378}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4911503, y: 0.3715654, z: 0.4295456}
+  m_Center: {x: -0.0044248584, y: 0.17194079, z: -0.035227206}
 --- !u!1 &7655217495651453382
 GameObject:
   m_ObjectHideFlags: 0

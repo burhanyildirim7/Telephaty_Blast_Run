@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 5683992790792742469}
   - component: {fileID: 6361185934950219031}
   - component: {fileID: 9161142559128773252}
+  - component: {fileID: 836113553369305429}
   m_Layer: 0
   m_Name: street-food-cart 1
   m_TagString: FirlatilabilirNesne
@@ -182,6 +183,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &836113553369305429
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8289810943353296192}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.666133, y: 10.543329, z: 7.5351305}
+  m_Center: {x: 0.19320679, y: 5.5022783, z: 0.33369398}
 --- !u!1 &8378482547293100661
 GameObject:
   m_ObjectHideFlags: 0

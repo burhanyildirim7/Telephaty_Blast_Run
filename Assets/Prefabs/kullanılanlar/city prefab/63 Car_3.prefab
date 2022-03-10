@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5251742220166291913}
   - component: {fileID: 5251742220164964841}
   - component: {fileID: 5251742220163998505}
-  - component: {fileID: 5251742220159636299}
   m_Layer: 0
   m_Name: Car_3
   m_TagString: Untagged
@@ -92,20 +91,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5251742220159636299
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5251742220165938665}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 0b69e72ed3595471596f06dda90cc19a, type: 3}
 --- !u!1 &5251742220165938667
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,6 +104,7 @@ GameObject:
   - component: {fileID: 660265863991947750}
   - component: {fileID: 8705148776589287101}
   - component: {fileID: 8664365096931865931}
+  - component: {fileID: 357892245420288723}
   m_Layer: 0
   m_Name: 63 Car_3
   m_TagString: FirlatilabilirNesne
@@ -204,3 +190,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &357892245420288723
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5251742220165938667}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.75, y: 0.75, z: 0.75}
+  m_Center: {x: 0, y: 0, z: 0}

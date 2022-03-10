@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6647767162136621901}
   - component: {fileID: 2831944719035364410}
   - component: {fileID: 3923041323642633717}
+  - component: {fileID: 8946175901483732177}
   m_Layer: 0
   m_Name: tas
   m_TagString: FirlatilabilirNesne
@@ -100,6 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   efekt: {fileID: 676058186210919786, guid: 61efc4199a1dece4bb6351a7dbc3923f, type: 3}
+  patlamaEfektiVarMi: 0
+  patlamaEfekti: {fileID: 0}
 --- !u!65 &6647767162136621901
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -142,8 +145,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 0
-  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineColor: {r: 0, g: 0.78431374, b: 0, a: 1}
   outlineWidth: 2
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!65 &8946175901483732177
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4175120248824763191}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.7147815, y: 2.8567183, z: 2.9455252}
+  m_Center: {x: -0.1856799, y: 0.49550524, z: 0.022445677}
