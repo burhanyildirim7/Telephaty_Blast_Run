@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour
 
     private GameObject player;
 
-    private WaitForSeconds beklemeSuresi0 = new WaitForSeconds(.1f);
+    private WaitForSeconds beklemeSuresi0 = new WaitForSeconds(.083f);
     private WaitForSeconds beklemeSuresi1 = new WaitForSeconds(.2f);
     private WaitForSeconds beklemeSuresi2 = new WaitForSeconds(.5f);
     private WaitForSeconds beklemeSuresi3 = new WaitForSeconds(2f);
@@ -194,21 +194,21 @@ public class Enemy : MonoBehaviour
             if (Vector3.Distance(transform.position, player.transform.position) >= 35)
             {
                 donusAcisalHizi += Random.Range(20, 50);
-                hiz = 15;
+                hiz = 17;
             }
             else if (Vector3.Distance(transform.position, player.transform.position) >= 25)
             {
                 donusAcisalHizi += Random.Range(10, 25);
-                hiz = 10;
+                hiz = 12;
             }
             else if (Vector3.Distance(transform.position, player.transform.position) >= 15)
             {
                 donusAcisalHizi += Random.Range(5, 10);
-                hiz = 8;
+                hiz = 9.35f;
             }
             else
             {
-                hiz = 6f;
+                hiz = 6.4f;
             }
 
             if (Vector3.Distance(transform.position, player.transform.position) <= odaklanmaMesafesiPlayer)
