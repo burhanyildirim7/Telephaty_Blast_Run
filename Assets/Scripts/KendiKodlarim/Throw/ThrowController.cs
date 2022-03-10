@@ -145,15 +145,15 @@ public class ThrowController : MonoBehaviour
     {
         if (!karakterSagaGidiyor && !karakterSolaGidiyor)
         {
-            atilanObje.Firlat(-deltaTouchPosition.normalized.x * Vector3.right * 6 - deltaTouchPosition.normalized.y * Vector3.forward * 6 + Vector3.up * 4);
+            atilanObje.Firlat(-deltaTouchPosition.normalized.x * Vector3.right * 6 - deltaTouchPosition.normalized.y * Vector3.forward * 6 + Vector3.up * 3.25f);
         }
         else if (karakterSagaGidiyor)
         {
-            atilanObje.Firlat(-deltaTouchPosition.normalized.y * Vector3.right * 6 + deltaTouchPosition.normalized.x * Vector3.forward * 6 + Vector3.up * 4);
+            atilanObje.Firlat(-deltaTouchPosition.normalized.y * Vector3.right * 6 + deltaTouchPosition.normalized.x * Vector3.forward * 6 + Vector3.up * 3.25f);
         }
         else if (karakterSolaGidiyor)
         {
-            atilanObje.Firlat(deltaTouchPosition.normalized.y * Vector3.right * 6 - deltaTouchPosition.normalized.x * Vector3.forward * 6 + Vector3.up * 4);
+            atilanObje.Firlat(deltaTouchPosition.normalized.y * Vector3.right * 6 - deltaTouchPosition.normalized.x * Vector3.forward * 6 + Vector3.up * 3.25f);
         }
 
         playerController.ObjeleriKontrolEtBitir();

@@ -550,7 +550,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3961676098168763602}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e76df76053b8f0b438e804f057134c14, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -3640,7 +3640,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5578013941589707357}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: e76df76053b8f0b438e804f057134c14, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -4573,6 +4573,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -42.515
       objectReference: {fileID: 0}
+    - target: {fileID: 2375569826627039825, guid: a03dc1fabfe6a3f4d9438890f02fa563, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e76df76053b8f0b438e804f057134c14, type: 2}
     - target: {fileID: 3635582763620706028, guid: a03dc1fabfe6a3f4d9438890f02fa563, type: 3}
       propertyPath: outlineColor.b
       value: 0
@@ -5297,6 +5301,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mixed_Rock_01
       objectReference: {fileID: 0}
+    - target: {fileID: 6647767162136621901, guid: 286653c30139c0d4597cd991b438e24e, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e76df76053b8f0b438e804f057134c14, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 286653c30139c0d4597cd991b438e24e, type: 3}
 --- !u!4 &1755734639362480019 stripped
@@ -5581,6 +5589,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 20.551
       objectReference: {fileID: 0}
+    - target: {fileID: 2375569826627039825, guid: a03dc1fabfe6a3f4d9438890f02fa563, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e76df76053b8f0b438e804f057134c14, type: 2}
     - target: {fileID: 4902302005748817952, guid: a03dc1fabfe6a3f4d9438890f02fa563, type: 3}
       propertyPath: m_Name
       value: Cactus.001 (1)
@@ -5931,6 +5943,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Huesos-Craneo (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1644424005084259446, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e76df76053b8f0b438e804f057134c14, type: 2}
     - target: {fileID: 8135964451937909785, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
       propertyPath: m_Mass
       value: 100
@@ -6539,6 +6555,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mixed_Rock_01 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6647767162136621901, guid: 286653c30139c0d4597cd991b438e24e, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e76df76053b8f0b438e804f057134c14, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 286653c30139c0d4597cd991b438e24e, type: 3}
 --- !u!4 &9200477895549532707 stripped
@@ -7011,6 +7031,10 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 6772565225415271711, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e76df76053b8f0b438e804f057134c14, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
 --- !u!4 &6523668692149623524 stripped
@@ -7101,6 +7125,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mixed_Rock_01
       objectReference: {fileID: 0}
+    - target: {fileID: 6647767162136621901, guid: 286653c30139c0d4597cd991b438e24e, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e76df76053b8f0b438e804f057134c14, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 286653c30139c0d4597cd991b438e24e, type: 3}
 --- !u!4 &9200477895219810304 stripped
@@ -7483,6 +7511,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -42.515
       objectReference: {fileID: 0}
+    - target: {fileID: 2375569826627039825, guid: a03dc1fabfe6a3f4d9438890f02fa563, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e76df76053b8f0b438e804f057134c14, type: 2}
     - target: {fileID: 3635582763620706028, guid: a03dc1fabfe6a3f4d9438890f02fa563, type: 3}
       propertyPath: outlineColor.b
       value: 0
@@ -7795,6 +7827,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -36.61
       objectReference: {fileID: 0}
+    - target: {fileID: 2375569826627039825, guid: a03dc1fabfe6a3f4d9438890f02fa563, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e76df76053b8f0b438e804f057134c14, type: 2}
     - target: {fileID: 3635582763620706028, guid: a03dc1fabfe6a3f4d9438890f02fa563, type: 3}
       propertyPath: outlineColor.b
       value: 0
@@ -8123,6 +8159,10 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 6772565225415271711, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e76df76053b8f0b438e804f057134c14, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
 --- !u!4 &6523668693067367232 stripped
@@ -8547,6 +8587,10 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 6772565225415271711, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e76df76053b8f0b438e804f057134c14, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
 --- !u!4 &6523668693504821450 stripped
@@ -8905,6 +8949,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Huesos-Craneo (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1644424005084259446, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e76df76053b8f0b438e804f057134c14, type: 2}
     - target: {fileID: 3182205481421067881, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
       propertyPath: outlineColor.b
       value: 0
@@ -9159,6 +9207,10 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 6772565225415271711, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e76df76053b8f0b438e804f057134c14, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
 --- !u!4 &6059514081696750588 stripped
@@ -9813,6 +9865,10 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 6772565225415271711, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: e76df76053b8f0b438e804f057134c14, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
 --- !u!4 &4746153393253235838 stripped

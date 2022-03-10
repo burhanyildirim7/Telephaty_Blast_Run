@@ -21,6 +21,7 @@ public class AtilanObje : MonoBehaviour
     private float eksenX, eksenY, eksenZ;
 
     private WaitForSeconds beklemeSuresi1 = new WaitForSeconds(.25f);
+    RaycastHit hit;
 
     void Start()
     {
@@ -130,8 +131,14 @@ public class AtilanObje : MonoBehaviour
     {
         yield return new WaitForSeconds(2.25f);
         gameObject.tag = "FirlatilabilirNesne";
-        fizik.isKinematic = true;
-        collider.size *= .6f;
+        collider.size *= .42f;
+        if (Physics.Raycast(transform.position + transform.up * .25f, transform.TransformDirection(-transform.up), out hit, 5))//Layer kullanýlýyorsa sontrafa virgül koyulup layerMask yazýlmaýlýdr.
+        {
+            if(hit.transform.gameObject.CompareTag("Zemin"))
+            {
+                fizik.isKinematic = true;
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
