@@ -14,16 +14,20 @@ public class AtilanObje : MonoBehaviour
     public ParticleSystem efekt;
     private Outline outline;
 
-    [Header("PatlamaEfektiKontrol")] // BaslangicIcin
-    [SerializeField] private bool patlamaEfektiVarMi;
-    [SerializeField] private ParticleSystem patlamaEfekti;
+    [Header("Asama1Efekt")] // BaslangicIcin
+    [SerializeField] private bool asama1EfektVarMi;
+    [SerializeField] private ParticleSystem asama1Efekt;
 
-    [Header("PatlamaEfektSon")]
-    [SerializeField] private bool sonPatlamaEfektVarMi;
-    [SerializeField] private ParticleSystem sonPatlamaEfekti;
+    [Header("Asama2Efekt")]
+    [SerializeField] private bool asama2EfektVarMi;
+    [SerializeField] private ParticleSystem asama2Efekt;
 
-    [Header("YereCarpmaEfekt")]
-    [SerializeField] private ParticleSystem yereCarpmaEfekt;
+    [Header("Asama3Efekt")]
+    [SerializeField] private bool asama3EfektVarMi;
+    [SerializeField] private ParticleSystem asama3Efekt;
+
+    [Header("GenelEfekt")]
+    [SerializeField] private ParticleSystem yereCarpmaEfekt;  // Sadece yere carpma aninda efekt uygulanir
 
     private float eksenX, eksenY, eksenZ;
 
@@ -42,6 +46,7 @@ public class AtilanObje : MonoBehaviour
 
         StartCoroutine(TutunabilirligiKontrolEt());
         outline.Secilebilir();
+        asama3Efekt.transform.gameObject.SetActive(false);
     }
 
     IEnumerator bekeleme()
@@ -101,9 +106,9 @@ public class AtilanObje : MonoBehaviour
         fizik.velocity = Vector3.zero;
         gameObject.layer = 2;
 
-        if (patlamaEfektiVarMi)
+        if (asama1EfektVarMi) //obje kontrol edilmeye basladiginda kullanilabilir
         {
-            patlamaEfekti.Play();
+            asama1Efekt.Play();
         }
 
         collider.enabled = false;
@@ -158,7 +163,29 @@ public class AtilanObje : MonoBehaviour
                  efekt.transform.position = hit.point + Vector3.up * .25f;
                  efekt.Play();
              }
+
+            if(asama2EfektVarMi && gameObject.tag == "FirlatmaNesnesi")  //Yere dustugunde patlama ani
+            {
+                ParticleSystem efekt = Instantiate(asama2Efekt, transform.position, Quaternion.identity);
+                efekt.transform.position = hit.point + Vector3.up * .25f;
+                asama2EfektVarMi = false;
+                StartCoroutine(ColliderBuyult());
+                if(asama3EfektVarMi)
+                {
+                    //  asama3Efekt = transform.GetChild(0).transform.gameObject.GetComponent<ParticleSystem>();
+                    asama3Efekt.transform.gameObject.SetActive(true);
+                    asama3Efekt.Play(); // yere dustukten sonra yanma kismi gibi dusunebilirsin
+                    outline.enabled = false;
+                }
+            }
         }
+    }
+
+    IEnumerator ColliderBuyult()
+    {
+        collider.size *= 3.5f;
+        yield return new WaitForSeconds(.15f);
+        collider.size *= .5f;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -169,6 +196,5 @@ public class AtilanObje : MonoBehaviour
             BoxCollider collider = GetComponent<BoxCollider>();
             collider.enabled = false;
         }
-
     }
 }

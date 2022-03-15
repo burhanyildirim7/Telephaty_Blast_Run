@@ -4104,17 +4104,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3807524487298689191}
     m_Modifications:
-    - target: {fileID: 619320058540615741, guid: d96dc53c30c8fda439da4f630cf5b04d, type: 3}
-      propertyPath: m_Mass
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 7655217495651453378, guid: d96dc53c30c8fda439da4f630cf5b04d, type: 3}
       propertyPath: m_Name
       value: 38 Fire_Hydrants (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7655217495651453378, guid: d96dc53c30c8fda439da4f630cf5b04d, type: 3}
-      propertyPath: m_TagString
-      value: FirlatilabilirNesne
       objectReference: {fileID: 0}
     - target: {fileID: 7655217495651816930, guid: d96dc53c30c8fda439da4f630cf5b04d, type: 3}
       propertyPath: m_RootOrder
@@ -4126,7 +4118,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7655217495651816930, guid: d96dc53c30c8fda439da4f630cf5b04d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.56
+      value: -0.06
       objectReference: {fileID: 0}
     - target: {fileID: 7655217495651816930, guid: d96dc53c30c8fda439da4f630cf5b04d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4161,13 +4153,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8860617429598809455, guid: d96dc53c30c8fda439da4f630cf5b04d, type: 3}
-      propertyPath: patlamaEfekti
+      propertyPath: asama1Efekt
       value: 
       objectReference: {fileID: 7149037572765132171}
-    - target: {fileID: 8860617429598809455, guid: d96dc53c30c8fda439da4f630cf5b04d, type: 3}
-      propertyPath: yereCarpmaEfekt
-      value: 
-      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d96dc53c30c8fda439da4f630cf5b04d, type: 3}
 --- !u!4 &5047698465047897984 stripped
@@ -4268,14 +4256,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3807524487298689191}
     m_Modifications:
-    - target: {fileID: 864482735180022807, guid: a8a7b9ff56da75f479c7e41a1f49c95e, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3504704665663243645, guid: a8a7b9ff56da75f479c7e41a1f49c95e, type: 3}
-      propertyPath: m_Mass
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 5375107367068945571, guid: a8a7b9ff56da75f479c7e41a1f49c95e, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -4286,7 +4266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5375107367068945571, guid: a8a7b9ff56da75f479c7e41a1f49c95e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.15
+      value: 0.49
       objectReference: {fileID: 0}
     - target: {fileID: 5375107367068945571, guid: a8a7b9ff56da75f479c7e41a1f49c95e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4325,11 +4305,28 @@ PrefabInstance:
       value: 62 Car_2
       objectReference: {fileID: 0}
     - target: {fileID: 9115310809943263567, guid: a8a7b9ff56da75f479c7e41a1f49c95e, type: 3}
-      propertyPath: yereCarpmaEfekt
+      propertyPath: asama2Efekt
       value: 
-      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
+      objectReference: {fileID: 995434135971978586, guid: aa60aad302c05ef4886a674ffeef4463, type: 3}
+    - target: {fileID: 9115310809943263567, guid: a8a7b9ff56da75f479c7e41a1f49c95e, type: 3}
+      propertyPath: asama3Efekt
+      value: 
+      objectReference: {fileID: 5220281819929960367}
+    - target: {fileID: 9115310809943263567, guid: a8a7b9ff56da75f479c7e41a1f49c95e, type: 3}
+      propertyPath: asama2EfektVarMi
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115310809943263567, guid: a8a7b9ff56da75f479c7e41a1f49c95e, type: 3}
+      propertyPath: asama3EfektVarMi
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8a7b9ff56da75f479c7e41a1f49c95e, type: 3}
+--- !u!198 &5220281819929960367 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8981622351881589930, guid: a8a7b9ff56da75f479c7e41a1f49c95e, type: 3}
+  m_PrefabInstance: {fileID: 3807524487092931333}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9101560386137376678 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5375107367068945571, guid: a8a7b9ff56da75f479c7e41a1f49c95e, type: 3}
@@ -4805,6 +4802,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8093038183405812161, guid: 6859678164b42e145ba337a3912eef92, type: 3}
+      propertyPath: asama1Efekt
+      value: 
+      objectReference: {fileID: 1176173164044274112}
+    - target: {fileID: 8093038183405812161, guid: 6859678164b42e145ba337a3912eef92, type: 3}
       propertyPath: patlamaEfekti
       value: 
       objectReference: {fileID: 1176173164044274112}
@@ -4812,6 +4813,10 @@ PrefabInstance:
       propertyPath: yereCarpmaEfekt
       value: 
       objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
+    - target: {fileID: 8093038183405812161, guid: 6859678164b42e145ba337a3912eef92, type: 3}
+      propertyPath: asama1EfektVarMi
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8893787526799297014, guid: 6859678164b42e145ba337a3912eef92, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.0351
@@ -5209,6 +5214,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8093038183405812161, guid: 6859678164b42e145ba337a3912eef92, type: 3}
+      propertyPath: asama1Efekt
+      value: 
+      objectReference: {fileID: 8542536205966334190}
+    - target: {fileID: 8093038183405812161, guid: 6859678164b42e145ba337a3912eef92, type: 3}
       propertyPath: patlamaEfekti
       value: 
       objectReference: {fileID: 8542536205966334190}
@@ -5216,6 +5225,10 @@ PrefabInstance:
       propertyPath: yereCarpmaEfekt
       value: 
       objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
+    - target: {fileID: 8093038183405812161, guid: 6859678164b42e145ba337a3912eef92, type: 3}
+      propertyPath: asama1EfektVarMi
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6859678164b42e145ba337a3912eef92, type: 3}
 --- !u!4 &6902695575668336762 stripped
@@ -5353,6 +5366,10 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8756391207029787720, guid: dee661d0b45de284b8731f66c844570a, type: 3}
+      propertyPath: asama1Efekt
+      value: 
+      objectReference: {fileID: 2669220823152319106}
+    - target: {fileID: 8756391207029787720, guid: dee661d0b45de284b8731f66c844570a, type: 3}
       propertyPath: patlamaEfekti
       value: 
       objectReference: {fileID: 2669220823152319106}
@@ -5360,6 +5377,10 @@ PrefabInstance:
       propertyPath: yereCarpmaEfekt
       value: 
       objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
+    - target: {fileID: 8756391207029787720, guid: dee661d0b45de284b8731f66c844570a, type: 3}
+      propertyPath: asama1EfektVarMi
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dee661d0b45de284b8731f66c844570a, type: 3}
 --- !u!4 &2208041943556760356 stripped
@@ -5427,6 +5448,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8093038183405812161, guid: 6859678164b42e145ba337a3912eef92, type: 3}
+      propertyPath: asama1Efekt
+      value: 
+      objectReference: {fileID: 8220255300949484328}
+    - target: {fileID: 8093038183405812161, guid: 6859678164b42e145ba337a3912eef92, type: 3}
       propertyPath: patlamaEfekti
       value: 
       objectReference: {fileID: 8220255300949484328}
@@ -5434,6 +5459,10 @@ PrefabInstance:
       propertyPath: yereCarpmaEfekt
       value: 
       objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
+    - target: {fileID: 8093038183405812161, guid: 6859678164b42e145ba337a3912eef92, type: 3}
+      propertyPath: asama1EfektVarMi
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6859678164b42e145ba337a3912eef92, type: 3}
 --- !u!4 &6902695575343527969 stripped
@@ -5591,6 +5620,10 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8756391207029787720, guid: dee661d0b45de284b8731f66c844570a, type: 3}
+      propertyPath: asama1Efekt
+      value: 
+      objectReference: {fileID: 7802809450253550629}
+    - target: {fileID: 8756391207029787720, guid: dee661d0b45de284b8731f66c844570a, type: 3}
       propertyPath: patlamaEfekti
       value: 
       objectReference: {fileID: 7802809450253550629}
@@ -5598,6 +5631,10 @@ PrefabInstance:
       propertyPath: yereCarpmaEfekt
       value: 
       objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
+    - target: {fileID: 8756391207029787720, guid: dee661d0b45de284b8731f66c844570a, type: 3}
+      propertyPath: asama1EfektVarMi
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dee661d0b45de284b8731f66c844570a, type: 3}
 --- !u!4 &2208041943339245826 stripped
@@ -5664,6 +5701,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8860617429598809455, guid: d96dc53c30c8fda439da4f630cf5b04d, type: 3}
+      propertyPath: asama1Efekt
+      value: 
+      objectReference: {fileID: 7043241880039996649}
     - target: {fileID: 8860617429598809455, guid: d96dc53c30c8fda439da4f630cf5b04d, type: 3}
       propertyPath: patlamaEfekti
       value: 
@@ -5978,13 +6019,45 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3807524487298689191}
     m_Modifications:
+    - target: {fileID: 357892245420288723, guid: 41206a42f693c7a458434da6a858d7a3, type: 3}
+      propertyPath: m_Center.y
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 660265863991947750, guid: 41206a42f693c7a458434da6a858d7a3, type: 3}
+      propertyPath: asama2Efekt
+      value: 
+      objectReference: {fileID: 995434135971978586, guid: aa60aad302c05ef4886a674ffeef4463, type: 3}
+    - target: {fileID: 660265863991947750, guid: 41206a42f693c7a458434da6a858d7a3, type: 3}
+      propertyPath: asama3Efekt
+      value: 
+      objectReference: {fileID: 5237819382781126813}
     - target: {fileID: 660265863991947750, guid: 41206a42f693c7a458434da6a858d7a3, type: 3}
       propertyPath: yereCarpmaEfekt
       value: 
       objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
+    - target: {fileID: 660265863991947750, guid: 41206a42f693c7a458434da6a858d7a3, type: 3}
+      propertyPath: asama2EfektVarMi
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 660265863991947750, guid: 41206a42f693c7a458434da6a858d7a3, type: 3}
+      propertyPath: asama3EfektVarMi
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 660265863991947750, guid: 41206a42f693c7a458434da6a858d7a3, type: 3}
+      propertyPath: sonPatlamaEfekti
+      value: 
+      objectReference: {fileID: 995434135971978586, guid: aa60aad302c05ef4886a674ffeef4463, type: 3}
+    - target: {fileID: 660265863991947750, guid: 41206a42f693c7a458434da6a858d7a3, type: 3}
+      propertyPath: sonPatlamaEfektVarMi
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5251742220165938667, guid: 41206a42f693c7a458434da6a858d7a3, type: 3}
       propertyPath: m_Name
       value: 63 Car_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5251742220166291913, guid: 41206a42f693c7a458434da6a858d7a3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.101
       objectReference: {fileID: 0}
     - target: {fileID: 5251742220166291915, guid: 41206a42f693c7a458434da6a858d7a3, type: 3}
       propertyPath: m_RootOrder
@@ -5996,7 +6069,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5251742220166291915, guid: 41206a42f693c7a458434da6a858d7a3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.07
+      value: 0.49
       objectReference: {fileID: 0}
     - target: {fileID: 5251742220166291915, guid: 41206a42f693c7a458434da6a858d7a3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6030,12 +6103,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8657289908382092931, guid: 41206a42f693c7a458434da6a858d7a3, type: 3}
+      propertyPath: m_Center.y
+      value: 0.13
+      objectReference: {fileID: 0}
     - target: {fileID: 8664365096931865931, guid: 41206a42f693c7a458434da6a858d7a3, type: 3}
       propertyPath: m_Mass
       value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41206a42f693c7a458434da6a858d7a3, type: 3}
+--- !u!198 &5237819382781126813 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8964260728462796342, guid: 41206a42f693c7a458434da6a858d7a3, type: 3}
+  m_PrefabInstance: {fileID: 3807524488830078635}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8950592960618016608 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5251742220166291915, guid: 41206a42f693c7a458434da6a858d7a3, type: 3}
@@ -12013,10 +12095,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3807524487298689191}
     m_Modifications:
-    - target: {fileID: 619320058540615741, guid: d96dc53c30c8fda439da4f630cf5b04d, type: 3}
-      propertyPath: m_Mass
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 7655217495651453378, guid: d96dc53c30c8fda439da4f630cf5b04d, type: 3}
       propertyPath: m_Name
       value: 38 Fire_Hydrants (3)
@@ -12066,13 +12144,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8860617429598809455, guid: d96dc53c30c8fda439da4f630cf5b04d, type: 3}
-      propertyPath: patlamaEfekti
+      propertyPath: asama1Efekt
       value: 
       objectReference: {fileID: 2189043518116246836}
-    - target: {fileID: 8860617429598809455, guid: d96dc53c30c8fda439da4f630cf5b04d, type: 3}
-      propertyPath: yereCarpmaEfekt
-      value: 
-      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d96dc53c30c8fda439da4f630cf5b04d, type: 3}
 --- !u!4 &250978769706896943 stripped

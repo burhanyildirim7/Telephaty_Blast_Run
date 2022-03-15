@@ -9570,7 +9570,7 @@ GameObject:
   - component: {fileID: 3286686840286286360}
   - component: {fileID: 3285732717388511908}
   m_Layer: 0
-  m_Name: elektrk
+  m_Name: Elektrik
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
