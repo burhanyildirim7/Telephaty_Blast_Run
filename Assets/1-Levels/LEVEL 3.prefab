@@ -4164,6 +4164,10 @@ PrefabInstance:
       propertyPath: patlamaEfekti
       value: 
       objectReference: {fileID: 7149037572765132171}
+    - target: {fileID: 8860617429598809455, guid: d96dc53c30c8fda439da4f630cf5b04d, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d96dc53c30c8fda439da4f630cf5b04d, type: 3}
 --- !u!4 &5047698465047897984 stripped
@@ -4320,6 +4324,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 62 Car_2
       objectReference: {fileID: 0}
+    - target: {fileID: 9115310809943263567, guid: a8a7b9ff56da75f479c7e41a1f49c95e, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8a7b9ff56da75f479c7e41a1f49c95e, type: 3}
 --- !u!4 &9101560386137376678 stripped
@@ -4398,6 +4406,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8093038183405812161, guid: 6859678164b42e145ba337a3912eef92, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     - target: {fileID: 8893787526799297014, guid: 6859678164b42e145ba337a3912eef92, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.001
@@ -4416,6 +4428,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3807524487298689191}
     m_Modifications:
+    - target: {fileID: 632816910833342308, guid: c7b9f96dacae86748911b77aa5183abd, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     - target: {fileID: 694781833792040402, guid: c7b9f96dacae86748911b77aa5183abd, type: 3}
       propertyPath: m_Name
       value: 46 Sign_board_3
@@ -4658,6 +4674,10 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 4522571481676379010, guid: 9bc98b456a58c844a9a34fd3defd6c38, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     - target: {fileID: 4773959331077280334, guid: 9bc98b456a58c844a9a34fd3defd6c38, type: 3}
       propertyPath: m_Name
       value: Week 9.5 - mailbox v2
@@ -4788,6 +4808,10 @@ PrefabInstance:
       propertyPath: patlamaEfekti
       value: 
       objectReference: {fileID: 1176173164044274112}
+    - target: {fileID: 8093038183405812161, guid: 6859678164b42e145ba337a3912eef92, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     - target: {fileID: 8893787526799297014, guid: 6859678164b42e145ba337a3912eef92, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.0351
@@ -4854,6 +4878,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4501348802821833360, guid: 15bddc27b13d2a3478c019bb85619826, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     - target: {fileID: 7221460764770140244, guid: 15bddc27b13d2a3478c019bb85619826, type: 3}
       propertyPath: m_Mass
       value: 100
@@ -4924,6 +4952,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6973813244613826961, guid: a1850b76306b7254d8de0f46c79ce0a6, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1850b76306b7254d8de0f46c79ce0a6, type: 3}
 --- !u!4 &8703632944476474054 stripped
@@ -4938,6 +4970,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3807524487298689191}
     m_Modifications:
+    - target: {fileID: 6249142145398243933, guid: 4619270267c1d624e991159206fd1e16, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     - target: {fileID: 6836470240257259571, guid: 4619270267c1d624e991159206fd1e16, type: 3}
       propertyPath: m_Name
       value: 43 Tree_planter
@@ -5028,6 +5064,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3807524487298689191}
     m_Modifications:
+    - target: {fileID: 5430930990371144960, guid: 27725544cb91216439d97322403cec7d, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     - target: {fileID: 8631961065304379703, guid: 27725544cb91216439d97322403cec7d, type: 3}
       propertyPath: m_Name
       value: 59 Ambulance
@@ -5172,6 +5212,10 @@ PrefabInstance:
       propertyPath: patlamaEfekti
       value: 
       objectReference: {fileID: 8542536205966334190}
+    - target: {fileID: 8093038183405812161, guid: 6859678164b42e145ba337a3912eef92, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6859678164b42e145ba337a3912eef92, type: 3}
 --- !u!4 &6902695575668336762 stripped
@@ -5186,6 +5230,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3807524487298689191}
     m_Modifications:
+    - target: {fileID: 5683992790792742469, guid: af2356301310cbd4b9b571d9bba53541, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     - target: {fileID: 8289810943353296192, guid: af2356301310cbd4b9b571d9bba53541, type: 3}
       propertyPath: m_Name
       value: street-food-cart 1 (1)
@@ -5308,6 +5356,10 @@ PrefabInstance:
       propertyPath: patlamaEfekti
       value: 
       objectReference: {fileID: 2669220823152319106}
+    - target: {fileID: 8756391207029787720, guid: dee661d0b45de284b8731f66c844570a, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dee661d0b45de284b8731f66c844570a, type: 3}
 --- !u!4 &2208041943556760356 stripped
@@ -5378,6 +5430,10 @@ PrefabInstance:
       propertyPath: patlamaEfekti
       value: 
       objectReference: {fileID: 8220255300949484328}
+    - target: {fileID: 8093038183405812161, guid: 6859678164b42e145ba337a3912eef92, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6859678164b42e145ba337a3912eef92, type: 3}
 --- !u!4 &6902695575343527969 stripped
@@ -5460,6 +5516,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8093038183405812161, guid: 6859678164b42e145ba337a3912eef92, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     - target: {fileID: 8893787526799297014, guid: 6859678164b42e145ba337a3912eef92, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.001
@@ -5534,6 +5594,10 @@ PrefabInstance:
       propertyPath: patlamaEfekti
       value: 
       objectReference: {fileID: 7802809450253550629}
+    - target: {fileID: 8756391207029787720, guid: dee661d0b45de284b8731f66c844570a, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dee661d0b45de284b8731f66c844570a, type: 3}
 --- !u!4 &2208041943339245826 stripped
@@ -5604,6 +5668,10 @@ PrefabInstance:
       propertyPath: patlamaEfekti
       value: 
       objectReference: {fileID: 7043241880039996649}
+    - target: {fileID: 8860617429598809455, guid: d96dc53c30c8fda439da4f630cf5b04d, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d96dc53c30c8fda439da4f630cf5b04d, type: 3}
 --- !u!4 &6839772224750583497 stripped
@@ -5618,6 +5686,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3807524487298689191}
     m_Modifications:
+    - target: {fileID: 5683992790792742469, guid: af2356301310cbd4b9b571d9bba53541, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     - target: {fileID: 8289810943353296192, guid: af2356301310cbd4b9b571d9bba53541, type: 3}
       propertyPath: m_Name
       value: street-food-cart 1
@@ -5736,6 +5808,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: model (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8495246838196392444, guid: 36dba84976ebf9446b0380d5b85425bb, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36dba84976ebf9446b0380d5b85425bb, type: 3}
 --- !u!4 &6967527917704731976 stripped
@@ -5902,6 +5978,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3807524487298689191}
     m_Modifications:
+    - target: {fileID: 660265863991947750, guid: 41206a42f693c7a458434da6a858d7a3, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     - target: {fileID: 5251742220165938667, guid: 41206a42f693c7a458434da6a858d7a3, type: 3}
       propertyPath: m_Name
       value: 63 Car_3
@@ -5968,6 +6048,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3807524487298689191}
     m_Modifications:
+    - target: {fileID: 1847504808442693593, guid: 229217b1d633af84cb215169c8dcdd31, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     - target: {fileID: 3790533969574035556, guid: 229217b1d633af84cb215169c8dcdd31, type: 3}
       propertyPath: m_Name
       value: 48 Sign_board_5
@@ -6935,6 +7019,10 @@ PrefabInstance:
       propertyPath: patlamaEfekti
       value: 
       objectReference: {fileID: 2302703789876085226}
+    - target: {fileID: 8860617429598809455, guid: d96dc53c30c8fda439da4f630cf5b04d, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d96dc53c30c8fda439da4f630cf5b04d, type: 3}
 --- !u!4 &4566321693818380799 stripped
@@ -11981,6 +12069,10 @@ PrefabInstance:
       propertyPath: patlamaEfekti
       value: 
       objectReference: {fileID: 2189043518116246836}
+    - target: {fileID: 8860617429598809455, guid: d96dc53c30c8fda439da4f630cf5b04d, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d96dc53c30c8fda439da4f630cf5b04d, type: 3}
 --- !u!4 &250978769706896943 stripped

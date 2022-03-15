@@ -674,6 +674,9 @@ MonoBehaviour:
   efekt: {fileID: 676058186210919786, guid: 61efc4199a1dece4bb6351a7dbc3923f, type: 3}
   patlamaEfektiVarMi: 0
   patlamaEfekti: {fileID: 0}
+  sonPatlamaEfektVarMi: 0
+  sonPatlamaEfekti: {fileID: 0}
+  yereCarpmaEfekt: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
 --- !u!65 &128598558207247353
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4002,6 +4005,9 @@ MonoBehaviour:
   efekt: {fileID: 676058186210919786, guid: 61efc4199a1dece4bb6351a7dbc3923f, type: 3}
   patlamaEfektiVarMi: 0
   patlamaEfekti: {fileID: 0}
+  sonPatlamaEfektVarMi: 0
+  sonPatlamaEfekti: {fileID: 0}
+  yereCarpmaEfekt: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
 --- !u!114 &1440400327823270002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4980,6 +4986,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cactus.001 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7013568036512771274, guid: a03dc1fabfe6a3f4d9438890f02fa563, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a03dc1fabfe6a3f4d9438890f02fa563, type: 3}
 --- !u!4 &154927465669114629 stripped
@@ -5616,6 +5626,10 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 3356689332689256039, guid: 286653c30139c0d4597cd991b438e24e, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     - target: {fileID: 3923041323642633717, guid: 286653c30139c0d4597cd991b438e24e, type: 3}
       propertyPath: outlineColor.b
       value: 0
@@ -5984,6 +5998,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cactus.001 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7013568036512771274, guid: a03dc1fabfe6a3f4d9438890f02fa563, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a03dc1fabfe6a3f4d9438890f02fa563, type: 3}
 --- !u!4 &3355431494618847164 stripped
@@ -6334,6 +6352,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: e76df76053b8f0b438e804f057134c14, type: 2}
+    - target: {fileID: 7755003860043903696, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     - target: {fileID: 8135964451937909785, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
       propertyPath: m_Mass
       value: 100
@@ -6894,6 +6916,10 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 3356689332689256039, guid: 286653c30139c0d4597cd991b438e24e, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     - target: {fileID: 4175120248824493929, guid: 286653c30139c0d4597cd991b438e24e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -7358,6 +7384,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: chest 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1969483993858392682, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     - target: {fileID: 2078149836405339681, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -7440,6 +7470,10 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 3356689332689256039, guid: 286653c30139c0d4597cd991b438e24e, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     - target: {fileID: 3923041323642633717, guid: 286653c30139c0d4597cd991b438e24e, type: 3}
       propertyPath: outlineColor.b
       value: 0
@@ -7676,6 +7710,10 @@ PrefabInstance:
       propertyPath: outlineColor.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7755003860043903696, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
 --- !u!4 &5507084803053694223 stripped
@@ -7918,6 +7956,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cactus.001 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7013568036512771274, guid: a03dc1fabfe6a3f4d9438890f02fa563, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a03dc1fabfe6a3f4d9438890f02fa563, type: 3}
 --- !u!4 &5748231202829489685 stripped
@@ -8234,6 +8276,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cactus.001 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7013568036512771274, guid: a03dc1fabfe6a3f4d9438890f02fa563, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a03dc1fabfe6a3f4d9438890f02fa563, type: 3}
 --- !u!4 &5748231202619392167 stripped
@@ -8486,6 +8532,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: chest 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1969483993858392682, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     - target: {fileID: 2078149836405339681, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -8914,6 +8964,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: chest 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1969483993858392682, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     - target: {fileID: 2078149836405339681, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -9352,6 +9406,10 @@ PrefabInstance:
       propertyPath: outlineColor.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7755003860043903696, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     - target: {fileID: 8135964451937909785, guid: 85cd881769b11b64da68582d30d2ec72, type: 3}
       propertyPath: m_Mass
       value: 100
@@ -9534,6 +9592,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: chest 1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1969483993858392682, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     - target: {fileID: 2078149836405339681, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -10204,6 +10266,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: chest 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1969483993858392682, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
+      propertyPath: yereCarpmaEfekt
+      value: 
+      objectReference: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
     - target: {fileID: 2078149836405339681, guid: 1356535e0e7c3714d92b6ef6a0c7a804, type: 3}
       propertyPath: m_RootOrder
       value: 2

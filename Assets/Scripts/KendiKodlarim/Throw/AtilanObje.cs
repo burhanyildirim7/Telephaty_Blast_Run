@@ -14,9 +14,16 @@ public class AtilanObje : MonoBehaviour
     public ParticleSystem efekt;
     private Outline outline;
 
-    [Header("PatlamaEfektiKontrol")]
+    [Header("PatlamaEfektiKontrol")] // BaslangicIcin
     [SerializeField] private bool patlamaEfektiVarMi;
     [SerializeField] private ParticleSystem patlamaEfekti;
+
+    [Header("PatlamaEfektSon")]
+    [SerializeField] private bool sonPatlamaEfektVarMi;
+    [SerializeField] private ParticleSystem sonPatlamaEfekti;
+
+    [Header("YereCarpmaEfekt")]
+    [SerializeField] private ParticleSystem yereCarpmaEfekt;
 
     private float eksenX, eksenY, eksenZ;
 
@@ -36,7 +43,7 @@ public class AtilanObje : MonoBehaviour
         StartCoroutine(TutunabilirligiKontrolEt());
         outline.Secilebilir();
     }
-    
+
     IEnumerator bekeleme()
     {
         yield return new WaitForSeconds(1);
@@ -44,7 +51,7 @@ public class AtilanObje : MonoBehaviour
 
     void Update()
     {
-        if(tutuluyorMu)
+        if (tutuluyorMu)
         {
             transform.Rotate((Vector3.up * eksenY + Vector3.forward * eksenZ + Vector3.right * eksenX) * Time.deltaTime * 20);
         }
@@ -52,17 +59,17 @@ public class AtilanObje : MonoBehaviour
 
     IEnumerator TutunabilirligiKontrolEt()
     {
-        while(true)
+        while (true)
         {
-            if(!karakterPaketiMovement.karakterSagaGidiyor && !karakterPaketiMovement.karakterSolaGidiyor)
+            if (!karakterPaketiMovement.karakterSagaGidiyor && !karakterPaketiMovement.karakterSolaGidiyor)
             {
-                if(karakterPaketiMovement.transform.position.z - transform.position.z >= 5f)
+                if (karakterPaketiMovement.transform.position.z - transform.position.z >= 5f)
                 {
                     efekt.Stop();
                     outline.Secilemez();
                 }
             }
-            else if(karakterPaketiMovement.karakterSagaGidiyor)
+            else if (karakterPaketiMovement.karakterSagaGidiyor)
             {
                 if (karakterPaketiMovement.transform.position.x - transform.position.x >= 5f)
                 {
@@ -70,7 +77,7 @@ public class AtilanObje : MonoBehaviour
                     outline.Secilemez();
                 }
             }
-            else if(karakterPaketiMovement.karakterSolaGidiyor)
+            else if (karakterPaketiMovement.karakterSolaGidiyor)
             {
                 if (-karakterPaketiMovement.transform.position.x + transform.position.x >= 5f)
                 {
@@ -94,7 +101,7 @@ public class AtilanObje : MonoBehaviour
         fizik.velocity = Vector3.zero;
         gameObject.layer = 2;
 
-        if(patlamaEfektiVarMi)
+        if (patlamaEfektiVarMi)
         {
             patlamaEfekti.Play();
         }
@@ -132,18 +139,31 @@ public class AtilanObje : MonoBehaviour
         yield return new WaitForSeconds(2.25f);
         gameObject.tag = "FirlatilabilirNesne";
         collider.size *= .42f;
-        if (Physics.Raycast(transform.position + transform.up * .25f, transform.TransformDirection(-transform.up), out hit, 5))//Layer kullanýlýyorsa sontrafa virgül koyulup layerMask yazýlmaýlýdr.
+        if (Physics.Raycast(transform.position + transform.up * .25f, transform.TransformDirection(-transform.up), out hit, 5))
         {
-            if(hit.transform.gameObject.CompareTag("Zemin"))
+            if (hit.transform.gameObject.CompareTag("Zemin"))
             {
                 fizik.isKinematic = true;
             }
         }
     }
 
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.transform.gameObject.CompareTag("Zemin"))
+        {
+             if (Physics.Raycast(transform.position, -Vector3.up, out hit, 10) && yereCarpmaEfekt != null)
+             {
+                 ParticleSystem efekt = Instantiate(yereCarpmaEfekt, transform.position, Quaternion.identity);
+                 efekt.transform.position = hit.point + Vector3.up * .25f;
+                 efekt.Play();
+             }
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("DonusYap"))
+        if (other.CompareTag("DonusYap"))
         {
             gameObject.layer = 2;
             BoxCollider collider = GetComponent<BoxCollider>();
