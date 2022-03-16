@@ -13,7 +13,12 @@ public class UIController : MonoBehaviour
 
     private PlayerController playerController;
 
+    [Header("ElCikarmakIcin")]
+    [SerializeField] private GameObject el;
+    [SerializeField] private GameObject yedekEl;
 
+
+    private WaitForSeconds beklemeSuresi0 = new WaitForSeconds(.04f);
 
     // singleton yapisi burada kuruluyor.
     private void Awake()
@@ -53,8 +58,8 @@ public class UIController : MonoBehaviour
         GamePanel.SetActive(true);
         SetLevelText(LevelController.instance.totalLevelNo);
         SetGamePlayScoreText();
-
     }
+
 
     // RESTART TUSUNA BASILDISINDA  --- LOOSE EKRANINDA
     public void RestartButtonClick()
@@ -238,5 +243,38 @@ public class UIController : MonoBehaviour
         LoosePanel.SetActive(false);
         GamePanel.SetActive(false);
         tapToStartScoreText.text = PlayerPrefs.GetInt("totalScore").ToString();
+    }
+
+
+    public IEnumerator EliGonder(Transform baslangicNoktasi)
+    {
+        Vector2 hedef = new Vector2(Screen.width / 2, Screen.height / 2) + Vector2.up * 600;
+        el.transform.position = Camera.main.WorldToScreenPoint(baslangicNoktasi.position);
+        StartCoroutine(ElOlustur());
+
+
+        while (el.transform.parent.transform.gameObject.activeSelf)
+        {
+
+            if (Vector2.Distance(el.transform.position, hedef) >= 5)
+            {
+                el.transform.position = Vector2.MoveTowards(el.transform.position, hedef, Time.deltaTime * 2500);
+            }
+            else if (Vector2.Distance(el.transform.position, hedef) < 5)
+            {
+                el.transform.position = Camera.main.WorldToScreenPoint(baslangicNoktasi.position);
+            }
+            yield return null;
+        }
+    }
+
+    private IEnumerator ElOlustur()
+    {
+        while (el.transform.parent.transform.gameObject.activeSelf)
+        {
+            GameObject obje = Instantiate(yedekEl, el.transform.position, Quaternion.identity);
+            obje.transform.parent = el.transform.root.transform.GetChild(0).transform;
+            yield return beklemeSuresi0;
+        }
     }
 }

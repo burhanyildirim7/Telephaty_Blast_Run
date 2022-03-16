@@ -46,7 +46,12 @@ public class AtilanObje : MonoBehaviour
 
         StartCoroutine(TutunabilirligiKontrolEt());
         outline.Secilebilir();
-        asama3Efekt.transform.gameObject.SetActive(false);
+
+
+        if(asama3Efekt != null)
+        {
+            asama3Efekt.transform.gameObject.SetActive(false);
+        }
     }
 
     IEnumerator bekeleme()
@@ -184,7 +189,7 @@ public class AtilanObje : MonoBehaviour
     IEnumerator ColliderBuyult()
     {
         collider.size *= 3.5f;
-        yield return new WaitForSeconds(.15f);
+        yield return new WaitForSeconds(.05f);
         collider.size *= .5f;
     }
 

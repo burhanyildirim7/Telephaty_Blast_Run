@@ -16588,7 +16588,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4643410851212649284}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.82, z: 23}
+  m_LocalPosition: {x: 0, y: 0.82, z: 17.1}
   m_LocalScale: {x: 8.0908, y: 2.9508, z: 0.61526}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30520,7 +30520,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8726741501743459549, guid: 796400866af766647976aab6814dedf6, type: 3}
       propertyPath: m_Name
-      value: masa
+      value: Ogretici1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 796400866af766647976aab6814dedf6, type: 3}
@@ -37473,7 +37473,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1940971607895722725, guid: 79be32a70aabd5b44a2ec18e4e09f6de, type: 3}
       propertyPath: m_Name
-      value: yazici1
+      value: Ogretici2
       objectReference: {fileID: 0}
     - target: {fileID: 3251145818835669987, guid: 79be32a70aabd5b44a2ec18e4e09f6de, type: 3}
       propertyPath: m_Mass

@@ -31,12 +31,75 @@ public class KarakterPaketiMovement : MonoBehaviour
 
     [SerializeField] private GameObject[] karakterler;
 
+    [Header("OgreticiModIcinGerekli")]
+    [SerializeField] private GameObject ogreticiCanvasi;
+
+
 
     void Start()
     {
         baslangicHizi = _speed;
         BaslangicDegerleri();
-       
+    }
+
+    IEnumerator OgreticiMod()
+    {
+        yield return new WaitForSeconds(.25f);
+        GameObject obje1 = GameObject.Find("Ogretici1");
+        GameObject obje2 = GameObject.Find("Ogretici2");
+        UIController uIController = GameObject.FindObjectOfType<UIController>();
+
+
+        while (transform.position.z < (obje2.transform.position.z + 9))
+        {
+            if (Vector3.Distance(transform.position, obje1.transform.position) <= 4.75f)
+            {
+                if(!ogreticiCanvasi.activeSelf)
+                {
+                    ogreticiCanvasi.SetActive(true);
+                    StartCoroutine(uIController.EliGonder(obje1.transform));
+                }
+                else
+                {
+                    Time.timeScale = Mathf.Lerp(Time.timeScale, .5f, Time.deltaTime * 3);
+                }
+            }
+            else if(Vector3.Distance(transform.position, obje1.transform.position) <= 7)
+            {
+                Time.timeScale = Mathf.Lerp(Time.timeScale, 1f, Time.deltaTime * 10);
+
+                if (ogreticiCanvasi.activeSelf)
+                {
+                    ogreticiCanvasi.SetActive(false);
+                }
+            }
+
+
+
+            if(Vector3.Distance(transform.position, obje2.transform.position) <= 4.75f)
+            {
+                if (!ogreticiCanvasi.activeSelf)
+                {
+                    ogreticiCanvasi.SetActive(true);
+                    StartCoroutine(uIController.EliGonder(obje2.transform));
+                }
+                else
+                {
+                    Time.timeScale = Mathf.Lerp(Time.timeScale, .5f, Time.deltaTime * 3);
+                }
+            }
+            else if (Vector3.Distance(transform.position, obje2.transform.position) <= 7)
+            {
+                Time.timeScale = Mathf.Lerp(Time.timeScale, 1f, Time.deltaTime * 10);
+
+                if (ogreticiCanvasi.activeSelf)
+                {
+                    ogreticiCanvasi.SetActive(false);
+                }
+            }
+
+            yield return null;
+        }
     }
 
     public void KarakterAktiflestir(int deger)
@@ -60,6 +123,11 @@ public class KarakterPaketiMovement : MonoBehaviour
         karakterSagaGidiyor = false;
 
         hedefRotasyon = Quaternion.Euler(Vector3.zero);
+
+        if (PlayerPrefs.GetInt("level") == 0)
+        {
+            StartCoroutine(OgreticiMod());
+        }
     }
 
 
