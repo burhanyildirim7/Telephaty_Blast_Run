@@ -144,6 +144,7 @@ public class KarakterPaketiMovement : MonoBehaviour
 
         if (PlayerPrefs.GetInt("level") == 0)
         {
+            Debug.Log(PlayerPrefs.GetInt("level"));
             uIController = GameObject.FindObjectOfType<UIController>();
             StartCoroutine(OgreticiMod());
         }
