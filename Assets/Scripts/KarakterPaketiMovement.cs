@@ -49,63 +49,69 @@ public class KarakterPaketiMovement : MonoBehaviour
         yield return new WaitForSeconds(.25f);
         GameObject obje1 = GameObject.Find("Ogretici1");
         GameObject obje2 = GameObject.Find("Ogretici2");
+
+        bool birinciYapildiMi = false;
+        bool ikinciYapildiMi = false;
         uIController.OnBoardingYapabilir = true;
 
 
         while (transform.position.z < (obje2.transform.position.z + 9))
         {
-            if (Vector3.Distance(transform.position, obje1.transform.position) <= 4.75f)
+            if (transform.position.z >= 6 && transform.position.z <= 10)
             {
-                if (!ogreticiCanvasi.activeSelf && uIController.OnBoardingYapabilir)
+                if (!ogreticiCanvasi.activeSelf && uIController.OnBoardingYapabilir && !birinciYapildiMi)
                 {
                     ogreticiCanvasi.SetActive(true);
                     StartCoroutine(uIController.EliGonder(obje1.transform));
                 }
-                else if (uIController.OnBoardingYapabilir)
+                else if (uIController.OnBoardingYapabilir && !birinciYapildiMi)
                 {
-                    Time.timeScale = Mathf.Lerp(Time.timeScale, .35f, Time.deltaTime * 10);
+                    Time.timeScale = Mathf.Lerp(Time.timeScale, .35f, Time.deltaTime * 8);
                 }
                 else if(!uIController.OnBoardingYapabilir)
                 {
+                    birinciYapildiMi = true;
                     ogreticiCanvasi.SetActive(false);
-                    Time.timeScale = Mathf.Lerp(Time.timeScale, 1f, Time.deltaTime * 10);
+                    Time.timeScale = Mathf.Lerp(Time.timeScale, 1f, Time.deltaTime * 50);
                 }
             }
-            else if (Vector3.Distance(transform.position, obje1.transform.position) <= 7)
+            else if (transform.position.z > 11 && transform.position.z <= 14)
             {
-                Time.timeScale = Mathf.Lerp(Time.timeScale, 1f, Time.deltaTime * 25);
+                Time.timeScale = Mathf.Lerp(Time.timeScale, 1f, Time.deltaTime * 50);
 
                 if (ogreticiCanvasi.activeSelf)
                 {
+                    birinciYapildiMi = true;
                     ogreticiCanvasi.SetActive(false);
                 }
             }
 
 
-            Debug.Log(uIController.OnBoardingYapabilir);
-            if (Vector3.Distance(transform.position, obje2.transform.position) <= 4.75f)
+            if (transform.position.z >= 18 && transform.position.z <= 25)
             {
-                if (!ogreticiCanvasi.activeSelf && uIController.OnBoardingYapabilir)
+                if (!ogreticiCanvasi.activeSelf && uIController.OnBoardingYapabilir && !ikinciYapildiMi)
                 {
                     ogreticiCanvasi.SetActive(true);
                     StartCoroutine(uIController.EliGonder(obje2.transform));
                 }
-                else if (uIController.OnBoardingYapabilir)
+                else if (uIController.OnBoardingYapabilir && !ikinciYapildiMi)
                 {
-                    Time.timeScale = Mathf.Lerp(Time.timeScale, .35f, Time.deltaTime * 10);
+                    Time.timeScale = Mathf.Lerp(Time.timeScale, .35f, Time.deltaTime * 8);
                 }
                 else if (!uIController.OnBoardingYapabilir)
                 {
+                    ikinciYapildiMi = true;
                     ogreticiCanvasi.SetActive(false);
-                    Time.timeScale = Mathf.Lerp(Time.timeScale, 1f, Time.deltaTime * 10);
+                    Time.timeScale = Mathf.Lerp(Time.timeScale, 1f, Time.deltaTime * 50);
                 }
             }
-            else if (Vector3.Distance(transform.position, obje2.transform.position) <= 7)
+            else if (transform.position.z > 25 && transform.position.z <= 30)
             {
-                Time.timeScale = Mathf.Lerp(Time.timeScale, 1f, Time.deltaTime * 25);
+                Time.timeScale = Mathf.Lerp(Time.timeScale, 1f, Time.deltaTime * 50);
 
                 if (ogreticiCanvasi.activeSelf)
                 {
+                    ikinciYapildiMi = true;
                     ogreticiCanvasi.SetActive(false);
                 }
             }
