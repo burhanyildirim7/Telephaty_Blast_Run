@@ -16,6 +16,7 @@ public class UIController : MonoBehaviour
     [Header("ElCikarmakIcin")]
     [SerializeField] private GameObject el;
     [SerializeField] private GameObject yedekEl;
+    public bool OnBoardingYapabilir = true;
 
 
     private WaitForSeconds beklemeSuresi0 = new WaitForSeconds(.04f);
@@ -255,7 +256,6 @@ public class UIController : MonoBehaviour
 
         while (el.transform.parent.transform.gameObject.activeSelf)
         {
-
             if (Vector2.Distance(el.transform.position, hedef) >= 5)
             {
                 el.transform.position = Vector2.MoveTowards(el.transform.position, hedef, Time.deltaTime * 2500);

@@ -24,13 +24,14 @@ public class ThrowController : MonoBehaviour
     private PlayerController playerController;
     private KarakterPaketiMovement karakterPaketiMovement;
 
-
-    [SerializeField] Text text;
     private Vector3 deltaTouchPosition;
 
     [Header("FirlatmaYonKontrol")]
     public bool karakterSagaGidiyor;
     public bool karakterSolaGidiyor;
+
+    [Header("OnBoardingKismi")]
+    private UIController uIController;
 
     float result;
 
@@ -47,6 +48,7 @@ public class ThrowController : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
         karakterPaketiMovement = GameObject.FindWithTag("KarakterPaketi").GetComponent<KarakterPaketiMovement>();
+        uIController = GameObject.FindObjectOfType<UIController>();
 
         karakterSolaGidiyor = false;
         karakterSagaGidiyor = false;
@@ -84,8 +86,11 @@ public class ThrowController : MonoBehaviour
         {
             uzaklikAlgilayici1();
 
-            if (hit.transform.CompareTag("FirlatilabilirNesne") && result >= objeUzaklikMenzili)
+            if (hit.transform.CompareTag("FirlatmaNesnesi") || hit.transform.CompareTag("FirlatilabilirNesne") && result >= objeUzaklikMenzili)
             {
+                uIController.OnBoardingYapabilir = false;
+
+
                 throwingObj = hit.transform.gameObject;
                 atilanObje = throwingObj.GetComponent<AtilanObje>();
                 atilanObje.ObjeSec();
@@ -117,8 +122,8 @@ public class ThrowController : MonoBehaviour
 
     private void DokunmayiBitir()
     {
+        uIController.OnBoardingYapabilir = true;
         deltaTouchPosition = touch.deltaPosition + dokunmatikAyarDuzenleyici;
-        text.text = (deltaTouchPosition).ToString();
 
         if (deltaTouchPosition.magnitude >= 1)
         {

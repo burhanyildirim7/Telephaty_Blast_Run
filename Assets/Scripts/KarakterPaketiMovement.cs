@@ -34,6 +34,8 @@ public class KarakterPaketiMovement : MonoBehaviour
     [Header("OgreticiModIcinGerekli")]
     [SerializeField] private GameObject ogreticiCanvasi;
 
+    [Header("OnBoarding")]
+    private UIController uIController;
 
 
     void Start()
@@ -47,26 +49,31 @@ public class KarakterPaketiMovement : MonoBehaviour
         yield return new WaitForSeconds(.25f);
         GameObject obje1 = GameObject.Find("Ogretici1");
         GameObject obje2 = GameObject.Find("Ogretici2");
-        UIController uIController = GameObject.FindObjectOfType<UIController>();
+        uIController.OnBoardingYapabilir = true;
 
 
         while (transform.position.z < (obje2.transform.position.z + 9))
         {
             if (Vector3.Distance(transform.position, obje1.transform.position) <= 4.75f)
             {
-                if(!ogreticiCanvasi.activeSelf)
+                if (!ogreticiCanvasi.activeSelf && uIController.OnBoardingYapabilir)
                 {
                     ogreticiCanvasi.SetActive(true);
                     StartCoroutine(uIController.EliGonder(obje1.transform));
                 }
-                else
+                else if (uIController.OnBoardingYapabilir)
                 {
-                    Time.timeScale = Mathf.Lerp(Time.timeScale, .5f, Time.deltaTime * 3);
+                    Time.timeScale = Mathf.Lerp(Time.timeScale, .35f, Time.deltaTime * 10);
+                }
+                else if(!uIController.OnBoardingYapabilir)
+                {
+                    ogreticiCanvasi.SetActive(false);
+                    Time.timeScale = Mathf.Lerp(Time.timeScale, 1f, Time.deltaTime * 10);
                 }
             }
-            else if(Vector3.Distance(transform.position, obje1.transform.position) <= 7)
+            else if (Vector3.Distance(transform.position, obje1.transform.position) <= 7)
             {
-                Time.timeScale = Mathf.Lerp(Time.timeScale, 1f, Time.deltaTime * 10);
+                Time.timeScale = Mathf.Lerp(Time.timeScale, 1f, Time.deltaTime * 25);
 
                 if (ogreticiCanvasi.activeSelf)
                 {
@@ -75,22 +82,27 @@ public class KarakterPaketiMovement : MonoBehaviour
             }
 
 
-
-            if(Vector3.Distance(transform.position, obje2.transform.position) <= 4.75f)
+            Debug.Log(uIController.OnBoardingYapabilir);
+            if (Vector3.Distance(transform.position, obje2.transform.position) <= 4.75f)
             {
-                if (!ogreticiCanvasi.activeSelf)
+                if (!ogreticiCanvasi.activeSelf && uIController.OnBoardingYapabilir)
                 {
                     ogreticiCanvasi.SetActive(true);
                     StartCoroutine(uIController.EliGonder(obje2.transform));
                 }
-                else
+                else if (uIController.OnBoardingYapabilir)
                 {
-                    Time.timeScale = Mathf.Lerp(Time.timeScale, .5f, Time.deltaTime * 3);
+                    Time.timeScale = Mathf.Lerp(Time.timeScale, .35f, Time.deltaTime * 10);
+                }
+                else if (!uIController.OnBoardingYapabilir)
+                {
+                    ogreticiCanvasi.SetActive(false);
+                    Time.timeScale = Mathf.Lerp(Time.timeScale, 1f, Time.deltaTime * 10);
                 }
             }
             else if (Vector3.Distance(transform.position, obje2.transform.position) <= 7)
             {
-                Time.timeScale = Mathf.Lerp(Time.timeScale, 1f, Time.deltaTime * 10);
+                Time.timeScale = Mathf.Lerp(Time.timeScale, 1f, Time.deltaTime * 25);
 
                 if (ogreticiCanvasi.activeSelf)
                 {
@@ -126,6 +138,7 @@ public class KarakterPaketiMovement : MonoBehaviour
 
         if (PlayerPrefs.GetInt("level") == 0)
         {
+            uIController = GameObject.FindObjectOfType<UIController>();
             StartCoroutine(OgreticiMod());
         }
     }
