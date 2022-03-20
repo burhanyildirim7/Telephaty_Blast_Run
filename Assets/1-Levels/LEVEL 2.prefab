@@ -672,10 +672,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   efekt: {fileID: 676058186210919786, guid: 61efc4199a1dece4bb6351a7dbc3923f, type: 3}
-  patlamaEfektiVarMi: 0
-  patlamaEfekti: {fileID: 0}
-  sonPatlamaEfektVarMi: 0
-  sonPatlamaEfekti: {fileID: 0}
+  asama1EfektVarMi: 0
+  asama1Efekt: {fileID: 0}
+  asama2EfektVarMi: 0
+  asama2Efekt: {fileID: 0}
+  asama3EfektVarMi: 0
+  asama3Efekt: {fileID: 0}
   yereCarpmaEfekt: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
 --- !u!65 &128598558207247353
 BoxCollider:
@@ -4003,10 +4005,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   efekt: {fileID: 676058186210919786, guid: 61efc4199a1dece4bb6351a7dbc3923f, type: 3}
-  patlamaEfektiVarMi: 0
-  patlamaEfekti: {fileID: 0}
-  sonPatlamaEfektVarMi: 0
-  sonPatlamaEfekti: {fileID: 0}
+  asama1EfektVarMi: 0
+  asama1Efekt: {fileID: 0}
+  asama2EfektVarMi: 0
+  asama2Efekt: {fileID: 0}
+  asama3EfektVarMi: 0
+  asama3Efekt: {fileID: 0}
   yereCarpmaEfekt: {fileID: 1894914561966903563, guid: ff9f04d10b1303847bc259999e903a38, type: 3}
 --- !u!114 &1440400327823270002
 MonoBehaviour:
