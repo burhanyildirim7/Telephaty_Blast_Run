@@ -21,7 +21,7 @@ public class KarakterPaketiMovement : MonoBehaviour
     [Header("KameraRotasyonu")]
     private CameraMovement cameraMovement;
 
-    [Header("AtýsAyarlamakIcindir")]
+    [Header("At?sAyarlamakIcindir")]
     private ThrowController throwController;
 
 
@@ -68,7 +68,7 @@ public class KarakterPaketiMovement : MonoBehaviour
                 {
                     Time.timeScale = Mathf.Lerp(Time.timeScale, .35f, Time.deltaTime * 8);
                 }
-                else if(!uIController.OnBoardingYapabilir)
+                else if (!uIController.OnBoardingYapabilir)
                 {
                     birinciYapildiMi = true;
                     ogreticiCanvasi.SetActive(false);
@@ -160,7 +160,7 @@ public class KarakterPaketiMovement : MonoBehaviour
         }
 
 
-        if (donme)  //Zihin kontrolü yaparken gecerlidir
+        if (donme)  //Zihin kontrol? yaparken gecerlidir
         {
             donusYonu = Quaternion.LookRotation(Vector3.right * donulecekObje.position.x + Vector3.forward * donulecekObje.position.z - transform.position);
             donecekObje.transform.rotation = Quaternion.RotateTowards(transform.rotation, donusYonu, 1000 * Time.deltaTime);
@@ -195,7 +195,7 @@ public class KarakterPaketiMovement : MonoBehaviour
                 {
                     throwController.SagaDon();
                     hedefRotasyon = Quaternion.Euler(Vector3.up * (transform.rotation.eulerAngles.y + 90));
-                    cameraMovement.KameraDogrultuDegistir(12, 0, 12, 90);
+                    cameraMovement.KameraDogrultuDegistir(13, 0, 12.75f, 90);
 
                     karakterSagaGidiyor = false;
                     karakterSolaGidiyor = false;
@@ -204,7 +204,7 @@ public class KarakterPaketiMovement : MonoBehaviour
                 {
                     throwController.SagaDon();
                     hedefRotasyon = Quaternion.Euler(Vector3.up * (transform.rotation.eulerAngles.y + 90));
-                    cameraMovement.KameraDogrultuDegistir(12, 0, -12, 90);
+                    cameraMovement.KameraDogrultuDegistir(13, 0, -12.75f, 90);
 
                     karakterSolaGidiyor = false;
                     karakterSagaGidiyor = true;
@@ -220,7 +220,7 @@ public class KarakterPaketiMovement : MonoBehaviour
                 {
                     throwController.SolaDon();
                     hedefRotasyon = Quaternion.Euler(Vector3.up * (transform.rotation.eulerAngles.y - 90));
-                    cameraMovement.KameraDogrultuDegistir(-12, 0, 12, -90);
+                    cameraMovement.KameraDogrultuDegistir(-13, 0, 12.75f, -90);
 
                     karakterSagaGidiyor = false;
                     karakterSolaGidiyor = false;
@@ -229,7 +229,7 @@ public class KarakterPaketiMovement : MonoBehaviour
                 {
                     throwController.SolaDon();
                     hedefRotasyon = Quaternion.Euler(Vector3.up * (transform.rotation.eulerAngles.y - 90));
-                    cameraMovement.KameraDogrultuDegistir(-12, 0, -12, -90);
+                    cameraMovement.KameraDogrultuDegistir(-13, 0, -12.75f, -90);
 
                     karakterSagaGidiyor = false;
                     karakterSolaGidiyor = true;
