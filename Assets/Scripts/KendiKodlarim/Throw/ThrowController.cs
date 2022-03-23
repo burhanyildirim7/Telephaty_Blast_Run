@@ -17,6 +17,7 @@ public class ThrowController : MonoBehaviour
     private RaycastHit hit;
     private Touch touch;
 
+
     [Header("Efektler")]
     [SerializeField] private ParticleSystem efekt;
 
@@ -32,6 +33,13 @@ public class ThrowController : MonoBehaviour
 
     [Header("OnBoardingKismi")]
     private UIController uIController;
+
+    [Header("MouseIleOynatici")]
+    private Vector3 currentMousePos; //++
+    private Vector3 previousMousePos; //++
+    private Vector3 duzenleyiciMouse;
+    private Vector3 deltaMousePos;
+
 
     float result;
 
@@ -56,32 +64,51 @@ public class ThrowController : MonoBehaviour
 
     void Update()
     {
-        if (Input.touchCount > 0)
+        /* if (Input.touchCount > 0)
+         {
+             touch = Input.GetTouch(0);
+
+             if (Input.GetTouch(0).phase == TouchPhase.Began)
+             {
+                 DokunmayaBasla();
+                 MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact); // titresim
+             }
+
+             if (Input.GetTouch(0).phase == TouchPhase.Moved && throwingObj != null)
+             {
+                 Dokunma();
+             }
+
+             if (Input.GetTouch(0).phase == TouchPhase.Ended && throwingObj != null)
+             {
+                 DokunmayiBitir();
+             }
+         }*/
+
+        //++
+        if (Input.GetMouseButtonDown(0))
         {
-            touch = Input.GetTouch(0);
-
-            if (Input.GetTouch(0).phase == TouchPhase.Began)
-            {
-                DokunmayaBasla();
-                MoreMountains.NiceVibrations.MMVibrationManager.Haptic(MoreMountains.NiceVibrations.HapticTypes.MediumImpact); // titresim
-            }
-
-            if (Input.GetTouch(0).phase == TouchPhase.Moved && throwingObj != null)
-            {
-                Dokunma();
-            }
-
-            if (Input.GetTouch(0).phase == TouchPhase.Ended && throwingObj != null)
-            {
-                DokunmayiBitir();
-            }
+            DokunmayaBasla();
         }
+
+        if (Input.GetMouseButton(0) && throwingObj != null)
+        {
+            Dokunma();
+        }
+
+        if (Input.GetMouseButtonUp(0) && throwingObj != null)
+        {
+            DokunmayiBitir();
+        }
+
     }
 
     //Dokunma kýsýmlarý
     private void DokunmayaBasla()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+        //    Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); //++
         if (Physics.Raycast(ray, out hit))
         {
             uzaklikAlgilayici1();
@@ -105,7 +132,8 @@ public class ThrowController : MonoBehaviour
 
     private void Dokunma()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+        //Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); //++
 
         if (Physics.Raycast(ray, out hit))
         {
@@ -117,15 +145,41 @@ public class ThrowController : MonoBehaviour
         {
             DokunmayiBitir();
         }
-        dokunmatikAyarDuzenleyici = touch.deltaPosition;
+
+        //dokunmatikAyarDuzenleyici = touch.deltaPosition;
+
+        currentMousePos = Input.mousePosition; //++
+
+        
+        duzenleyiciMouse = currentMousePos - previousMousePos; //++
+
+        previousMousePos = Input.mousePosition; //++
     }
 
     private void DokunmayiBitir()
     {
         uIController.OnBoardingYapabilir = true;
-        deltaTouchPosition = touch.deltaPosition + dokunmatikAyarDuzenleyici;
 
-        if (deltaTouchPosition.magnitude >= 1)
+
+        // deltaTouchPosition = touch.deltaPosition + dokunmatikAyarDuzenleyici;
+
+        previousMousePos = Input.mousePosition; //++
+        currentMousePos = Input.mousePosition; //++
+
+        deltaMousePos = duzenleyiciMouse + (currentMousePos - previousMousePos); //++
+
+        /*if (deltaTouchPosition.magnitude >= 1)
+        {
+            ObjeyiFirlat();
+        }
+        else
+        {
+            atilanObje.Birak();
+        }*/
+
+
+        //++
+        if (deltaMousePos.magnitude >= 1)
         {
             ObjeyiFirlat();
         }
@@ -133,6 +187,8 @@ public class ThrowController : MonoBehaviour
         {
             atilanObje.Birak();
         }
+
+
 
         karakterPaketiMovement.DonulmePasiflestir();
         efekt.Stop();
@@ -148,17 +204,30 @@ public class ThrowController : MonoBehaviour
     //Firlatma kisimlari
     private void ObjeyiFirlat()
     {
+        /* if (!karakterSagaGidiyor && !karakterSolaGidiyor)
+         {
+             atilanObje.Firlat(-deltaTouchPosition.normalized.x * Vector3.right * 6 - deltaTouchPosition.normalized.y * Vector3.forward * 6 + Vector3.up * 3.25f);
+         }
+         else if (karakterSagaGidiyor)
+         {
+             atilanObje.Firlat(-deltaTouchPosition.normalized.y * Vector3.right * 6 + deltaTouchPosition.normalized.x * Vector3.forward * 6 + Vector3.up * 3.25f);
+         }
+         else if (karakterSolaGidiyor)
+         {
+             atilanObje.Firlat(deltaTouchPosition.normalized.y * Vector3.right * 6 - deltaTouchPosition.normalized.x * Vector3.forward * 6 + Vector3.up * 3.25f);
+         }*/
+
         if (!karakterSagaGidiyor && !karakterSolaGidiyor)
         {
-            atilanObje.Firlat(-deltaTouchPosition.normalized.x * Vector3.right * 6 - deltaTouchPosition.normalized.y * Vector3.forward * 6 + Vector3.up * 3.25f);
+            atilanObje.Firlat(-deltaMousePos.normalized.x * Vector3.right * 6 - deltaMousePos.normalized.y * Vector3.forward * 6 + Vector3.up * 3.25f);
         }
         else if (karakterSagaGidiyor)
         {
-            atilanObje.Firlat(-deltaTouchPosition.normalized.y * Vector3.right * 6 + deltaTouchPosition.normalized.x * Vector3.forward * 6 + Vector3.up * 3.25f);
+            atilanObje.Firlat(-deltaMousePos.normalized.y * Vector3.right * 6 + deltaMousePos.normalized.x * Vector3.forward * 6 + Vector3.up * 3.25f);
         }
         else if (karakterSolaGidiyor)
         {
-            atilanObje.Firlat(deltaTouchPosition.normalized.y * Vector3.right * 6 - deltaTouchPosition.normalized.x * Vector3.forward * 6 + Vector3.up * 3.25f);
+            atilanObje.Firlat(deltaMousePos.normalized.y * Vector3.right * 6 - deltaMousePos.normalized.x * Vector3.forward * 6 + Vector3.up * 3.25f);
         }
 
         playerController.ObjeleriKontrolEtBitir();
